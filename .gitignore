@@ -1,0 +1,63 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon\r
+
+# macOS Finder metadata
+._*
+.Spotlight-V100
+.Trashes
+
+# Unity
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Mm]emoryCaptures/
+UserSettings/
+
+# Unity generated files
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+*.pidb.meta
+
+# Visual Studio / Rider
+.vscode/
+.idea/
+*.sln.iml
+
+# Logs
+*.log
+
+# Archives
+*.tar.gz
+*.tgz
+*.gz
+*.bz2
+
+# Temporary files
+*~
+*.swp
+*.lock
+
+# Node / npm (if used)
+node_modules/
+pnpm-lock.yaml
+yarn.lock
+package-lock.json
+
