@@ -2,9 +2,9 @@ title:Shaken
 position: 0,0
 ---
   // Makes Sylvia feel a bit insecure.
-    <<stopPulsatingFile DocumentIcon_2>>
-    <<setCanClick DocumentIcon_2 false>>
-    <<setCanDrag DocumentIcon_2 false>>
+    <<stopPulsatingFile DocumentIcon2>>
+    <<setCanClick DocumentIcon2 false>>
+    <<setCanDrag DocumentIcon2 false>>
     Sylvia: (A little shaken) Oh, wait! What are you doing ?
     Sylvia: I just... I need to know what disappears.
 
@@ -12,13 +12,13 @@ position: 0,0
       Camille (You): You're right. Sorry. I should have asked.
       Sylvia: No, no. I am the one who asked you for help.
       Sylvia: Perhaps, we can look at it together?
-      <<startPulsatingFile DocumentIcon_2>>
-      <<setCanClick DocumentIcon_2 true>>
+      <<startPulsatingFile DocumentIcon2>>
+      <<setCanClick DocumentIcon2 true>>
     -> Explain that space needs to be freed quickly.
       Camille (You): We need to delete things if you want the computer to work.
       Sylvia: Yes. Of, course.
       Sylvia: Still, let's not be too quick.
-      <<startPulsatingFile DocumentIcon_2>>
-      <<setCanClick DocumentIcon_2 true>>
+      <<startPulsatingFile DocumentIcon2>>
+      <<setCanClick DocumentIcon2 true>>
 
 ===
