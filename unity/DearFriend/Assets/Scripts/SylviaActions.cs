@@ -76,9 +76,8 @@ public class SylviaActions : MonoBehaviour
     }
 
     [YarnCommand("SylviaSits")]
-    public void Sits()
+    public IEnumerator Sits()
     {
-    
         if (moveRoutine != null)
         {
             StopCoroutine(moveRoutine);
@@ -86,7 +85,10 @@ public class SylviaActions : MonoBehaviour
         }
 
         sitAfterArrival = true;
+
         moveRoutine = StartCoroutine(MoveToPosition(position3));
+
+        yield return moveRoutine;
     }
 
     private IEnumerator SnapAndSit()
@@ -106,4 +108,6 @@ public class SylviaActions : MonoBehaviour
 
         yield return null;
     }
+
+
 }

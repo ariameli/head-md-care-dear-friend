@@ -1,14 +1,13 @@
 //====================
 // Onboarding - Intro
 //====================
-title: Start
-position: -420,-513
+title: Day1
+position: -414,-438
 ---
 
 <<declare $zoom = 0>> // De 0 à 100
 
 //<<SylviaMoves Sylvia Kitchen>>
-// IMPORTANT : Opportunity to introduce Sylvia's uniqueness
 Sylvia: Thank you for helping me.
 Sylvia: ... My computer has been very slow these past few weeks. It always sounds as if the vacuum is on.
 Camille (You): Oh! No problem. Let's see what's wrong.
@@ -22,10 +21,7 @@ title: WarningWindow
 Hello
 <<PlaySound Audio Warning>>
 Camille (You): Your hard drive is full.
-Sylvia: Full? How is that possible? Don't computers have infinite space?//TODO: maybe find another word than infinite? She's not that clueless I'd say, i feel like caricaturizing an old lady
-Camille (You): Haha, not really.
-Sylvia: I suppose I kept too many things.
-
+Sylvia: Full? How is that possible? Don't computers have infinite space?
 <<startPulsating CloseButton>>
 <<setCanClickForCloseButton CloseButton true>>
 
@@ -158,9 +154,7 @@ Camille (You): Thank you.
 
 <<jump Image>>
 
-//===============
-// End Of Story
-//===============
+
 ===
 
 title: Image
@@ -195,4 +189,37 @@ Camille (You):
 <<ZoomOutCamera 77.32 0 0 20>>
 
 <<SylviaSits Sylvia>>
+
+<<NextDay DayManager>>
+<<jump Day2>>
+
+//===============
+// End Of Day1
+//===============
+
+===
+title:Day2
+---
+
+<<ZoomOutCamera 65.5 0 0 0>>
+Sylvia: Thanks for coming by. I need to send a serie of photographs to an online magazin. Can you help me with this ?
+
+
+
+<<NextDay DayManager>>
+<<jump Day3>>
+//===============
+// End Of Day2
+//===============
+
+===
+title:Day3
+---
+
+Camille: So. I finally finished my exams. I'm exhausted.
+
+//===============
+// End Of STORY
+//===============
+
 ===
