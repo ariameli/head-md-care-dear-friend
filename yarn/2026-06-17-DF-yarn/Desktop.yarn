@@ -1,0 +1,96 @@
+title: Desktop
+position: -63,-228
+---
+
+<<declare $opened= 0>>
+<<if $opened < 3>>
+
+    -> Cliquer sur fichier1.
+        <<jump Fichier1>>>
+    -> Cliquer sur fichier2.
+        <<jump Fichier2>>>
+    -> Cliquer sur fichier3.
+        <<jump Fichier3>>>
+    -> Cliquer sur fichier3.
+        <<jump Fichier4>>>
+<<else>>
+    <<jump Main>>
+
+<<endif>>
+===
+
+
+title: Fichier1
+position: -272,298
+---
+<<set $opened+=1>>
+(Le fichier s'ouvre. C'est un pdf à propos de "Comment tricoter un chapeau avec des oreilles de chat.")
+Sylvia: Oh (Surprise). Haha.
+Sylvia: C'est le costume que j'ai fabriqué avec mon amie pour Carnaval l'année passée.
+Sylvia: Je n'en n'ai plus besoin. Tu peux le supprimer.
+
+
+(L'icône de la corbeille "clignote".)
+-> Cliquer sur le fichier et le tirer vers l'îcone de la corbeille.
+
+
+<<jump Desktop>>
+===
+
+title: Fichier2
+position: 57,290
+---
+
+<<set $opened+=1>>
+(Le fichier s'ouvre. C'est la photo d'une rivière dans une forêt).
+Sylvia: Oh...
+Sylvia: Hum. Garde-la pour l'instant.
+
+-> Demander ce que c'est.
+-> Ne rien dire.
+-> Dire que c'est beau.
+
+<<jump Desktop>>
+===
+
+title: Fichier3
+position: 229,506
+---
+<<set $opened+=1>>
+(C'est un audio. Des tambours un peu mystiques.)
+Sylvia: Oh la la. Je ne sais plus ce que c'est.
+
+-> Convaincre de le garder.
+-> Convaincre de le supprimer.
+
+<<jump Desktop>>
+===
+
+title: Fichier4
+position: 229,506
+---
+<<set $opened+=1>>
+
+Une facture.
+
+<<jump Desktop>>
+===
+
+title: Fichier5
+position: 229,506
+---
+<<set $opened+=1>>
+(C'est une photo de Sylvia et d'une dame plus âgée qui font de la randonnée)
+
+Une facture.
+
+-> Supprimer.
+-> Garder.
+
+<<jump Desktop>>
+
+
+//Camille: On a pas encore fait assez d'espace. Est-ce que tu as un disque sur lequel je pourrais copier des fichiers ?
+//Sylvia: Mon fils m'a dit que mes fichiers était stockés en ligne, mais je sais pas trop où c'est.
+
+===
