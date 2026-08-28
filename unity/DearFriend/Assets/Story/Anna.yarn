@@ -1,0 +1,24 @@
+title:Shaken
+position: 0,0
+---
+  // Makes Anna feel a bit insecure.
+    <<stopPulsatingFile DocumentIcon_2>>
+    <<setCanClick DocumentIcon_2 false>>
+    <<setCanDrag DocumentIcon_2 false>>
+    Anna: (A little shaken) Oh, wait! What are you doing ?
+    Anna: I just... I need to know what disappears.
+
+    -> Apologize and open the file with her.
+      Camille (You): You're right. Sorry. I should have asked.
+      Anna: No, no. I am the one who asked you for help.
+      Anna: Perhaps, we can look at it together?
+      <<startPulsatingFile DocumentIcon_2>>
+      <<setCanClick DocumentIcon_2 true>>
+    -> Explain that space needs to be freed quickly.
+      Camille (You): We need to delete things if you want the computer to work.
+      Anna: Yes. Of, course.
+      Anna: Still, let's not be too quick.
+      <<startPulsatingFile DocumentIcon_2>>
+      <<setCanClick DocumentIcon_2 true>>
+
+===
