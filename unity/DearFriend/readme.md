@@ -50,6 +50,8 @@ Assets/
 └── Yarn/
 ```
 
+[Assets Folder Structure — Detailed](Assets-folder-structure-detailed.md)
+
 ## Development Notes
 
 This project is still in development.
