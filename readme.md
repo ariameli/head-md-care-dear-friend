@@ -1,5 +1,7 @@
 # DearFriend
 
+![cover](./presskit/cover.png)
+
 ## Project Status
 
 This repository contains the current development of **DearFriend**.
@@ -19,7 +21,6 @@ We are now in the final phase of production. The team is continuing to work on t
 ### Unity
 
 **Unity version:** `6000.3.15f1 LTS`
-
 **Target:** iPad, 4:3
 
 To run the current vertical slice:
@@ -27,7 +28,14 @@ To run the current vertical slice:
 1. Open `./unity/DearFriend` as a Unity project.
 2. Press **Play** in Unity.
 
----
+### Vertical Slice Reference Video
+
+If the project cannot be run, or if you need a reference for the intended behavior, a recorded playthrough of the vertical slice is available here:
+
+**[Watch the vertical slice](https://www.youtube.com/watch?v=ya9sq1jCNZ4)**
+
+The video can also be used as a reference when comparing behavior during integration and bug fixing.
+
 
 ## Repository Structure
 
