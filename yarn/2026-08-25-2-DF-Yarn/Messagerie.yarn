@@ -1,0 +1,93 @@
+title: Messagerie
+position: -41,-412
+---
+
+<<declare $photo_seen= 0>>
+("Memento Vivere" est toujours écrit dans la barre de recherche)
+
+<<jump Scrolling>>
+===
+
+title: Scrolling
+---
+<<if $photo_seen < 4>>
+// NEW CODE ACTION : Scroll up/down, snap to image in discussion to trigger dialogue
+
+-> Scroller vers le bas 1x
+    ("Il est écrit "(1/4)")
+    <<jump Photo1>>
+-> Scroller vers le bas 2x
+    ("Il est écrit "(2/4)")
+    <<jump Photo2>>
+-> Scroller vers le bas 3x
+    ("Il est écrit "(3/4)")
+    <<jump Photo3>>
+-> Scroller vers le bas 4x
+    ("Il est écrit "(4/4)")
+    <<jump Photo4>>
+<<else>>
+     <<jump Photo_Selection>>
+<<endif>>
+===
+
+title: Photo1
+position: -162,22
+---
+
+<<set $photo_seen+=1>>
+(Photo 1 - Sylvia et Eugénie en randonnée.)
+
+// Todo : Ecrire anecdote + discussion...
+-> Demander qui est la personne sur la photo.
+    Sylvia: C'est une amie très chère qui a décédée.
+    -> Demander si elle est partie avec une aide au suicide.
+        Sylvia: ... Oui.
+        Sylvia: Quand elle m'a annoncé qu'elle voulait partir avec Euthanasie, je lui ai répondu que ce qu'elle venait de me faire m'avait fait très mal.
+        Sylvia: Mais je voulais être forte pour elle. Je ne voulais pas m'effondrer. Je voulais surtout être contente de l'avoir rencontrée.
+
+         //je lui ai répondu c'est qu'elle venait de me faire très mal avec ce qu'elle vemait de me dire., mais je veux être forte pour elle, je veux pas m'effronder pour elle, je veux être contente de la rencontrer.
+
+    -> Ne pas poser de question. 
+
+-> Dire qu'on aimerait bien trouver le temps de faire des randonnées.
+
+
+<<jump Messagerie>>
+===
+
+title: Photo2
+position: -37,99
+---
+<<set $photo_seen+=1>>
+(Photo 2 - Un ruisseau dans une petite forêt suisse.) // to discuss
+
+// Todo : Ecrire anecdote + discussion...
+Sylvia : C'est la rivière près de chez nous. J'aimais bien aller me promener là avec Eugénie, quand elle pouvait encore marcher.
+
+<<jump Messagerie>>
+===
+
+title: Photo3
+position: -160,111
+---
+(Photo 3 - Une fleur) // to discuss
+
+// Todo : Ecrire anecdote + discussion...
+Sylvia : ... les fleurs préférées d'Eugénie. Elle aimait vraiment la nature, comme son père.
+Sylvia : Elle adorait son père. 
+
+<<jump Messagerie>>
+===
+
+title: Photo4
+position: 145,109
+---
+(Photo 4 - Un levé de Soleil sur des montagnes Suisses.) // to discuss
+Camille : Wahou, c'est trop beau!
+Sylvia : On avait fait un voyage au glacier d'Aletsch avec un groupe d'amies.
+
+// Todo : Ecrire anecdote + discussion...
+
+<<jump Messagerie>>
+
+===

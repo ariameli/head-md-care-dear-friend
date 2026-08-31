@@ -1,0 +1,182 @@
+
+title: Start
+position: 0,0
+---
+(On voit une page de login d'un ordinateur.)
+(Un post-it sur lequel est noté \: "mot de passe \: 1234." est collé sur l'écran). // ça pourrait être sa date de naissance... Elle a genre 70 ans. Donc
+(La photo du profil est un chat.)                                                  // donc qqchose comme 04_03_1950 (Un enfant à laissé un petit dessin sur le post-it ? Son petit fils ?)
+
+Texte barre de login: Touchez la barre pour rentrer le mot de passe.
+-> Clicker sur barre de login
+
+(1234 apparaît dans la barre de login.)
+(On passe de l'écran d'ouverture de sesssion au bureau de l'ordinateur. Il est rempli de fichiers.)
+(On aperçoit à peine le fond d'écran.)
+
+Sylvia: (avec audio) Mon ordinateur fait un bruit d'aspirateur.
+Sylvia: (avec audio) Tu peux faire quelque chose ?
+
+(Audio - La ventilation de l'ordinateur s'emballe et fait plus de bruit.)
+
+Camille: (avec Audio - Amusée) "Wow"!, on dirait qu'il va décoller! Je vais voir ce que je peux faire. // Communiquer que "absurdement bruyant."
+
+(Une fenêtre avec un signe Warning apparaît à l'écran audio \: (Audio FX).)
+(Il est écrit \: "Mémoire pleine. Veuillez supprimer des fichiers."")
+
+(Le bouton dans le coin de la fenêtre warning "clignote".)
+-> Cliquer sur le bouton rouge.
+
+(La fenêtre se ferme. On est toujours sur le bureau.)
+
+Camille: Bon, je dois faire de la place sur le disque pour le soulager. // Gens comprennent pas disque trop plein -> opportunité cliché vieux/jeunes
+//Camille: Est-ce que je peux supprimer des fichiers ? // Il n'y a plus de place.
+
+// Douglas
+// Remettre "infinite space"
+// Remettre que idée que "effacer des trucs, c'est effacer des trucs importants"
+// Sylvia pourrait révéler des trucs importants sur sa copine, inconsciente.
+// Camille: on peut effacer des choses importantes, d'autres non ?
+// Sylvia -> je vais perdre des choses ?
+
+Sylvia: Faire de la place ? Oh... Ce n'est pas infini la mémoire d'un ordinateur ?
+Camille: (Soupir) Malheureusement pas. On doit la "nettoyer" de temps en temps.
+
+(L'icône du disque dur de l'ordinateur est accompagné d'un warning. Quand on clique dessus, la fenêtre ! Vider la mémoire apparaît)
+(L'icône de la corbeille de l'ordinateur est accompagnée d'un signe warning)
+(La messagerie indique 200 messages non lus)
+
+Camille: J'aimerais que ça marche aussi pour nous. // Trouver autre chose....
+Camille: Mais bref. Est-ce que je peux supprimer les fichiers qui sont sur ton bureau ? // TODO: changer ça....
+
+Sylvia: Est-ce que tu peux me montrer ce que c'est d'abord ?
+Sylvia: Ce fichier-là, par exemple ?
+
+(L'icône d'un fichier nommé "9404w98094.pdf" clignote sur le bureau.)
+-> Cliquer sur le fichier.
+
+// NEW ASSET : PDF CONCOURS PHOTO
+(Le fichier s'ouvre. C'est un pdf à propos d'un concours photo pour un magazin en ligne.)
+(Il est écrit \\: "Thème : Nature morte, nature vivante : un joyeux memento mori.") // trouver le thème idéal. Ici, jeu de mots avec nature morte
+
+Sylvia: Oh non! C'est là qu'il était!
+Camille : La deadline est fixé à aujourd'hui. C'est trop tard, non ?
+
+// Elle savait que c'était demain, mais ça fait 2 semaines qu'elle ouvre l'ordinateur.
+// Elle avait laissé une note, Camille arrive à la dernière minute.
+// Camille demande, c'est quoi le concours ?
+
+Sylvia: Non, non. Les photos sont là, quelque part, j'en suis sûre.
+Camille: On va peut-être les retrouver en triant. Continuons à faire le ménage !
+
+-> Fermer le pdf (Cliquer sur le bouton rouge dans le coin)
+
+(Plusieurs fichiers "clignotent" sur le bureau)
+
+<<jump Desktop>>
+===
+
+title: Main
+---
+
+(La caméra zoom out encore un peu. On voit qu'un café est posé sur la table)
+-> Cliquer sur le café pour boire une gorgée du café (Audio FX: Slurp). // Quand on clique sur le café, le café se vide. 
+// Douglas
+// Faire une blague avec le cloud.
+
+Sylvia: J'étais sûre qu'elles étaient là.
+Sylvia: Tu les as supprimées par accident ?
+Camille: J'ai uniquement supprimé ce que tu m'as dit d'effacer.
+Sylvia: Tu es sûre ? On peut faire une pause. Tu as l'air fatiguée.
+Camille: Je dois partir dans 10 minutes, désolée. J'ai une conférence obligatoire en ligne pour l'uni.
+Sylvia: Mais tu as le temps de regarder dans ma messsagerie si les photos pour le concours sont là?
+Sylvia: Je mets un minuteur.
+Camille: Ok. Go.
+
+// NEW ASSET : A chicken-shaped pressure cooker or anything that her grandchildren gifted her -> what do u think ?
+Sylvia: Un peu de technologie.
+(Une cocotte-minute en forme de .... ? apparaît sur la table. Elle tourne gentiment et émet un tic tac)
+
+(L'icône de la messagerie clignote.)
+-> Cliquer sur l'icône de la messagerie.
+
+(La messagerie s'ouvre sur le bureau. On voit plusieurs profils. Un groupe "Famille", "Club de lecture", "CinéCeSoir/CinéPotes", "Eugénie") // Todo \:trouver des noms de club "jeu de mots"
+
+Sylvia: Cherche "Eugénie". Elle m'avait envoyé les photos.
+
+-> Cliquer sur la discussion avec Eugénie.
+
+(Le fil de discussion s'ouvre).
+(Le dernier message est \: "Je t'ai envoyés les coupons pour les chocolats (très chers) que tu aimes tant. J'espère que tu pourras t'en servir") // Ou alors, elle les as reçu par la poste ?
+(Il est daté d'il y a 1-2 (?) mois.)
+
+// DOUGLAS :
+// Camille dit : Il y a trop de messages ici. 
+// Sylvia panique
+// Camille j'ai besoin d'un mot-clé
+// Sylvia dit : "c..."
+// Ajouter minuteur
+
+-> Scroller dans la discussion.
+
+// NEW ASSET : pdf about "How to face assisted suicide as a friend or relative" -> look for inspiration on internet
+(On voit un lien vers un site avec le titre \: "Guide d’accompagnement destiné aux proches pour l’aide médicale à mourir")
+
+// Ajouter des messages effacés genre vraiment vraiment beaucoup. Des audios.
+
+Sylvia: Il y trop de messages.
+Camille: Qu'est-ce que je peux taper comme mot-clé pour faciliter la recherche ?
+Sylvia: Arf, mais je sais pas... "Memento ... mori... ? ... vivere"! "Memento VIVERE!" // trouver un mot-clé de recherche amusant.
+
+(L'écran de la messagerie affiche un texte sous une photo où "Momento vivere" est surligné. Il est écrit qu'il y a encore 3-4 fichiers qui commencent par ce nom.)
+(C'est une photo de Sylvia et d'une dame plus âgée (90 ans) qui font de la randonnée)
+(C'est Sylvia qui l'a envoyée. Il est écrit dessous \: "Celle-là?" .) // Trouver quelque chose à dire.
+(Eugénie a répondu quelque chose \: "Hum, tu crois que deux vieilles (mot "argot" pour vieilles à trouver) croulantes sont mieux qu'un coucher de Soleil au Québec ?") // trouver quelque chose à dire pour Eugénie
+(Eugénie \: J'étais encore sur cette photo.)
+(Eugénie \: Bon. C'est toi qui choisit. Je te fais confiance.) // orthographe
+
+Sylvia: Oh.
+
+-> Dire que c'est sur son téléphone.
+    // Zoom in si on choisi ça ?
+-> Demander si ça va.
+    // Ecrire des réponses de Sylvia....
+-> Demander qui c'est.
+    // Ecrire des réponses de Sylvia....
+-> Dire que c'est une belle photo.
+-> Ne rien dire.
+-> Dire qu'on est pas d'accord avec Eugénie.
+-> Dire qu'on est d'accord avec Eugénie.
+
+(La cocotte minute sonne (Audio FX - Bruit de coq qui chante ? ))
+
+// Sylvia a mis un minuteur ou qu'elle a regardé l'heure : Vite, tu peux y aller.
+
+Sylvia: C'est l'heure!!! Vite, tu vas être en retard!
+Camille: Ah! Mince! Merci pou le café. Je serai bien réveillée pour la vidéoconférence.
+(Audio FX - Camille range sont sac) 
+Sylvia: Mais on a pas fini. Est-ce que tu peux revenir après la conférence ?
+Camille: J'ai un examen demain, je peux pas faire tard.
+Sylvia: Je ne sais pas comment faire pour envoyer la photo.
+Camille: Ok... Je peux repasser vers 20h00.
+Sylvia: Merci infiniment.
+Camille: À toute à l'heure.
+
+(FADE IN)
+
+<<jump Part2>>
+// END OF PART I
+
+===
+
+
+// DOUGLAS features
+// Livrer de la personnalité avec l'information.
+// Théorie psychologique de l'écriture. Stephen King fait ça, il écrit. C'est son travail, un automatisme,
+// C'est limité dans le temps. Régularité.
+
+// Autre théorie de la création-écriture.
+// Mode fonctionnel (2 modes différents, default mode). 2 phases d'écritures ont été identifiés (Virginia Wolf), maniaque.
+// (Ecouter Max Richter -> Three Worlds)
+
+// Soucis de procrastination, alors, rentrer dans le mode de l'éditeur. Révision de ce que tu as fait dans la journée, écrire 10'000 fois,
+// Wolf, réécrivait 10'000 fois, tu peux faire ça numériquement. Elle avait une sorte de manie. 1 journée de manie, 29 jours de révision des phrases.
