@@ -37,6 +37,39 @@ public class SearchController : MonoBehaviour
         }
     }
 
+   private void GoToCurrentResult()
+    {
+        Canvas.ForceUpdateCanvases();
+
+        RectTransform target = results[currentResult];
+        RectTransform content = scrollRect.content;
+        RectTransform viewport = scrollRect.viewport;
+
+        // Force le Vertical Layout Group à avoir ses positions définitives
+        LayoutRebuilder.ForceRebuildLayoutImmediate(content);
+        Canvas.ForceUpdateCanvases();
+
+        // Position réelle de la photo par rapport au Viewport
+        Bounds targetBounds =
+            RectTransformUtility.CalculateRelativeRectTransformBounds(viewport, target);
+
+        // Centre réel du Viewport
+        float viewportCenterY = viewport.rect.center.y;
+
+        // Centre réel de la photo
+        float targetCenterY = targetBounds.center.y;
+
+        // Distance nécessaire pour mettre les deux centres au même endroit
+        float difference = viewportCenterY - targetCenterY;
+
+        Vector2 newPosition = content.anchoredPosition;
+        newPosition.y += difference;
+
+        content.anchoredPosition = newPosition;
+
+        scrollRect.StopMovement();
+    }
+
     public void NextResult()
     {
         if (currentResult < results.Length - 1)
@@ -45,6 +78,7 @@ public class SearchController : MonoBehaviour
         }
 
         UpdateCounter();
+        GoToCurrentResult();
     }
 
     public void PreviousResult()
@@ -55,6 +89,7 @@ public class SearchController : MonoBehaviour
     }
 
         UpdateCounter();
+        GoToCurrentResult();
     }
    
 
