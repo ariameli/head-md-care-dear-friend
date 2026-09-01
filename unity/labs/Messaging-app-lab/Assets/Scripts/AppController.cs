@@ -7,7 +7,7 @@ public class AppController : MonoBehaviour
 
     public void OpenConversation()
     {
-        accountScreen.SetActive(false);
+        accountScreen.SetActive(true);
         conversationScreen.SetActive(true);
     }
 }
