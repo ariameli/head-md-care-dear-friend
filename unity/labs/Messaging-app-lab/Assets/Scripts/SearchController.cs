@@ -2,9 +2,22 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
+using Yarn.Unity;
 
 public class SearchController : MonoBehaviour
 {
+    [Header("Yarn")]
+    [SerializeField] private DialogueRunner dialogueRunner;
+
+    [SerializeField] private string[] dialogueNodes =
+    {
+        "Photo01Dialogue",
+        "Photo02Dialogue",
+        "Photo03Dialogue",
+        "Photo04Dialogue"
+    };
+
     [Header("Search")]
     [SerializeField] private TMP_Text searchText;
     [SerializeField] private string wordToType = "MEMENTO VIVERE";
@@ -18,6 +31,21 @@ public class SearchController : MonoBehaviour
     [SerializeField] private ScrollRect scrollRect;
 
     private int currentResult = 0;
+
+    private void StartDialogueForCurrentResult()
+    {
+        if (dialogueRunner == null)
+        {
+            return;
+        }
+
+        if (currentResult < 0 || currentResult >= dialogueNodes.Length)
+        {
+            return;
+        }
+
+        dialogueRunner.StartDialogue(dialogueNodes[currentResult]);
+    }
 
     public void StartSearch()
     {
@@ -79,6 +107,7 @@ public class SearchController : MonoBehaviour
 
         UpdateCounter();
         GoToCurrentResult();
+        StartDialogueForCurrentResult();
     }
 
     public void PreviousResult()
@@ -86,7 +115,7 @@ public class SearchController : MonoBehaviour
         if (currentResult > 0)
         {
             currentResult--;
-    }
+        }
 
         UpdateCounter();
         GoToCurrentResult();
