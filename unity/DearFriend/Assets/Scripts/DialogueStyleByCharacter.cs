@@ -23,13 +23,13 @@ public class DialogueStyleByCharacter : MonoBehaviour
 
         string speaker = characterName.text.Trim();
 
-        if (speaker == "Anna")
+        if (speaker == "Sylvia" || speaker == "Anna")
         {
             bubble.anchoredPosition = annaPosition;
             if (bubbleImage) bubbleImage.color = annaColor;
             if (characterName) characterName.color = annaTextColor;
         }
-        else if (speaker == "Camille (You)")
+        else if (speaker == "Camille")
         {
             bubble.anchoredPosition = camillePosition;
             if (bubbleImage) bubbleImage.color = camilleColor;

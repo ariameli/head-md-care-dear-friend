@@ -28,6 +28,7 @@ public class AudioPlaySound : MonoBehaviour
             "ZoomOut" => CameraZoomOut,
             "DialogueOpen" => DialogueOpen,
             "DialogueClose" => DialogueClose,
+            "ComputerFan" => ComputerNotification, // Placeholder for ComputerFan sound
             _ => null
         };
 

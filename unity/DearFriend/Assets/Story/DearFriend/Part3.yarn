@@ -1,0 +1,41 @@
+title: Part3
+position: 0,0
+---
+(FADE OUT)
+(Camille is sitting with Sylvia at the table. They are eating chocolate, drinking coffee)
+
+// NEW ASSET : Chocolate + Eaten chocolate
+// NEW Asset : Magazin
+(Un magazin avec la photo qu'on a choisit est posée sur la table devant nous, à côté d'une assiette pleine de chocolat, dont certain déjà entamés)
+
+// NEW ASSET HAT WITH CAT EARS
+//(Si on a vue le pdf du bonnet avec oreilles de chats. Sylvia le porte (ou il est posé sur la table avec un petit noeud cadeau.))
+
+Camille: Tu vois, je te l'avais dit qu'elles étaient bien ces photos !
+Sylvia: Tout le monde a eu une photo publiée au final.
+Camille: Mais pas en couverture !
+
+// Ordinateur est posé dans un coin ?
+// NEW ANIMATIONS : Chocolate eaten (2 steps), Coffee drunk (2-3 steps)
+// Si on clique sur le café, on boit. Si on clique sur le chocolat, il est grignoté.
+
+// TODO : write a sequence about Camille and Sylvia genuinely talking about "life".
+// Camille's exams are over, thanks for Sylvia's help with the food she kept making for her
+// Sylvia invited Camille to tell u that the picture they picked won the contest.
+// Discussion discussion... blah blah
+Sylvia: Et tes examens, alors ?
+Camille: J'attends les résultats. Mais je pense que ça a passé.
+Camille: Merci de m'avoir apporté à manger tous les jours. J'aurais jamais réussi sans ça. Je serais morte de faim.
+Sylvia: Tu vas déménager bientôt ?
+
+Camille: Je sais pas. J'ai pas très envie. Mais je ne peux pas rester dans l'immeuble.
+Sylvia: Alors, c'est la dernière fois qu'on se voit ?
+Camille: J'aurais bien voulu que tu me montres comment coudre...
+
+// NEW ASSET : Post with date
+// We finish the game with accepting or not to meet at MARIA's GARDEN to grab coffee sometime.
+// If we say yes, Sylvia gives us a post-it with date on it. 
+
+// END OF STORY
+
+===

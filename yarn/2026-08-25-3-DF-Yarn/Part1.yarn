@@ -1,0 +1,128 @@
+
+title: Start
+position: 0,0
+---
+(On voit une page de login d'un ordinateur.)
+(Un post-it sur lequel est noté \: "mot de passe \: 1234." est collé sur l'écran). // ça pourrait être sa date de naissance... Elle a genre 70 ans. Donc
+(La photo du profil est un chat.)                                                  // donc qqchose comme 04_03_1950 (Un enfant à laissé un petit dessin sur le post-it ? Son petit fils ?)
+
+Texte barre de login: Touchez la barre pour rentrer le mot de passe.
+-> Clicker sur barre de login
+
+(1234 apparaît dans la barre de login.)
+(On passe de l'écran d'ouverture de sesssion au bureau de l'ordinateur. Il est rempli de fichiers.)
+(On aperçoit à peine le fond d'écran.)
+
+Sylvia: (avec audio) Mon ordinateur fait un bruit d'aspirateur.
+Sylvia: (avec audio) Tu peux faire quelque chose ?
+
+(Audio - La ventilation de l'ordinateur s'emballe et fait plus de bruit.)
+
+Camille: (avec Audio - Amusée) "Wow"!, on dirait qu'il va décoller!
+
+(Une fenêtre avec un signe Warning apparaît à l'écran audio \: (Audio FX).)
+(Il est écrit \: "Mémoire pleine. Veuillez supprimer des fichiers.")
+
+(Le bouton dans le coin de la fenêtre warning "clignote".)
+-> Cliquer sur le bouton rouge.
+
+(La fenêtre se ferme. On est toujours sur le bureau.)
+
+Camille: On doit faire de la place sur le disque. // Gens comprennent pas disque trop plein -> opportunité cliché vieux/jeunes
+//Camille: Est-ce que je peux supprimer des fichiers ? // Il n'y a plus de place.
+
+// Douglas
+// Remettre "infinite space"
+// Remettre que idée que "effacer des trucs, c'est effacer des trucs importants"
+// Sylvia pourrait révéler des trucs importants sur sa copine, inconsciente.
+// Camille: on peut effacer des choses importantes, d'autres non ?
+// Sylvia -> je vais perdre des choses ?
+
+Sylvia: Faire de la place ? Oh... Ce n'est pas infini la mémoire d'un ordinateur ?
+Camille: Malheureusement pas. On doit la "nettoyer" de temps en temps.
+
+// NEW ASSET : hard disk icon
+(L'icône du disque dur de l'ordinateur est accompagné d'un warning. Quand on clique dessus, la fenêtre \: "Vider la mémoire apparaît")
+(L'icône de la corbeille de l'ordinateur est accompagnée d'un signe warning)
+// NEW ASSET: Mail box icon
+
+(La boîte mail indique 200 messages non lus) 
+
+Camille: Est-ce que je peux supprimer les fichiers qui sont sur ton bureau ? // TODO: changer ça....
+
+Sylvia: Est-ce que tu peux me montrer ce que c'est d'abord ?
+Sylvia: Ce fichier-là, par exemple ?
+
+(L'icône d'un fichier nommé "9404w98094.pdf" clignote sur le bureau.)
+-> Cliquer sur le fichier.
+
+// NEW ASSET : PDF CONCOURS PHOTO
+(Le fichier s'ouvre. C'est un pdf à propos d'un concours photo pour un magazin en ligne.)
+(Il est écrit \: "Thème \: Nature morte, nature vivante \: un joyeux memento mori.") // trouver le thème idéal. Ici, jeu de mots avec nature morte
+
+Sylvia: Oh non! C'est là qu'il était!
+Camille: C'est quoi comme concours ?
+Sylvia: Un concours photo, je n'ai pas pu envoyer de photos parce que mon ordinateur était bloqué.
+Camille : Mais je vois que la deadline est fixé à aujourd'hui. C'est trop tard, non ?
+
+// Elle savait que c'était demain, mais ça fait 2 semaines qu'elle ouvre l'ordinateur.
+// Elle avait laissé une note, Camille arrive à la dernière minute.
+// Camille demande, c'est quoi le concours ?
+
+Sylvia: Non, non. Les photos sont là, quelque part, j'en suis sûre. Il faut juste les retrouver.
+Camille: On va peut-être les retrouver en triant. Continuons à faire le ménage !
+
+-> Fermer le pdf (Cliquer sur le bouton rouge dans le coin)
+
+(Plusieurs fichiers "clignotent" sur le bureau)
+
+<<jump Desktop>>
+
+===
+title: Main
+---
+
+(La caméra zoom out encore un peu. On voit qu'un café est posé sur la table)
+-> Cliquer sur le café pour boire une gorgée du café (Audio FX: Slurp). // Quand on clique sur le café, le café se vide. 
+
+
+Sylvia: (Soupir) J'étais sûre qu'elles étaient là.
+Sylvia: Tu les as supprimées par accident ?
+Camille: J'ai uniquement supprimé ce que tu m'as dit d'effacer.
+Sylvia: Tu es sûre ? On peut faire une pause. Tu as l'air fatiguée.
+Camille: Je dois partir dans 10 minutes, désolée. J'ai une conférence obligatoire en ligne pour l'uni.
+Sylvia: Mais tu as le temps de regarder dans ma messsagerie si les photos pour le concours sont là?
+Sylvia: Je mets un minuteur.
+Camille: Ok....
+
+// NEW ASSET : A chicken-shaped pressure cooker or anything that her grandchildren gifted her -> what do u think ?
+Sylvia: Un peu de technologie.
+(Une cocotte-minute en forme de .... ? apparaît sur la table. Elle tourne gentiment et émet un tic tac)
+
+(L'icône de la messagerie clignote.)
+-> Cliquer sur l'icône de la messagerie.
+
+<<jump Messagerie_part_1>>
+
+===
+title: PressureCooker
+position: 0,
+--- 
+
+(La cocotte minute sonne (Audio FX - Bruit de coq qui chante ? ))
+
+// Sylvia a mis un minuteur ou qu'elle a regardé l'heure : Vite, tu peux y aller.
+Camille: Déjà?!! Mince. Merci pou le café.
+(Audio FX - Camille range sont sac) 
+Sylvia: Mais on a pas fini. Est-ce que tu peux revenir après ta conférence en ligne ?
+Camille: J'ai un examen important demain, je peux pas faire tard.
+Sylvia: Je ne peux pas envoyer la photo par moi-même. J'ai besoin de ton aide. // Plus dramatique / culpabilisant
+Camille: Ok... Je peux repasser vers 20h00.
+Sylvia: Merci.
+Camille: À toute à l'heure, alors
+
+(FADE IN)
+
+<<jump Part2>>
+// END OF PART I
+===

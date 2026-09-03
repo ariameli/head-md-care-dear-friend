@@ -1,0 +1,58 @@
+title: Part2
+position: -118,-98
+---
+(FADE OUT)
+
+// Sylvia a préparé un tupperware avec de la nourriture pour Camille, elle s'est dit qu'elle avait pas eu le temps de manger.
+// NEW ASSET : Tupperware filled with pasta and with a post-it with "Pour camille" written on it
+(Un tupperware remplit de nourriture avec écrit "Pour Camille (dessin d'un petit chat')" est posé vers l'ordinateur.)
+(On est devant l'ordinateur allumé. La messagerie est là où on l'avait laissée. Avec une image de Sylvia et Eugénie qui font de la randonnée)
+(La caméra est un peu plus serrée sur l'écran. Camille est fatiguée et concentrée sur la tâche) // Ajouter effet ? genre flou ou mauvaise vue, tremblement vision... ?
+
+Sylvia: C'est allé cette conférence ?
+Camille: Pfouf. Oui, une chose de moins à faire...
+Camille: Alors, on regarde ces photos ?
+
+Sylvia: Eugénie m'en avait envoyé quatre. Tu peux me les montrer ?
+
+<<jump Messagerie_part_2>>
+
+===
+title: Photo_Selection
+---
+Sylvia: Voilà. Elles sont toutes là. Quelle photo on envoie ?
+
+// Quand on descend dans les flèches, le scroll descend ou remonte.
+-> La photo de Sylvia et Eugénie en randonnée.
+    Sylvia : Je crois pas qu'elle aimerait ça.
+-> Le ruisseau dans la forêt.
+    Sylvia : C'est un peu banal, non ?
+-> La jonquille.
+    Sylvia : C'est jolie, mais sans plus...
+-> Le couché de soleil vers le glacier d'Aletsch. // Photo 04 pas faite
+    Sylvia : Je vois pas le rapport avec le thème.
+
+Camille: T'es trop négative. Elles sont très bien ces photos.
+Sylvia: Ce n'est pas ça.... J'ai peur que Eugénie soit "déçue".
+
+Camille: Moi j'enverais \:
+-> Sylvia et Eugénie
+-> Le ruisseau
+-> La jonquille
+-> Le couché de Soleil
+
+Sylvia: Hum... D'accord. Je te fais confiance. Eugénie trouvais que j'étais un peu timorée.
+// Transférer la photo au concours sur Whatsapp
+
+Camille: Voilà, c'est fait. Soulagée ?
+Sylvia: C'est bien parti, tu es sûr ?
+Camille: Oui.
+Camille: Le résultat est dans 2 semaines. Tu me diras si on a gagné ?
+
+Sylvia: Entendu. N'oublie pas le tupperware.
+
+(FADE IN)
+// END OF PART II
+<<jump Part3>>
+
+===

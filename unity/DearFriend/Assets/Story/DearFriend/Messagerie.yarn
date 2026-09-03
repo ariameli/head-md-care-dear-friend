@@ -1,0 +1,155 @@
+title: Messagerie_part_1
+position: 0,0
+---
+
+(La messagerie s'ouvre sur le bureau. On voit plusieurs profils. Un groupe "Famille", "Club de lecture", "CinéCeSoir/CinéPotes", "Eugénie") // Todo \:trouver des noms de club "jeu de mots"
+
+Sylvia: Cherche "Eugénie". Elle m'avait envoyé les photos.
+
+-> Cliquer sur la discussion avec Eugénie.
+
+(Le fil de discussion s'ouvre).
+(Le dernier message est \: "Je t'ai envoyés les coupons pour les chocolats que tu aimes tant. J'espère que tu les employeras") // Ou alors, elle les as reçu par la poste ?
+(Il est daté d'il y a 2 mois.)
+
+// DOUGLAS :
+// Camille dit : Il y a trop de messages ici. 
+// Sylvia panique
+// Camille j'ai besoin d'un mot-clé
+// Sylvia dit : "c..."
+// Ajouter minuteur
+
+-> Scroller dans la discussion.
+
+// NEW ASSET : pdf about "How to face assisted suicide as a friend or relative" -> look for inspiration on internet
+(On voit un lien vers un site avec le titre \: "Guide d’accompagnement destiné aux proches pour l’aide médicale à mourir")
+
+// Ajouter des messages effacés genre vraiment vraiment beaucoup. Des audios.
+(Des audios supprimés, on scrolle un moment)
+
+Sylvia: Oh, il y a beaucoup trop de messages.
+Camille: Qu'est-ce que je peux taper comme mot-clé pour faciliter la recherche ?
+Sylvia: Arf, mais je sais pas... "Memento ... mori... ? ... vivere"! "Memento VIVERE!" // trouver un mot-clé de recherche amusant.
+
+(L'écran de la messagerie affiche un texte sous une photo où "Memento vivere" est surligné. Il est écrit qu'il y a encore 3-4 fichiers qui commencent par ce nom.)
+(C'est une photo de Sylvia et d'une dame plus âgée (90 ans) qui font de la randonnée)
+(C'est Sylvia qui l'a envoyée. Il est écrit dessous \: "Celle-là?" .) // Trouver quelque chose à dire.
+(Eugénie a répondu \: Mon dieu.... Bien de loin, loin d'être bien?") // trouver quelque chose à dire pour Eugénie
+(Eugénie \: Je pouvais encore marcher.)
+(Eugénie \: C'est toi qui choisit. Je te fais confiance.) // orthographe
+
+Sylvia: Oh.
+
+-> Dire que c'était sur son téléphone dès le début.
+    (La caméra zoom in légèrement)
+    Sylvia: Ah. Je comprends pas où sont mes photos. 
+-> Demander si ça va.
+    Sylvia: C'était notre dernière randonnée ensemble. // Sylvia verse une petite larme ?
+-> Demander qui c'est.
+    Sylvia: Eugénie, une amie à moi.
+-> Dire que c'est une belle photo.
+    Sylvia: Je n'aime plus trop me voir en photo.
+-> Ne rien dire.
+
+<<jump PressureCooker>>
+
+===
+
+title: Messagerie_part_2
+position: -41,-412
+---
+
+<<declare $photo_seen= 0>>
+("Memento Vivere" est toujours écrit dans la barre de recherche)
+
+<<jump Scrolling>>
+===
+
+title: Scrolling
+---
+<<if $photo_seen < 4>>
+// NEW CODE ACTION : Scroll up/down, snap to image in discussion to trigger dialogue
+
+-> Scroller vers le bas 1x
+    ("Il est écrit "(1/4)")
+    <<jump Photo1>>
+-> Scroller vers le bas 2x
+    ("Il est écrit "(2/4)")
+    <<jump Photo2>>
+-> Scroller vers le bas 3x
+    ("Il est écrit "(3/4)")
+    <<jump Photo3>>
+-> Scroller vers le bas 4x
+    ("Il est écrit "(4/4)")
+    <<jump Photo4>>
+<<else>>
+     <<jump Photo_Selection>>
+<<endif>>
+===
+
+title: Photo1
+position: -162,22
+---
+
+<<set $photo_seen+=1>>
+(Photo 1 - Sylvia et Eugénie en randonnée.)
+
+// Todo : Ecrire anecdote + discussion...
+-> Demander qui est la personne sur la photo.
+    Sylvia: C'est une amie très chère qui est décédée.
+    -> Demander si elle est partie avec une aide au suicide.
+        Sylvia: ... Oui.
+        Sylvia: Elle m'a prévenue une semaine avant.
+        Camille: Ah bon! ça a dû être difficile.
+        Sylvia: Je lui ai dit que ce qu'elle venait de me dire m'avait fait très mal.
+        Camille: ...
+        Camille: Je sais pas comment j'aurais réagi à ta place.
+        Sylvia: Je ne voulais pas m'effondrer, je voulais être forte pour elle.
+        Sylvia: Et je voulais surtout rester sur un bon sentiment, celui d'avoir été contente de l'avoir rencontrée.
+        -> Demander comment elle se sont rencontrées.
+            Sylvia: Dans le couloir de l'immeuble. On s'est dit bonjour. C'était il y a 7 ans.
+            Sylvia: (Soupir)
+    -> Ne pas poser de question. 
+
+-> Dire qu'on aimerait bien trouver le temps de faire des randonnées.
+    (Camera zoom in légèrement)
+
+
+<<jump Scrolling>>
+===
+
+title: Photo2
+position: -37,99
+---
+<<set $photo_seen+=1>>
+(Photo 2 - Un ruisseau dans une petite forêt suisse.)
+
+// Todo : Ecrire anecdote + discussion...
+Sylvia: C'est la rivière près de chez nous. J'aimais beacoup me promener là avec Eugénie, quand elle pouvait encore marcher.
+Sylvia: Je pense toujours à elle quand j'y vais maintenant. C'était quelqu'un d'extrêmemnt joyeux, apaisant.
+
+<<jump Messagerie_part_1>>
+===
+
+title: Photo3
+position: -160,111
+---
+(Photo 3 - Une fleur)
+
+// ça lui rappelle l'appartement d'Eugénie qu'elle trouvait joli ?
+Sylvia: ... les fleurs préférées d'Eugénie. Elle aimait vraiment la nature, comme son père.
+Sylvia: Elle adorait son père.
+
+<<jump Messagerie_part_1>>
+===
+
+title: Photo4
+position: 145,109
+---
+(Photo 4 - Un levé de Soleil sur des montagnes Suisses.)
+Camille : Wahou, c'est trop beau!
+Sylvia : On avait fait un voyage au glacier d'Aletsch avec un groupe d'amies.
+
+<<jump Messagerie_part_1>>
+
+===
