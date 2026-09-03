@@ -5,19 +5,24 @@ position: 0,0
 
 // Sylvia: (avec audio) Mon ordinateur fait un bruit d'aspirateur.
 // Sylvia: (avec audio) Tu peux faire quelque chose ?
- Sylvia:  Mon ordinateur fait plus de bruit que d'habitude. Vous pouvez m'aider ?
 
 
-<<PlaySound ComputerFan >>
+Sylvia: Mon ordinateur fait plus de bruit qu'avant. Vous pouvez me dire pourquoi ? #sound:DialogueSylvia_1
+
+
+<<PlaySound FX ComputerFan>>
 (Audio - La ventilation de l'ordinateur s'emballe et fait plus de bruit.)
 
-Camille: (avec Audio - Amusée) "Wow"!, on dirait qu'il va décoller!
+// Qu'il est sur le point de décoller // Il est sur le point de décoller, oui...
+Camille: (avec Audio - Amusée) "Wow"!, on dirait qu'il va décoller! #sound:DialogueCamille_1
 
 (Une fenêtre avec un signe Warning apparaît à l'écran audio \: (Audio FX).)
 (Il est écrit \: "Mémoire pleine. Veuillez supprimer des fichiers.")
 
 (Le bouton dans le coin de la fenêtre warning "clignote".)
 -> Cliquer sur le bouton rouge.
+
+<<StopSound FX ComputerFan>>
 
 (La fenêtre se ferme. On est toujours sur le bureau.)
 
