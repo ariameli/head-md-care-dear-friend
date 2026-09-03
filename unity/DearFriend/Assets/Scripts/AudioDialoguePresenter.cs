@@ -45,7 +45,6 @@ public class AudioDialoguePresenter : DialoguePresenterBase
             }
         }
 
-        // Cette ligne n'a aucun son associé
         if (string.IsNullOrEmpty(soundName))
         {
             return;

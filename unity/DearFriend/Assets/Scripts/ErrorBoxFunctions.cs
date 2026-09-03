@@ -1,13 +1,10 @@
 using UnityEngine;
 using Yarn.Unity;
-using UnityEngine.EventSystems;
 
 public class ErrorBoxFunctions : MonoBehaviour
 {
     public DialogueRunner dialogueRunner;
     public GameObject objectToShow;
-
-    private bool shouldStartWarningOnStartComplete = false;
 
     [YarnCommand("showWarning")]
     public void ShowWarning()
@@ -22,17 +19,13 @@ public class ErrorBoxFunctions : MonoBehaviour
 
         if (dialogueRunner != null)
         {
-            shouldStartWarningOnStartComplete = true;
-            OnNodeComplete("Start");
+            StartCoroutine(StartWarningDialogueNextFrame());
         }
     }
 
-    private void OnNodeComplete(string completedNodeName)
+    private System.Collections.IEnumerator StartWarningDialogueNextFrame()
     {
-        if (shouldStartWarningOnStartComplete && completedNodeName == "Start")
-        {
-            shouldStartWarningOnStartComplete = false;
-            dialogueRunner.StartDialogue("WarningWindow");
-        }
+        yield return null;
+        dialogueRunner.StartDialogue("WarningWindow");
     }
 }

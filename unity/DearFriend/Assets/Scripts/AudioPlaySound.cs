@@ -7,8 +7,10 @@ public class AudioPlaySound : MonoBehaviour
 {
     public AudioClip ComputerWarning;
     public AudioClip ComputerNotification;
+    public AudioClip ComputerHumming;
+    public AudioClip ComputerFansSpeedsUp;
     public AudioClip CameraZoomOut;
-    public AudioClip ComputerFan;
+  
 
     private AudioSource audioSource;
 
@@ -24,7 +26,8 @@ public class AudioPlaySound : MonoBehaviour
             "Warning"       => ComputerWarning,
             "Notification"  => ComputerNotification,
             "ZoomOut"       => CameraZoomOut,
-            "ComputerFan"   => ComputerFan,
+            "ComputerFanSpeedsUp" => ComputerFansSpeedsUp,
+            "ComputerHumming" => ComputerHumming,
             _               => null
         };
     }
@@ -41,7 +44,7 @@ public class AudioPlaySound : MonoBehaviour
         }
 
         audioSource.clip = clip;
-        audioSource.Play();
+        audioSource.PlayOneShot(clip);
 
     }
 
