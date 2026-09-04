@@ -1,7 +1,8 @@
-
 title: Start
 position: 0,0
 ---
+
+<<declare $zoom = 0>> // De 0 à 100
 
 // Sylvia: (avec audio) Mon ordinateur fait un bruit d'aspirateur.
 // Sylvia: (avec audio) Tu peux faire quelque chose ?
@@ -11,82 +12,80 @@ Sylvia: Mon ordinateur fait plus de bruit qu'avant. Vous pouvez me dire pourquoi
 
 //<<PlaySound FX ComputerFanSpeedsUp>> // En attente du vrai son
 
-
-// Qu'il est sur le point de décoller // Il est sur le point de décoller, oui...
-Camille: Il est sur le point de décoller, ouais... Je vais voir ce que je peux faire. #sound:DialogueCamille_1
-
+Camille: Il est sur le point de décoller, oui... Je vais voir ce que je peux faire. #sound:DialogueCamille_1
 
 <<showWarning ErrorBox>>
 
-(Une fenêtre avec un signe Warning apparaît à l'écran audio \: (Audio FX).)
-(Il est écrit \: "Mémoire pleine. Veuillez supprimer des fichiers.")
+===
+title: WarningWindow
+---
 
+//Computer: Warning : Storage FULL!!! Please make space by deleting unnecessary files.
 
-
-(Le bouton dans le coin de la fenêtre warning "clignote".)
--> Cliquer sur le bouton rouge.
-
-
-(La fenêtre se ferme. On est toujours sur le bureau.)
-
-Camille: On doit faire de la place sur le disque. // Gens comprennent pas disque trop plein -> opportunité cliché vieux/jeunes
-//Camille: Est-ce que je peux supprimer des fichiers ? // Il n'y a plus de place.
-
-// Douglas
-// Remettre "infinite space"
-// Remettre que idée que "effacer des trucs, c'est effacer des trucs importants"
-// Sylvia pourrait révéler des trucs importants sur sa copine, inconsciente.
-// Camille: on peut effacer des choses importantes, d'autres non ?
-// Sylvia -> je vais perdre des choses ?
-
+<<PlaySound FX Warning>>
+Camille: On doit faire de la place sur le disque.
 Sylvia: Faire de la place ? Oh... Ce n'est pas infini la mémoire d'un ordinateur ?
 Camille: Malheureusement pas. On doit la "nettoyer" de temps en temps.
 
-// NEW ASSET : hard disk icon
-(L'icône du disque dur de l'ordinateur est accompagné d'un warning. Quand on clique dessus, la fenêtre \: "Vider la mémoire apparaît")
-(L'icône de la corbeille de l'ordinateur est accompagnée d'un signe warning)
-// NEW ASSET: Mail box icon
 
-(La boîte mail indique 200 messages non lus) 
+<<startPulsating CloseButton>>
+<<setCanClickForCloseButton CloseButton true>>
 
-Camille: Est-ce que je peux supprimer les fichiers qui sont sur ton bureau ? // TODO: changer ça....
+===
 
+title: FirstFile
+---
+
+// NEW ASSET : hard disk icon with warning
+// NEW ASSET: Mail box icon with 200 written in a red cercle
+
+Camille: Est-ce que je peux supprimer les fichiers qui sont sur ton bureau ?
 Sylvia: Est-ce que tu peux me montrer ce que c'est d'abord ?
 Sylvia: Ce fichier-là, par exemple ?
 
-(L'icône d'un fichier nommé "9404w98094.pdf" clignote sur le bureau.)
--> Cliquer sur le fichier.
-
 // NEW ASSET : PDF CONCOURS PHOTO
-(Le fichier s'ouvre. C'est un pdf à propos d'un concours photo pour un magazin en ligne.)
-(Il est écrit \: "Thème \: Nature morte, nature vivante \: un joyeux memento mori.") // trouver le thème idéal. Ici, jeu de mots avec nature morte
 
-Sylvia: Oh non! C'est là qu'il était!
-Camille: C'est quoi comme concours ?
-Sylvia: Un concours photo, je n'ai pas pu envoyer de photos parce que mon ordinateur était bloqué.
-Camille : Mais je vois que la deadline est fixé à aujourd'hui. C'est trop tard, non ?
-
-// Elle savait que c'était demain, mais ça fait 2 semaines qu'elle ouvre l'ordinateur.
-// Elle avait laissé une note, Camille arrive à la dernière minute.
-// Camille demande, c'est quoi le concours ?
-
-Sylvia: Non, non. Les photos sont là, quelque part, j'en suis sûre. Il faut juste les retrouver.
-Camille: On va peut-être les retrouver en triant. Continuons à faire le ménage !
-
--> Fermer le pdf (Cliquer sur le bouton rouge dans le coin)
-
-(Plusieurs fichiers "clignotent" sur le bureau)
-
-<<jump Desktop>>
+<<startPulsatingFile DocumentIcon_2>>
+<<setCanClick DocumentIcon_2 true>>
 
 ===
-title: Main
+title: photoContestDeadline
+---
+// contest deadline PDF
+<<stopPulsatingFile DocumentIcon_2>>
+<<setCanClick DocumentIcon_2 false>>
+
+<<startPulsating CloseButtonPattern>>
+<<setCanClickForCloseButton CloseButtonPattern true>>
+
+// (La caméra zoom out encore un peu. On voit qu'un café est posé sur la table)
+//-> Cliquer sur le café pour boire une gorgée du café (Audio FX: Slurp). Quand on clique sur le café, le café se vide. 
+
+Sylvia: Oh non! C'est trop tard !
+Camille: Qu'est-ce que c'est ?
+Sylvia: Un concours photo, je devais envoyer les photos qu'on avait prises avec mon amie.
+Camille : La deadline est fixée à aujourd'hui. C'est pas trop tard.
+Sylvia: Les photos sont quelque part sur mon ordinateur.
+Camille: On doit d'abord régler le problème d'espace. Je peux supprimer ce fichier?
+
+
+//(The close button of the PDF begins to pulsate.)
+//user closes the file
+//trashbin pulsates
+//user drags and drops file to trash
+ //camera zooms out if file is dropped in trash
+
+
+
+===
+title: DeleteFirstFile
 ---
 
-<<StopSound FX ComputerHumming>>
-(La caméra zoom out encore un peu. On voit qu'un café est posé sur la table)
--> Cliquer sur le café pour boire une gorgée du café (Audio FX: Slurp). // Quand on clique sur le café, le café se vide. 
+Camille: Voilà. On regarde les autres maintenant.
 
+===
+title: wait
+---
 
 Sylvia: (Soupir) J'étais sûre qu'elles étaient là.
 Sylvia: Tu les as supprimées par accident ?

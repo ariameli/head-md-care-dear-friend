@@ -14,7 +14,7 @@ position: -63,-228
     -> Cliquer sur fichier4.
         <<jump Fichier4>>>
 <<else>>
-    <<jump Main>>
+    <<jump Start>>
 
 <<endif>>
 ===
@@ -62,7 +62,7 @@ Sylvia: Hum. Garde-la pour l'instant.
 -> Ne rien dire.
 -> Dire que c'est beau.
 
-<<jump Desktop>>
+<<jump Start>>
 ===
 
 title: Fichier3
