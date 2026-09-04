@@ -8,11 +8,10 @@ position: 0,0
 // Sylvia: (avec audio) Tu peux faire quelque chose ?
 
 //<<PlaySound FX ComputerHumming>>
-Sylvia: Mon ordinateur fait plus de bruit qu'avant. Vous pouvez me dire pourquoi ? #sound:DialogueSylvia_1
+//Sylvia: Mon ordinateur fait plus de bruit qu'avant. Vous pouvez me dire pourquoi ? #sound:DialogueSylvia_1
 
 //<<PlaySound FX ComputerFanSpeedsUp>> // En attente du vrai son
-
-Camille: Il est sur le point de décoller, oui... Je vais voir ce que je peux faire. #sound:DialogueCamille_1
+//Camille: Il est sur le point de décoller, oui... Je vais voir ce que je peux faire. #sound:DialogueCamille_1
 
 <<showWarning ErrorBox>>
 
@@ -22,10 +21,10 @@ title: WarningWindow
 
 //Computer: Warning : Storage FULL!!! Please make space by deleting unnecessary files.
 
-<<PlaySound FX Warning>>
-Camille: On doit faire de la place sur le disque.
-Sylvia: Faire de la place ? Oh... Ce n'est pas infini la mémoire d'un ordinateur ?
-Camille: Malheureusement pas. On doit la "nettoyer" de temps en temps.
+//<<PlaySound FX Warning>>
+//Camille: On doit faire de la place sur le disque.
+//Sylvia: Faire de la place ? Oh... Ce n'est pas infini la mémoire d'un ordinateur ?
+//Camille: Malheureusement pas. On doit la "nettoyer" de temps en temps.
 
 
 <<startPulsating CloseButton>>
@@ -39,9 +38,9 @@ title: FirstFile
 // NEW ASSET : hard disk icon with warning
 // NEW ASSET: Mail box icon with 200 written in a red cercle
 
-Camille: Est-ce que je peux supprimer les fichiers qui sont sur ton bureau ?
-Sylvia: Est-ce que tu peux me montrer ce que c'est d'abord ?
-Sylvia: Ce fichier-là, par exemple ?
+//Camille: Est-ce que je peux supprimer les fichiers qui sont sur ton bureau ?
+//Sylvia: Est-ce que tu peux me montrer ce que c'est d'abord ?
+//Sylvia: Ce fichier-là, par exemple ?
 
 // NEW ASSET : PDF CONCOURS PHOTO
 
@@ -51,37 +50,34 @@ Sylvia: Ce fichier-là, par exemple ?
 ===
 title: photoContestDeadline
 ---
-// contest deadline PDF
-<<stopPulsatingFile DocumentIcon_2>>
-<<setCanClick DocumentIcon_2 false>>
 
-<<startPulsating CloseButtonPattern>>
-<<setCanClickForCloseButton CloseButtonPattern true>>
+<<setCanClick DocumentIcon_2 false>>
+<<stopPulsatingFile DocumentIcon_2>>
 
 // (La caméra zoom out encore un peu. On voit qu'un café est posé sur la table)
 //-> Cliquer sur le café pour boire une gorgée du café (Audio FX: Slurp). Quand on clique sur le café, le café se vide. 
 
-Sylvia: Oh non! C'est trop tard !
-Camille: Qu'est-ce que c'est ?
-Sylvia: Un concours photo, je devais envoyer les photos qu'on avait prises avec mon amie.
-Camille : La deadline est fixée à aujourd'hui. C'est pas trop tard.
-Sylvia: Les photos sont quelque part sur mon ordinateur.
-Camille: On doit d'abord régler le problème d'espace. Je peux supprimer ce fichier?
+Sylvia: Oh, non!
+//Camille: Qu'est-ce que c'est ?
+//Sylvia: Un concours photo. Je devais envoyer les photos qu'on avait prises avec mon amie.
+//Camille : La deadline est fixée à aujourd'hui. C'est peut-être pas trop tard.
+//Sylvia: Tu crois ? Les photos sont quelque part sur mon ordinateur.
+//Camille : Mais il faut d'abord régler ce problème de bruit.
 
-
-//(The close button of the PDF begins to pulsate.)
-//user closes the file
-//trashbin pulsates
-//user drags and drops file to trash
- //camera zooms out if file is dropped in trash
-
-
+<<startPulsating CloseButtonPattern>>
+<<setCanClickForCloseButton CloseButtonPattern true>>
 
 ===
 title: DeleteFirstFile
 ---
 
-Camille: Voilà. On regarde les autres maintenant.
+Camille: Je supprime le fichier.
+
+<<startPulsatingFile DocumentIcon_2>>
+<<setCanDrag DocumentIcon_2 true>>
+
+
+<<jump Desktop>>
 
 ===
 title: wait
@@ -126,4 +122,15 @@ Camille: À toute à l'heure, alors
 
 <<jump Part2>>
 // END OF PART I
+===
+title: shaken
+---
+Camille: Fuck
+
+===
+
+title: drink
+---
+
+Camille: La merde
 ===

@@ -2,7 +2,12 @@ title: Desktop
 position: -63,-228
 ---
 
+
 <<declare $opened= 0>>
+
+Camille: Ok. Qu'est-ce que j'efface maintenant ?
+Sylvia: Montre-moi.
+
 <<if $opened < 3>> // elle s'impatiente aprsès 3 fichiers. Elle aimerait qu'on retrouve les photos, pas qu'on vide la mémoire.
 
     -> Cliquer sur fichier1.

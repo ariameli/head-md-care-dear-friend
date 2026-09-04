@@ -173,6 +173,11 @@ public class DesktopItem : MonoBehaviour,
         // Activate the image/content inside the file
         if (fileContentObject != null)
         {
+            for (var parent = fileContentObject.transform.parent; parent != null; parent = parent.parent)
+            {
+                parent.gameObject.SetActive(true);
+            }
+
             fileContentObject.SetActive(true);
         }
 

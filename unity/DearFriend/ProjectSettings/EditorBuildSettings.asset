@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/ArchiveVerticalSlice.unity
-    guid: 7a841b6b2d72e4decbd478ff36297806
+    path: Assets/Scenes/DearFriend.unity
+    guid: 788b99b1fb5ca524eaeadcab88a1926b
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
