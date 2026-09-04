@@ -91,6 +91,8 @@ Sylvia: Mais tu as le temps de regarder dans ma messsagerie si les photos pour l
 Sylvia: Je mets un minuteur.
 Camille: Ok....
 
+<<ZoomOutCamera 37.9 0.02 -0.24 10>>
+
 // NEW ASSET : A chicken-shaped pressure cooker or anything that her grandchildren gifted her -> what do u think ?
 Sylvia: Un peu de technologie.
 (Une cocotte-minute en forme de .... ? apparaît sur la table. Elle tourne gentiment et émet un tic tac)
@@ -104,6 +106,7 @@ Sylvia: Un peu de technologie.
 title: PressureCooker
 position: 0,
 --- 
+
 
 (La cocotte minute sonne (Audio FX - Bruit de coq qui chante ? ))
 
