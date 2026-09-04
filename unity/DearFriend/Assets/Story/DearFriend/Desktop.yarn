@@ -2,118 +2,141 @@ title: Desktop
 position: -63,-228
 ---
 
-
 <<declare $opened= 0>>
-
+<<stopPulsatingFile Trashbin>>
+//<<debugOpened>>
 Camille: Ok. Qu'est-ce que j'efface maintenant ?
 Sylvia: Montre-moi.
 
+<<jump Browsing>>
+===
+
+title:Browsing
+---
+
 <<if $opened < 3>> // elle s'impatiente aprsès 3 fichiers. Elle aimerait qu'on retrouve les photos, pas qu'on vide la mémoire.
 
-    -> Cliquer sur fichier1.
-        <<jump Fichier1>>>
-    -> Cliquer sur fichier2.
-        <<jump Fichier2>>>
-    -> Cliquer sur fichier3.
-        <<jump Fichier3>>>
-    -> Cliquer sur fichier4.
-        <<jump Fichier4>>>
+    <<setCanClick DocumentIcon_2 true>>
+    <<setCanDrag DocumentIcon_2 true>>
+    <<setCanClick DocumentIcon_3 true>>
+    <<setCanClick DocumentIcon_4 true>>
+    <<setCanClick DocumentIcon_5 true>>
 <<else>>
-    <<jump Start>>
+    <<jump wait>>
 
 <<endif>>
 ===
 
 
-title: Fichier1
+title: Fichier2
 position: -272,298
 ---
 
 // Si on ouvre ce fichier, le jour 3, Sylvia porte le bonnet
+<<setCanClick DocumentIcon_2 false>>
+<<setCanClick DocumentIcon_3 false>>
+<<setCanClick DocumentIcon_4 false>>
+<<setCanClick DocumentIcon_5 false>>
 
-<<set $opened+=1>>
-(Le fichier s'ouvre. C'est un pdf à propos de "Comment tricoter un chapeau avec des oreilles de chat.")
-Sylvia: Oh (Surprise). Haha.
+<<set $opened += 1>>
+//<<startPulsating CloseButtonPattern_DI2>>
+
+//(Le fichier s'ouvre. C'est un pdf à propos de "Comment tricoter un chapeau avec des oreilles de chat.")
+//Sylvia: Oh (Surprise). Haha.
 Sylvia: C'est le costume que j'ai fabriqué avec mon amie pour Carnaval l'année passée.
-Camille: Trop chou! Je suis jalouse. 
-Sylvia: Je n'en n'ai plus besoin. Tu peux le supprimer.
+//Camille: Trop chou! Je suis jalouse. 
+//Sylvia: Je n'en n'ai plus besoin. Tu peux le supprimer.
 
--> "T'es sûre ?" 
-    (La caméra zoom in à nouveau, éventuellement)
-    Sylvia: Oui. S'il te plaît.
--> "Ok"
+//-> "T'es sûre ?" 
+//    (La caméra zoom in à nouveau, éventuellement)
+//    Sylvia: Oui. S'il te plaît.
+//-> "Ok"
 
 
-(L'icône de la corbeille "clignote".)
--> Cliquer sur le fichier et le tirer vers l'îcone de la corbeille.
-<<jump Desktop>>
-
-===
-
-title: Fichier2
-position: 57,290
----
-
-<<set $opened+=1>>
-(Le fichier s'ouvre. C'est la photo d'une rivière dans une forêt).
-Sylvia: Oh...
-Sylvia: Hum. Garde-la pour l'instant.
-
--> Demander qui a pris la photo.
-    Sylvia: Je crois que c'est moi ou mon amie qui a pris cette photo. C'est la rivière en bas de l'immeuble.
-    Sylvia: On aimait beaucoup se promener là ensemble. 
--> Dire que c'est bien pour le concours.
-    Sylvia: Je trouve ça trop terne.
--> Ne rien dire.
--> Dire que c'est beau.
-
-<<jump Start>>
+//(L'icône de la corbeille "clignote".)
+//-> Cliquer sur le fichier et le tirer vers l'îcone de la corbeille.
+<<jump Browsing>>
 ===
 
 title: Fichier3
-position: 229,506
+position: 57,290
 ---
-<<set $opened+=1>>
-(C'est un audio. Des tambours un peu mystiques.)
-Sylvia: Oh la la. Je ne sais plus ce que c'est.
+<<setCanClick DocumentIcon_2 false>>
+<<setCanClick DocumentIcon_3 false>>
+<<setCanClick DocumentIcon_4 false>>
+<<setCanClick DocumentIcon_5 false>>
 
--> Creuser un peu.
+<<set $opened += 1>>
+(Le fichier s'ouvre. C'est la photo d'une rivière dans une forêt).
+//Sylvia: Oh...
+Sylvia: Hum. Garde-la pour l'instant.
 
-    Camille: On dirait un rituel chamanique.
-    Sylvia: Des fantômes...
-        -> Demander si bon souvenir.
-        -> Faire une blague.
--> Convaincre de le supprimer.
-    Sylvia: Je suis un peu supersticieuse. Je préfère le garder.
+//-> Demander qui a pris la photo.
+//    Sylvia: Je crois que c'est moi ou mon amie qui a pris cette photo. C'est la rivière en bas de l'immeuble.
+//    Sylvia: On aimait beaucoup se promener là ensemble. 
+//-> Dire que c'est bien pour le concours.
+//    Sylvia: Je trouve ça trop terne.
+//-> Ne rien dire.
+//-> Dire que c'est beau.
 
-<<jump Desktop>>
+<<jump Browsing>>
 ===
 
 title: Fichier4
 position: 229,506
 ---
-<<set $opened+=1>>
 
-Une facture.
+<<setCanClick DocumentIcon_2 false>>
+<<setCanClick DocumentIcon_3 false>>
+<<setCanClick DocumentIcon_4 false>>
+<<setCanClick DocumentIcon_5 false>>
+<<set $opened += 1>>
+(C'est un audio. Des tambours un peu mystiques.)
+//Sylvia: Oh la la. Je ne sais plus ce que c'est.
 
-<<jump Desktop>>
+//-> Creuser un peu.
+
+//    Camille: On dirait un rituel chamanique.
+//    Sylvia: Des fantômes...
+//        -> Demander si bon souvenir.
+//        -> Faire une blague.
+//-> Convaincre de le supprimer.
+//    Sylvia: Je suis un peu supersticieuse. Je préfère le garder.
+
+<<jump Browsing>>
 ===
 
 title: Fichier5
 position: 229,506
 ---
-<<set $opened+=1>>
+
+<<setCanClick DocumentIcon_2 false>>
+<<setCanClick DocumentIcon_3 false>>
+<<setCanClick DocumentIcon_4 false>>
+<<setCanClick DocumentIcon_5 false>>
+<<set $opened += 1>>
+
+Une facture.
+<<jump Browsing>>
+===
+
+title: Fichier6
+position: 229,506
+---
+
+<<setCanClick DocumentIcon_2 false>>
+<<setCanClick DocumentIcon_3 false>>
+<<setCanClick DocumentIcon_4 false>>
+<<setCanClick DocumentIcon_5 false>>
+<<set $opened += 1>>
 //(C'est une photo de Sylvia et d'une dame plus âgée qui font de la randonnée) dans la messagerie
 
 Une facture.
 
--> Supprimer.
--> Garder.
-
-<<jump Desktop>>
-
+//-> Supprimer.
+//-> Garder.
 
 //Camille: On a pas encore fait assez d'espace. Est-ce que tu as un disque sur lequel je pourrais copier des fichiers ?
 //Sylvia: Mon fils m'a dit que mes fichiers était stockés en ligne, mais je sais pas trop où c'est.
-
+<<jump Browsing>>
 ===

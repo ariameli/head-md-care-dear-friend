@@ -44,15 +44,15 @@ title: FirstFile
 
 // NEW ASSET : PDF CONCOURS PHOTO
 
-<<startPulsatingFile DocumentIcon_2>>
-<<setCanClick DocumentIcon_2 true>>
+<<startPulsatingFile DocumentIcon_1>>
+<<setCanClick DocumentIcon_1 true>>
 
 ===
 title: photoContestDeadline
 ---
 
-<<setCanClick DocumentIcon_2 false>>
-<<stopPulsatingFile DocumentIcon_2>>
+<<setCanClick DocumentIcon_1 false>>
+<<stopPulsatingFile DocumentIcon_1>>
 
 // (La caméra zoom out encore un peu. On voit qu'un café est posé sur la table)
 //-> Cliquer sur le café pour boire une gorgée du café (Audio FX: Slurp). Quand on clique sur le café, le café se vide. 
@@ -73,11 +73,10 @@ title: DeleteFirstFile
 
 Camille: Je supprime le fichier.
 
-<<startPulsatingFile DocumentIcon_2>>
-<<setCanDrag DocumentIcon_2 true>>
-
-
-<<jump Desktop>>
+<<startPulsatingFile DocumentIcon_1>>
+<<startPulsatingFile Trashbin>>
+<<setCanDrag DocumentIcon_1 true>>
+// Jump à Desktop
 
 ===
 title: wait
@@ -125,12 +124,7 @@ Camille: À toute à l'heure, alors
 ===
 title: shaken
 ---
-Camille: Fuck
+Sylvia: Attends! Pourquoi tu fais ça ?!!
 
-===
-
-title: drink
----
-
-Camille: La merde
+<<jump FirstFile>>
 ===

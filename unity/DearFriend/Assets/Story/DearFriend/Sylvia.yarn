@@ -1,0 +1,24 @@
+title: PasOK
+position: 0,0
+---
+  // Makes Sylvia feel a bit insecure.
+    <<stopPulsatingFile DocumentIcon_1>>
+    <<setCanClick DocumentIcon_1 false>>
+    <<setCanDrag DocumentIcon_1 false>>
+    Sylvia: (Un peu secouée) Attends ! Pourquoi tu fais ça ?
+    Sylvia: J'ai besoin de voir le fichier avant de l'effacer.
+
+    -> S'excuser et ouvrir le fichier.
+      Camille : Désolée. Je n'ai pas réfléchi.
+      Sylvia: C'est moi qui m'excuse, vous vouliez bien faire.
+      Sylvia: Est-ce qu'on peut regarde ensemble ?
+      <<startPulsatingFile DocumentIcon_1>>
+      <<setCanClick DocumentIcon_1 true>>
+    -> Expliquer qu'on doit faire de la place rapidement.
+      Camille: On doit vraiment faire de la place si on veut pouvoir utiliser l'ordinateur.
+      Sylvia: Oui, j'ai compris. 
+      Sylvia: Est-ce qu'on peut aller moins vite quand même ?
+      <<startPulsatingFile DocumentIcon_1>>
+      <<setCanClick DocumentIcon_1 true>>
+
+===

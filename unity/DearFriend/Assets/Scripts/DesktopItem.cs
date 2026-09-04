@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Text.RegularExpressions;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using Yarn.Unity;
@@ -139,6 +140,27 @@ public class DesktopItem : MonoBehaviour,
         canDrag = value;
     }
 
+    [YarnCommand("debugOpened")]
+    public static void debugOpened()
+    {
+        var dialogueRunner = Object.FindFirstObjectByType<DialogueRunner>();
+
+        if (dialogueRunner == null || dialogueRunner.VariableStorage == null)
+        {
+            Debug.LogWarning("Desktop: unable to read $opened because DialogueRunner or VariableStorage is missing.");
+            return;
+        }
+
+        if (dialogueRunner.VariableStorage.TryGetValue("$opened", out float opened))
+        {
+            Debug.Log($"Desktop: opened = {opened}");
+        }
+        else
+        {
+            Debug.LogWarning("Desktop: variable $opened was not found.");
+        }
+    }
+
     [YarnCommand("deleteItem")]
     public void deleteItem()
     {
@@ -149,6 +171,7 @@ public class DesktopItem : MonoBehaviour,
     {
         if (!canClick)
         {
+            Debug.LogWarning($"DesktopItem: click blocked on '{name}' because canClick is false.");
             return;
         }
         // Mark the file as opened so trashing is no longer treated as the first interaction
@@ -182,10 +205,24 @@ public class DesktopItem : MonoBehaviour,
         }
 
         // Start Yarn dialogue for clicking/opening this file
-        if (dialogueRunner != null && !string.IsNullOrEmpty(clickNodeName))
+        var nodeToPlay = clickNodeName;
+        if (string.IsNullOrEmpty(nodeToPlay))
         {
-            Debug.Log($"DesktopItem: OnPointerClick received, starting dialogue node '{clickNodeName}' if applicable.");
-            dialogueRunner.StartDialogue(clickNodeName);
+            var match = Regex.Match(name, @"^DocumentIcon_(\d+)$");
+            if (match.Success)
+            {
+                nodeToPlay = $"Fichier{match.Groups[1].Value}";
+            }
+        }
+
+        if (dialogueRunner != null && !string.IsNullOrEmpty(nodeToPlay))
+        {
+            Debug.Log($"DesktopItem: OnPointerClick received, starting dialogue node '{nodeToPlay}'.");
+            dialogueRunner.StartDialogue(nodeToPlay);
+        }
+        else
+        {
+            Debug.LogError($"DesktopItem: cannot open '{name}'. Assign a DialogueRunner and clickNodeName.");
         }
 
         if(deleteAfterClick)
