@@ -5,13 +5,14 @@ position: -63,-228
 <<declare $opened= 0>>
 <<stopPulsatingFile Trashbin>>
 //<<debugOpened>>
+
 Camille: Ok. Qu'est-ce que j'efface maintenant ?
 Sylvia: Montre-moi.
 
 <<jump Browsing>>
-===
 
-title:Browsing
+===
+title: Browsing
 ---
 
 <<if $opened < 3>> // elle s'impatiente aprsès 3 fichiers. Elle aimerait qu'on retrouve les photos, pas qu'on vide la mémoire.
@@ -22,12 +23,10 @@ title:Browsing
     <<setCanClick DocumentIcon_4 true>>
     <<setCanClick DocumentIcon_5 true>>
 <<else>>
-    <<jump wait>>
+    <<jump ComputerStillInPain>>
 
 <<endif>>
 ===
-
-
 title: Fichier2
 position: -272,298
 ---
@@ -139,4 +138,30 @@ Une facture.
 //Camille: On a pas encore fait assez d'espace. Est-ce que tu as un disque sur lequel je pourrais copier des fichiers ?
 //Sylvia: Mon fils m'a dit que mes fichiers était stockés en ligne, mais je sais pas trop où c'est.
 <<jump Browsing>>
+
+===
+title: DeleteHugeFolder
+---
+<<declare $deleted = 0>>
+
+<< if $deleted < 3 >>
+
+    <<setCanDrag FolderIcon_1 true>>
+    <<setCanDrag FolderIcon_2 true>>
+    <<setCanDrag FolderIcon_3 true>>
+    <<setCanDrag FolderIcon_4 true>>
+    <<setCanDrag FolderIcon_5 true>>
+    <<setCanDrag FolderIcon_6 true>>
+    <<setCanDrag FolderIcon_7 true>>
+    <<setCanDrag FolderIcon_8 true>>
+    <<setCanDrag FolderIcon_9 true>>
+<<else>>
+    <<jump ComputerIsWorkingAgain>>
+<<endif>>
+===
+title: Trashed
+---
+
+<<set $deleted += 1>>
+<<jump DeleteHugeFolder>>
 ===

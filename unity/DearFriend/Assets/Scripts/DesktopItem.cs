@@ -71,6 +71,8 @@ public class DesktopItem : MonoBehaviour,
             cam = Camera.main;
         }
 
+        EnsurePointerCollider();
+
         originalScale = transform.localScale;
 
         objectRenderer = GetComponent<Renderer>();
@@ -95,13 +97,26 @@ public class DesktopItem : MonoBehaviour,
         }
     }
 
-    public void OnPointerDown(PointerEventData eventData)
+    void EnsurePointerCollider()
     {
-        if (!canDrag)
+        if (GetComponent<Collider>() != null)
         {
             return;
         }
-        if (!canClick)
+
+        var meshFilter = GetComponent<MeshFilter>();
+        if (meshFilter == null || meshFilter.sharedMesh == null)
+        {
+            return;
+        }
+
+        var meshCollider = gameObject.AddComponent<MeshCollider>();
+        meshCollider.sharedMesh = meshFilter.sharedMesh;
+    }
+
+    public void OnPointerDown(PointerEventData eventData)
+    {
+        if (!canDrag)
         {
             return;
         }
@@ -114,7 +129,7 @@ public class DesktopItem : MonoBehaviour,
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        if (!canClick)
+        if (!canDrag)
         {
             return;
         }
