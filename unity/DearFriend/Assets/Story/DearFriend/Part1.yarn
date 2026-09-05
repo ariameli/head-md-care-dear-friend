@@ -76,22 +76,23 @@ Camille: Je supprime le fichier.
 <<startPulsatingFile DocumentIcon_1>>
 <<startPulsatingFile Trashbin>>
 <<setCanDrag DocumentIcon_1 true>>
-// Jump à Desktop
+// Jump at Desktop
 
 ===
 title: wait
 ---
 
 Sylvia: (Soupir) J'étais sûre qu'elles étaient là.
-Sylvia: Tu les as supprimées par accident ?
-Camille: J'ai uniquement supprimé ce que tu m'as dit d'effacer.
-Sylvia: Tu es sûre ? On peut faire une pause. Tu as l'air fatiguée.
-Camille: Je dois partir dans 10 minutes, désolée. J'ai une conférence obligatoire en ligne pour l'uni.
-Sylvia: Mais tu as le temps de regarder dans ma messsagerie si les photos pour le concours sont là?
-Sylvia: Je mets un minuteur.
-Camille: Ok....
+// Sylvia: Tu les as supprimées par accident ?
+// Camille: J'ai uniquement supprimé ce que tu m'as dit d'effacer.
+// Sylvia: Tu es sûre ? On peut faire une pause. Tu as l'air fatiguée.
+// Camille: Je dois partir dans 10 minutes, désolée. J'ai une conférence obligatoire en ligne pour l'uni.
+// Sylvia: Mais tu as le temps de regarder dans ma messsagerie si les photos pour le concours sont là?
+// Sylvia: Je mets un minuteur.
+// Camille: Ok....
 
 <<ZoomOutCamera 37.9 0.02 -0.24 10>>
+// NEW FX : Tic Tac
 
 // NEW ASSET : A chicken-shaped pressure cooker or anything that her grandchildren gifted her -> what do u think ?
 Sylvia: Un peu de technologie.
@@ -103,7 +104,7 @@ Sylvia: Un peu de technologie.
 <<jump Messagerie_part_1>>
 
 ===
-title: PressureCooker
+title: KitchenTimer
 position: 0,
 --- 
 
