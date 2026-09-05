@@ -1,4 +1,5 @@
 using UnityEngine;
+using Yarn.Unity;
 
 public class KitchenTimer : MonoBehaviour
 {
@@ -7,16 +8,14 @@ public class KitchenTimer : MonoBehaviour
     [SerializeField] private float startAngle = 270f;
 
     private float timeRemaining;
-    private bool running = true;
+    private bool running = false;
 
     private Quaternion initialRotation;
 
     void Start()
     {
-        timeRemaining = maxTime;
-
-        // On garde l'orientation originale de la pièce
         initialRotation = dialTop.localRotation;
+        timeRemaining = maxTime;
     }
 
     void Update()
@@ -30,14 +29,27 @@ public class KitchenTimer : MonoBehaviour
         {
             timeRemaining = 0f;
             running = false;
+
             Debug.Log("DING!");
         }
 
         float progress = timeRemaining / maxTime;
         float angle = progress * startAngle;
 
-        Quaternion timerRotation = Quaternion.Euler(0f, 0f, angle);
+        Quaternion timerRotation =
+            Quaternion.Euler(0f, 0f, angle);
 
-        dialTop.localRotation = initialRotation * timerRotation;
+        dialTop.localRotation =
+            initialRotation * timerRotation;
+    }
+
+    // Commande appelée depuis Yarn
+    [YarnCommand("Start_timer")]
+    public void StartTimer()
+    {
+        timeRemaining = maxTime;
+        running = true;
+
+        Debug.Log("Timer démarré !");
     }
 }

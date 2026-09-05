@@ -8941,6 +8941,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -4819223349682164798, guid: 77ee06899f8148044a9c81121752538e, type: 3}
+      propertyPath: m_Name
+      value: Body
+      objectReference: {fileID: 0}
+    - target: {fileID: -2511240423080479738, guid: 77ee06899f8148044a9c81121752538e, type: 3}
+      propertyPath: m_Name
+      value: Head
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 77ee06899f8148044a9c81121752538e, type: 3}
       propertyPath: m_Name
       value: CookingTimer
@@ -8963,7 +8971,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: -2511240423080479738, guid: 77ee06899f8148044a9c81121752538e, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1209344946}
+      addedObject: {fileID: 1209344949}
   m_SourcePrefab: {fileID: 100100000, guid: 77ee06899f8148044a9c81121752538e, type: 3}
 --- !u!4 &854063663 stripped
 Transform:
@@ -12368,7 +12376,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5328482478806888397, guid: 77ee06899f8148044a9c81121752538e, type: 3}
   m_PrefabInstance: {fileID: 854063662}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1209344946
+--- !u!114 &1209344949
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -12377,11 +12385,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1209344944}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f93cc6713aa69514ca7d016bf78f9a4e, type: 3}
+  m_Script: {fileID: 11500000, guid: 99d14189ad647e243971353a71254726, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::KitchenTimer
   dialTop: {fileID: 1209344945}
-  maxTime: 60
+  maxTime: 10
   startAngle: 270
 --- !u!1 &1224721660
 GameObject:

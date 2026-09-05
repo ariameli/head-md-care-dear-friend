@@ -4,6 +4,7 @@ position: 0,0
 
 <<declare $zoom = 0>> // De 0 à 100
 
+
 // Sylvia: (avec audio) Mon ordinateur fait un bruit d'aspirateur.
 // Sylvia: (avec audio) Tu peux faire quelque chose ?
 
@@ -91,6 +92,7 @@ Sylvia: (Soupir) J'étais sûre qu'elles étaient là.
 // Sylvia: Je mets un minuteur.
 // Camille: Ok....
 
+<<Start_timer Head>>
 <<ZoomOutCamera 37.9 0.02 -0.24 10>>
 // NEW FX : Tic Tac
 
@@ -108,9 +110,7 @@ title: KitchenTimer
 position: 0,
 --- 
 
-
 (La cocotte minute sonne (Audio FX - Bruit de coq qui chante ? ))
-
 // Sylvia a mis un minuteur ou qu'elle a regardé l'heure : Vite, tu peux y aller.
 Camille: Déjà?!! Mince. Merci pou le café.
 (Audio FX - Camille range sont sac) 
