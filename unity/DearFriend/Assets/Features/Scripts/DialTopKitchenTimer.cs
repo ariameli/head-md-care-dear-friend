@@ -8,10 +8,6 @@ public class KitchenTimer : MonoBehaviour
 
     private bool running = false;
 
-    void Start()
-    {
-    }
-
     void Update()
     {
         if (!running || dialTop == null)

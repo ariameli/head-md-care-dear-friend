@@ -32,6 +32,54 @@ public class SearchController : MonoBehaviour
 
     private int currentResult = 0;
 
+    private void Awake()
+    {
+        Canvas canvas = GetComponentInParent<Canvas>();
+        if (canvas != null && canvas.renderMode == RenderMode.ScreenSpaceCamera && canvas.worldCamera == null)
+        {
+            GameObject cameraObject = GameObject.Find("MessApp Camera");
+            Camera messageAppCamera = cameraObject != null ? cameraObject.GetComponent<Camera>() : null;
+            canvas.worldCamera = messageAppCamera != null
+                ? messageAppCamera
+                : Camera.main != null ? Camera.main : FindFirstObjectByType<Camera>();
+        }
+
+        if (canvas != null)
+        {
+            foreach (Transform child in canvas.GetComponentsInChildren<Transform>(true))
+            {
+                if (child.name != "Header")
+                {
+                    continue;
+                }
+
+                foreach (Graphic graphic in child.GetComponentsInChildren<Graphic>(true))
+                {
+                    graphic.raycastTarget = false;
+                }
+
+                break;
+            }
+        }
+
+        EventSystem eventSystem = EventSystem.current;
+
+        if (eventSystem == null)
+        {
+            GameObject eventSystemObject = new GameObject("EventSystem");
+            eventSystem = eventSystemObject.AddComponent<EventSystem>();
+        }
+
+        if (eventSystem.GetComponent<BaseInputModule>() == null)
+        {
+#if ENABLE_INPUT_SYSTEM
+            eventSystem.gameObject.AddComponent<UnityEngine.InputSystem.UI.InputSystemUIInputModule>();
+#else
+            eventSystem.gameObject.AddComponent<StandaloneInputModule>();
+#endif
+        }
+    }
+
     private void StartDialogueForCurrentResult()
     {
         if (dialogueRunner == null)
