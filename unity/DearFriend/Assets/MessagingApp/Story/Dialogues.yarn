@@ -1,19 +1,24 @@
-﻿title: Photo01Dialogue
----
-Sylvia: Dialogue pour la première image.
-===
+﻿// title: Photo01Dialogue
+// ---
+// Sylvia: Dialogue pour la première image.
+// ===
+// 
+// title: Photo02Dialogue
+// ---
+// Camille: Dialogue pour la deuxième image.
+// ===
+// 
+// title: Photo03Dialogue
+// ---
+// Sylvia: Dialogue pour la troisième image.
+// ===
+// 
+// title: Photo04Dialogue
+// ---
+// Camille: Dialogue pour la quatrième image.
+// ===
 
-title: Photo02Dialogue
+title: rien
 ---
-Camille: Dialogue pour la deuxième image.
-===
-
-title: Photo03Dialogue
----
-Sylvia: Dialogue pour la troisième image.
-===
-
-title: Photo04Dialogue
----
-Camille: Dialogue pour la quatrième image.
+LOL
 ===

@@ -5,6 +5,7 @@ position: 0,0
 
 // DEBUG JUMPS
 <<jump ComputerIsWorkingAgain>>
+//<<jump ComputerIsWorkingAgain>>
 //<< jump DeleteHugeFolder>>
 //<<jump ComputerIsWorkingAgain>>
 
@@ -12,7 +13,12 @@ position: 0,0
 // Sylvia: (avec audio) Tu peux faire quelque chose ?
 
 //<<PlaySound FX ComputerHumming>>
-//Sylvia: Mon ordinateur fait plus de bruit qu'avant. Vous pouvez me dire pourquoi ? #sound:DialogueSylvia_1
+Sylvia: Mon ordinateur fait plus de bruit qu'avant. Vous pouvez me dire pourquoi ? #sound:DialogueSylvia_1
+
+
+
+
+Sylvia: Allez, on en achète un autre.
 
 //<<PlaySound FX ComputerFanSpeedsUp>> // En attente du vrai son
 //Camille: Il est sur le point de décoller, oui... Je vais voir ce que je peux faire. #sound:DialogueCamille_1
@@ -49,7 +55,7 @@ title: FirstFile
 <<setCanClick DocumentIcon_1 true>>
 
 ===
-title: photoContestDeadline
+title: PhotoContestDeadline
 ---
 <<setCanClick DocumentIcon_1 false>>
 <<stopPulsatingFile DocumentIcon_1>>
@@ -112,14 +118,14 @@ title: ComputerIsWorkingAgain
 
 <<Start_timer Head>>
 <<ZoomOutCamera 37.9 0.02 -0.24 10>>
+<<startPulsatingFile MessAppIcon>>
+<<setCanClick MessAppIcon true>>
 // NEW FX : Tic Tac
 
 // NEW ASSET : A chicken-shaped pressure cooker or anything that her grandchildren gifted her -> what do u think ?
 // Sylvia: Un peu de technologie.
 //(Une cocotte-minute en forme de .... ? apparaît sur la table. Elle tourne gentiment et émet un tic tac)
 
-<<startPulsatingFile MessAppIcon>>
-<<setCanClick MessAppIcon true>>
 
 //(L'icône de la messagerie clignote.)
 //-> Cliquer sur l'icône de la messagerie.
@@ -129,20 +135,21 @@ title: ComputerIsWorkingAgain
 ===
 title: KitchenTimer
 position: 0,0
---- 
+---
 
-(La cocotte minute sonne (Audio FX - Bruit de coq qui chante ? ))
-// Sylvia a mis un minuteur ou qu'elle a regardé l'heure : Vite, tu peux y aller.
+<<Stop_timer Head>>
+
+// (La cocotte minute sonne (Audio FX - Bruit de coq qui chante ? )
 Camille: Déjà?!! Mince. Merci pou le café.
-(Audio FX - Camille range sont sac) 
+// (Audio FX - Camille range sont sac) 
 Sylvia: Mais on a pas fini. Est-ce que tu peux revenir après ta conférence en ligne ?
 Camille: J'ai un examen important demain, je peux pas faire tard.
 Sylvia: Je ne peux pas envoyer la photo par moi-même. J'ai besoin de ton aide. // Plus dramatique / culpabilisant
-Camille: Ok... Je peux repasser vers 20h00.
-Sylvia: Merci.
-Camille: À toute à l'heure, alors
+Camille: Ok. Je peux repasser vers 20h00.
+Sylvia: Merci, infiniment.
+Camille: À toute à l'heure, alors.
 
-(FADE IN)
+<<Next_day DayTransitionManager>>
 
 <<jump Part2>>
 // END OF PART I

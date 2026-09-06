@@ -1,13 +1,12 @@
 title: Part2
 position: -118,-98
 ---
-(FADE OUT)
 
 // Sylvia a préparé un tupperware avec de la nourriture pour Camille, elle s'est dit qu'elle avait pas eu le temps de manger.
 // NEW ASSET : Tupperware filled with pasta and with a post-it with "Pour camille" written on it
-(Un tupperware remplit de nourriture avec écrit "Pour Camille (dessin d'un petit chat')" est posé vers l'ordinateur.)
-(On est devant l'ordinateur allumé. La messagerie est là où on l'avait laissée. Avec une image de Sylvia et Eugénie qui font de la randonnée)
-(La caméra est un peu plus serrée sur l'écran. Camille est fatiguée et concentrée sur la tâche) // Ajouter effet ? genre flou ou mauvaise vue, tremblement vision... ?
+//(Un tupperware remplit de nourriture avec écrit "Pour Camille (dessin d'un petit chat')" est posé vers l'ordinateur.)
+//(On est devant l'ordinateur allumé. La messagerie est là où on l'avait laissée. Avec une image de Sylvia et Eugénie qui font de la randonnée)
+//(La caméra est un peu plus serrée sur l'écran. Camille est fatiguée et concentrée sur la tâche) // Ajouter effet ? genre flou ou mauvaise vue, tremblement vision... ?
 
 Sylvia: C'est allé cette conférence ?
 Camille: Pfouf. Oui, une chose de moins à faire...
@@ -15,7 +14,7 @@ Camille: Alors, on regarde ces photos ?
 
 Sylvia: Eugénie m'en avait envoyé quatre. Tu peux me les montrer ?
 
-<<jump Messagerie_part_2>>
+<<jump Photo_Selection>>
 
 ===
 title: Photo_Selection
@@ -55,4 +54,30 @@ Sylvia: Entendu. N'oublie pas le tupperware.
 // END OF PART II
 <<jump Part3>>
 
+===
+
+
+title: archives
+position: -162,22
+---
+//(Photo 1 - Sylvia et Eugénie en randonnée.)
+
+-> Demander qui est la personne sur la photo.
+    Sylvia: C'est une amie très chère qui est décédée.
+    -> Demander si elle est partie avec une aide au suicide.
+        Sylvia: ... Oui.
+        Sylvia: Elle m'a prévenue une semaine avant.
+        Camille: Ah bon! ça a dû être difficile.
+        Sylvia: Je lui ai dit que ce qu'elle venait de me dire m'avait fait très mal.
+        Camille: ...
+        Camille: Je sais pas comment j'aurais réagi à ta place.
+        Sylvia: Je ne voulais pas m'effondrer, je voulais être forte pour elle.
+        Sylvia: Et je voulais surtout rester sur un bon sentiment, celui d'avoir été contente de l'avoir rencontrée.
+        -> Demander comment elle se sont rencontrées.
+            Sylvia: Dans le couloir de l'immeuble. On s'est dit bonjour. C'était il y a 7 ans.
+            Sylvia: (Soupir)
+    -> Ne pas poser de question. 
+
+-> Dire qu'on aimerait bien trouver le temps de faire des randonnées.
+    (Camera zoom in légèrement)
 ===
