@@ -3,8 +3,10 @@ position: 0,0
 ---
 <<declare $zoom = 0>> // De 0 à 100
 
-//<< jump DeleteHugeFolder>>
+// DEBUG JUMPS
 <<jump ComputerIsWorkingAgain>>
+//<< jump DeleteHugeFolder>>
+//<<jump ComputerIsWorkingAgain>>
 
 // Sylvia: (avec audio) Mon ordinateur fait un bruit d'aspirateur.
 // Sylvia: (avec audio) Tu peux faire quelque chose ?
@@ -98,34 +100,35 @@ title: ComputerIsWorkingAgain
 
 // VIDER LA CORBEILLE
 
-Camille: Bon, ça fonctionne à nouveau, mais pas de photos.
-Sylvia: (Soupir) J'étais sûre qu'elles étaient là.
-Sylvia: Tu les as supprimées par accident ?
-Camille: J'ai uniquement supprimé ce que tu m'as dit d'effacer!
-Sylvia: Tu es sûre ? Tu as l'air fatiguée. On peut faire une pause. 
-Camille: Hum... Je dois partir dans 10 minutes, désolée. J'ai une conférence obligatoire en ligne pour l'uni.
-Sylvia: Mais, tu as le temps de regarder dans ma messsagerie si les photos pour le concours sont là?
-Sylvia: Je mets un minuteur.
-
+//Camille: Bon, ça fonctionne à nouveau.
+//Sylvia: (Soupir). Mais on a toujours pas les photos. J'étais sûre qu'elles étaient là.
+// Sylvia: Tu les as supprimées par accident ?
+// Camille: J'ai uniquement supprimé ce que tu m'as dit d'effacer!
+// Sylvia: Tu es sûre ? Tu as l'air fatiguée. On peut faire une pause. 
+// Camille: Hum... Je dois partir dans 10 minutes, désolée. J'ai une conférence obligatoire en ligne pour l'uni.
+// Sylvia: Mais, tu as le temps de regarder dans ma messsagerie si les photos pour le concours sont là?
+// Sylvia: Je mets un minuteur.
+// Camille: Ok.
 
 <<Start_timer Head>>
 <<ZoomOutCamera 37.9 0.02 -0.24 10>>
 // NEW FX : Tic Tac
 
 // NEW ASSET : A chicken-shaped pressure cooker or anything that her grandchildren gifted her -> what do u think ?
-Sylvia: Un peu de technologie.
+// Sylvia: Un peu de technologie.
 //(Une cocotte-minute en forme de .... ? apparaît sur la table. Elle tourne gentiment et émet un tic tac)
 
-Camille: Ok... Let's go!
+<<startPulsatingFile MessAppIcon>>
+<<setCanClick MessAppIcon true>>
 
-(L'icône de la messagerie clignote.)
--> Cliquer sur l'icône de la messagerie.
+//(L'icône de la messagerie clignote.)
+//-> Cliquer sur l'icône de la messagerie.
 
-<<jump Messagerie_part_1>>
+//<<jump Messagerie_part_1>>
 
 ===
 title: KitchenTimer
-position: 0,
+position: 0,0
 --- 
 
 (La cocotte minute sonne (Audio FX - Bruit de coq qui chante ? ))
