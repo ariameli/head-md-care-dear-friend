@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using Yarn.Unity;
 
-public class AnnaActions : MonoBehaviour
+public class SylviaActions : MonoBehaviour
 {
     public Transform position1;
     public Transform position2;
@@ -21,7 +21,7 @@ public class AnnaActions : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-    [YarnCommand("AnnaMoves")]
+    [YarnCommand("SylviaMoves")]
     public void Moves(string positionName)
     {
         Transform target = positionName switch
@@ -75,7 +75,7 @@ public class AnnaActions : MonoBehaviour
         moveRoutine = null;
     }
 
-    [YarnCommand("AnnaSits")]
+    [YarnCommand("SylviaSits")]
     public void Sits()
     {
     

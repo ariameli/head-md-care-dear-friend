@@ -2,24 +2,24 @@ title: Part2
 position: -118,-98
 ---
 
-// Sylvia a préparé un tupperware avec de la nourriture pour Camille, elle s'est dit qu'elle avait pas eu le temps de manger.
-// NEW ASSET : Tupperware filled with pasta and with a post-it with "Pour camille" written on it
-//(Un tupperware remplit de nourriture avec écrit "Pour Camille (dessin d'un petit chat')" est posé vers l'ordinateur.)
-//(On est devant l'ordinateur allumé. La messagerie est là où on l'avait laissée. Avec une image de Sylvia et Eugénie qui font de la randonnée)
-//(La caméra est un peu plus serrée sur l'écran. Camille est fatiguée et concentrée sur la tâche) // Ajouter effet ? genre flou ou mauvaise vue, tremblement vision... ?
 
-Sylvia: C'est allé cette conférence ?
+
+<<SylviaMoves Sylvia SylviaChairPos>>
+<<SylviaSits Sylvia>>
+
+
+
 Camille: Pfouf. Oui, une chose de moins à faire...
-Camille: Alors, on regarde ces photos ?
+Camille: Alors, tu as choisi la photo à envoyer ?
 
-Sylvia: Eugénie m'en avait envoyé quatre. Tu peux me les montrer ?
+Sylvia: Non... Je n'arrive pas à me décider.
+Camille: Laisse-moi t'aider.
 
 <<jump Photo_Selection>>
 
 ===
 title: Photo_Selection
 ---
-Sylvia: Voilà. Elles sont toutes là. Quelle photo on envoie ?
 
 // Quand on descend dans les flèches, le scroll descend ou remonte.
 -> La photo de Sylvia et Eugénie en randonnée.

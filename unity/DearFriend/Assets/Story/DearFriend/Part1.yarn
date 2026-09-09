@@ -3,8 +3,13 @@ position: 0,0
 ---
 <<declare $zoom = 0>> // De 0 à 100
 
+
+
+//<<SylviaMoves SylviaMesh ChairPos>>
+//<<SylviaSits SylviaMesh>>
+
 // DEBUG JUMPS
-<<jump ComputerIsWorkingAgain>>
+//<<jump ComputerIsWorkingAgain>>
 //<<jump ComputerIsWorkingAgain>>
 //<< jump DeleteHugeFolder>>
 //<<jump ComputerIsWorkingAgain>>
@@ -116,7 +121,7 @@ title: ComputerIsWorkingAgain
 // Sylvia: Je mets un minuteur.
 // Camille: Ok.
 
-<<Start_timer Head>>
+//<<Start_timer Head>>
 <<ZoomOutCamera 37.9 0.02 -0.24 10>>
 <<startPulsatingFile MessAppIcon>>
 <<setCanClick MessAppIcon true>>
@@ -137,7 +142,7 @@ title: KitchenTimer
 position: 0,0
 ---
 
-<<Stop_timer Head>>
+//<<Stop_timer Head>>
 
 // (La cocotte minute sonne (Audio FX - Bruit de coq qui chante ? )
 Camille: Déjà?!! Mince. Merci pou le café.
