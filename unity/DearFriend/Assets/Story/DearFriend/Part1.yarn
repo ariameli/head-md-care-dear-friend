@@ -18,7 +18,7 @@ position: 0,0
 // Sylvia: (avec audio) Tu peux faire quelque chose ?
 
 //<<PlaySound FX ComputerHumming>>
-Sylvia: Mon ordinateur fait plus de bruit qu'avant. Vous pouvez me dire pourquoi ? #sound:DialogueSylvia_1
+//Sylvia: Mon ordinateur fait plus de bruit qu'avant. Vous pouvez me dire pourquoi ? #sound:DialogueSylvia_1
 
 
 
