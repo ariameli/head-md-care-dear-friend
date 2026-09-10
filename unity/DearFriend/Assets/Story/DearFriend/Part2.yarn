@@ -2,6 +2,7 @@ title: Part2
 position: -118,-98
 ---
 
+<<SylviaSits SylviaMesh>>
 
 Camille: Pfouf. Oui, une chose de moins à faire...
 Camille: Alors, tu as choisi la photo à envoyer ?
@@ -44,7 +45,7 @@ Camille: Le résultat est dans 2 semaines. Tu me diras si on a gagné ?
 
 Sylvia: Entendu. N'oublie pas le tupperware.
 
-(FADE IN)
+<<Next_day DayTransitionManager>>
 // END OF PART II
 <<jump Part3>>
 
@@ -68,7 +69,7 @@ position: -162,22
         Sylvia: Je ne voulais pas m'effondrer, je voulais être forte pour elle.
         Sylvia: Et je voulais surtout rester sur un bon sentiment, celui d'avoir été contente de l'avoir rencontrée.
         -> Demander comment elle se sont rencontrées.
-            Sylvia: Dans le couloir de l'immeuble. On s'est dit bonjour. C'était il y a 7 ans.
+            Sylvia: Dans le couloir de l'immeuble. On s'est dit bonjour il y a 7 ans.
             Sylvia: (Soupir)
     -> Ne pas poser de question. 
 

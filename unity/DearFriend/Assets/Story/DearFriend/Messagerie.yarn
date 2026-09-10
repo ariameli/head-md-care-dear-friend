@@ -3,7 +3,7 @@ position: 0,0
 ---
 
 <<stopPulsatingFile MessAppIcon>>
-<<setCanClick SearchButton false>>
+//<<setCanClick SearchButton false>> ça bug maintenant
 
 // Ajouter suite dans bouton
 Sylvia: Cherche "Eugénie". Elle m'avait envoyé les photos.
@@ -33,20 +33,16 @@ title: MementoVivere
 
 Sylvia: Ah! Les voilà !
 
--> Dire que c'était sur son téléphone dès le début.
-    // (La caméra zoom in légèrement)
-    <<ZoomOutCamera 32 0.02 -0.24 3>>
--> Ne rien dire. 
 
-// Scroller ou jumper d'une image à l'autre
-// Si scroller -> inventer une discussion ou faire que chaque scrolle amène directe à image
 
-===
-title: Photo01Dialogue
-position: -37,99
----
+//-> Dire que c'était sur son téléphone dès le début.
+//    <<ZoomOutCamera 30 0.02 -0.24 10>>
+//    Sylvia: Oui, je suis désolée, je suis plus vieille que mon ordinateur.
+//-> "Wahou!"
+//-> Ne rien dire.
 
-Camille: BUG.
+Sylvia: C'est mon chat.
+Sylvia: Continue, il y en a d'autres.
 
 ===
 title: Photo02Dialogue
@@ -62,7 +58,7 @@ Sylvia: Je pense toujours à elle quand j'y vais maintenant. C'était quelqu'un 
 title: Photo03Dialogue
 position: -160,111
 ---
-Sylvia: Un renard !
+Sylvia: Oh oui, je me rappelle. On lui avait peur!
 
 
 ===

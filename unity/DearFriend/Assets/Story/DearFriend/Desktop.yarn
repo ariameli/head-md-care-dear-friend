@@ -41,15 +41,15 @@ position: -272,298
 //<<startPulsating CloseButtonPattern_DI2>>
 
 //(Le fichier s'ouvre. C'est un pdf à propos de "Comment tricoter un chapeau avec des oreilles de chat.")
-//Sylvia: Oh (Surprise). Haha.
+Sylvia: Oh (Surprise). Haha.
 Sylvia: C'est le costume que j'ai fabriqué avec mon amie pour Carnaval l'année passée.
-//Camille: Trop chou! Je suis jalouse. 
-//Sylvia: Je n'en n'ai plus besoin. Tu peux le supprimer.
+Camille: Trop chou! Je suis jalouse. 
+Sylvia: Je n'en n'ai plus besoin. Tu peux le supprimer.
 
-//-> "T'es sûre ?" 
-//    (La caméra zoom in à nouveau, éventuellement)
-//    Sylvia: Oui. S'il te plaît.
-//-> "Ok"
+-> "T'es sûre ?" 
+    <<ZoomOutCamera 27.0 0.02 -0.24 10>>
+    Sylvia: Oui. S'il te plaît.
+> "Ok"
 
 
 //(L'icône de la corbeille "clignote".)
@@ -91,16 +91,16 @@ position: 229,506
 <<setCanClick DocumentIcon_5 false>>
 <<set $opened += 1>>
 (C'est un audio. Des tambours un peu mystiques.)
-//Sylvia: Oh la la. Je ne sais plus ce que c'est.
+Sylvia: Oh la la. Je ne sais plus ce que c'est.
 
-//-> Creuser un peu.
+-> Creuser un peu.
 
-//    Camille: On dirait un rituel chamanique.
-//    Sylvia: Des fantômes...
-//        -> Demander si bon souvenir.
-//        -> Faire une blague.
-//-> Convaincre de le supprimer.
-//    Sylvia: Je suis un peu supersticieuse. Je préfère le garder.
+    Camille: On dirait un rituel chamanique.
+    Sylvia: Des fantômes...
+        -> Demander si bon souvenir.
+        -> Faire une blague.
+-> Convaincre de le supprimer.
+    Sylvia: Je suis un peu supersticieuse. Je préfère le garder.
 
 <<jump Browsing>>
 ===

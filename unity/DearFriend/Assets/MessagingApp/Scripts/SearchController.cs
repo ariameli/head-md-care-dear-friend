@@ -22,6 +22,7 @@ public class SearchController : MonoBehaviour
     [SerializeField] private TMP_Text searchText;
     [SerializeField] private string wordToType = "MEMENTO VIVERE";
     [SerializeField] private float typingSpeed = 0.06f;
+    [SerializeField] private GameObject arrow;
 
     [Header("Results")]
     [SerializeField] private TMP_Text counterText;
@@ -99,6 +100,11 @@ public class SearchController : MonoBehaviour
     {
         currentResult = 0;
         UpdateCounter();
+        if (arrow != null)
+        {
+            arrow.SetActive(false);
+        }
+
         StartCoroutine(TypeSearch());
     }
 
@@ -110,6 +116,14 @@ public class SearchController : MonoBehaviour
         {
             searchText.text += letter;
             yield return new WaitForSeconds(typingSpeed);
+        }
+
+        GoToCurrentResult();
+        StartDialogueForCurrentResult();
+
+        if (arrow != null)
+        {
+            arrow.SetActive(true);
         }
     }
 

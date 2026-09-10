@@ -3,32 +3,26 @@ position: 0,0
 ---
 <<declare $zoom = 0>> // De 0 à 100
 
+// DEBUG
+//<<jump Messagerie_part_1>>
 
-
-//<<SylviaMoves SylviaMesh ChairPos>>
-//<<SylviaSits SylviaMesh>>
-
-// DEBUG JUMPS
 //<<jump ComputerIsWorkingAgain>>
-//<<jump ComputerIsWorkingAgain>>
-//<< jump DeleteHugeFolder>>
-//<<jump ComputerIsWorkingAgain>>
-
-// Sylvia: (avec audio) Mon ordinateur fait un bruit d'aspirateur.
-// Sylvia: (avec audio) Tu peux faire quelque chose ?
 
 //<<PlaySound FX ComputerHumming>>
-//Sylvia: Mon ordinateur fait plus de bruit qu'avant. Vous pouvez me dire pourquoi ? #sound:DialogueSylvia_1
+Sylvia: Mon ordinateur fait plus de bruit qu'avant. Vous pouvez me dire pourquoi ? #sound:DialogueSylvia_1
 
-
-
-
-Sylvia: Allez, on en achète un autre.
 
 //<<PlaySound FX ComputerFanSpeedsUp>> // En attente du vrai son
-//Camille: Il est sur le point de décoller, oui... Je vais voir ce que je peux faire. #sound:DialogueCamille_1
+Camille: Il est sur le point de décoller, oui... Je vais voir ce que je peux faire. #sound:DialogueCamille_1
 
 <<showWarning ErrorBox>>
+
+// Set All Documents to not clickable
+<<setCanClick DocumentIcon_1 false>>
+<<setCanClick DocumentIcon_2 false>>
+<<setCanClick DocumentIcon_3 false>>
+<<setCanClick DocumentIcon_4 false>>
+<<setCanClick DocumentIcon_5 false>>
 
 ===
 title: WarningWindow
@@ -36,10 +30,10 @@ title: WarningWindow
 
 //Computer: Warning : Storage FULL!!! Please make space by deleting unnecessary files.
 
-//<<PlaySound FX Warning>>
-//Camille: On doit faire de la place sur le disque.
-//Sylvia: Faire de la place ? Oh... Ce n'est pas infini la mémoire d'un ordinateur ?
-//Camille: Malheureusement pas. On doit la "nettoyer" de temps en temps.
+<<PlaySound FX Warning>>
+Camille: On doit faire de la place sur le disque.
+Sylvia: Faire de la place ? Oh... Ce n'est pas infini la mémoire d'un ordinateur ?
+Camille: Malheureusement pas. On doit la "nettoyer" de temps en temps.
 
 <<startPulsating CloseButton>>
 <<setCanClickForCloseButton CloseButton true>>
@@ -50,11 +44,11 @@ title: FirstFile
 // NEW ASSET : hard disk icon with warning
 // NEW ASSET: Mail box icon with 200 written in a red cercle
 
-//Camille: Est-ce que je peux supprimer les fichiers qui sont sur ton bureau ?
-//Sylvia: Est-ce que tu peux me montrer ce que c'est d'abord ?
-//Sylvia: Ce fichier-là, par exemple ?
+Camille: Est-ce que je peux supprimer les fichiers qui sont sur ton bureau ?
+Sylvia: Est-ce que tu peux me montrer ce que c'est d'abord ?
+Sylvia: Ce fichier-là, par exemple ?
 
-// NEW ASSET : PDF CONCOURS PHOTO
+// NEW ASSET : PDF CONCOURS PHOTO DEADLINE
 
 <<startPulsatingFile DocumentIcon_1>>
 <<setCanClick DocumentIcon_1 true>>
@@ -69,11 +63,11 @@ title: PhotoContestDeadline
 //-> Cliquer sur le café pour boire une gorgée du café (Audio FX: Slurp). Quand on clique sur le café, le café se vide. 
 
 Sylvia: Oh, non!
-//Camille: Qu'est-ce que c'est ?
-//Sylvia: Un concours photo. Je devais envoyer les photos qu'on avait prises avec mon amie.
-//Camille : La deadline est fixée à aujourd'hui. C'est peut-être pas trop tard.
-//Sylvia: Tu crois ? Les photos sont quelque part sur mon ordinateur.
-//Camille : Mais il faut d'abord régler ce problème de bruit.
+Camille: Qu'est-ce que c'est ?
+Sylvia: Un concours photo. Je devais envoyer les photos qu'on avait prises avec mon amie.
+Camille : La deadline est fixée à aujourd'hui. C'est peut-être pas trop tard.
+Sylvia: Tu crois ? Les photos sont quelque part sur mon ordinateur.
+Camille : Mais il faut d'abord régler ce "problème de bruit".
 
 <<startPulsating CloseButtonPattern>>
 <<setCanClickForCloseButton CloseButtonPattern true>>
@@ -109,42 +103,36 @@ title: ComputerIsWorkingAgain
 // Eventually : fenêtre poubelle se vide.
 // On devrait peut-être vider la corbeille, en fait...
 
-// VIDER LA CORBEILLE
+// VIDER LA CORBEILLE ?
 
-//Camille: Bon, ça fonctionne à nouveau.
-//Sylvia: (Soupir). Mais on a toujours pas les photos. J'étais sûre qu'elles étaient là.
-// Sylvia: Tu les as supprimées par accident ?
-// Camille: J'ai uniquement supprimé ce que tu m'as dit d'effacer!
-// Sylvia: Tu es sûre ? Tu as l'air fatiguée. On peut faire une pause. 
-// Camille: Hum... Je dois partir dans 10 minutes, désolée. J'ai une conférence obligatoire en ligne pour l'uni.
-// Sylvia: Mais, tu as le temps de regarder dans ma messsagerie si les photos pour le concours sont là?
-// Sylvia: Je mets un minuteur.
-// Camille: Ok.
+Camille: Bon, ça fonctionne à nouveau.
+Sylvia: (Soupir). Mais on a toujours pas les photos. J'étais sûre qu'elles étaient là.
+Sylvia: Tu les as supprimées par accident ?
+Camille: J'ai uniquement supprimé ce que tu m'as dit d'effacer!
+Sylvia: Tu es sûre ? Tu as l'air fatiguée. On peut faire une PAUSE. 
+Camille: Hum... Non, désolée. Je dois partir dans 10 minutes. J'ai une conférence obligatoire en ligne pour l'uni.
+Sylvia: Mais, tu as le temps de regarder dans ma messsagerie si les photos pour le concours sont là?
+Sylvia: Je mets un minuteur.
+Camille: Oh. Ok. Ça marche.
+Sylvia: Un peu de technologie.
 
-//<<Start_timer Head>>
+<<Start_timer Head>>
+<<PlaySound FX KitchenTimerTicTac>>
 <<ZoomOutCamera 37.9 0.02 -0.24 10>>
 <<startPulsatingFile MessAppIcon>>
 <<setCanClick MessAppIcon true>>
 // NEW FX : Tic Tac
 
-// NEW ASSET : A chicken-shaped pressure cooker or anything that her grandchildren gifted her -> what do u think ?
-// Sylvia: Un peu de technologie.
-//(Une cocotte-minute en forme de .... ? apparaît sur la table. Elle tourne gentiment et émet un tic tac)
-
-
-//(L'icône de la messagerie clignote.)
-//-> Cliquer sur l'icône de la messagerie.
-
-//<<jump Messagerie_part_1>>
+// MessaginApp Button jumps to MessagingApp_part1
 
 ===
 title: KitchenTimer
 position: 0,0
 ---
 
-//<<Stop_timer Head>>
-
-// (La cocotte minute sonne (Audio FX - Bruit de coq qui chante ? )
+<<Stop_timer Head>>
+<<StopSound FX KitchenTimerTicTac>>
+<<PlaySound FX KitchenTimerDing>>
 Camille: Déjà?!! Mince. Merci pou le café.
 // (Audio FX - Camille range sont sac) 
 Sylvia: Mais on a pas fini. Est-ce que tu peux revenir après ta conférence en ligne ?
