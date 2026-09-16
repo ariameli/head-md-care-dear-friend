@@ -15884,7 +15884,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DayManager
   fadeController: {fileID: 1246725543}
   roomController: {fileID: 703410963}
-  currentDay: 1
+  currentDay: 3
   dialogueRunner: {fileID: 50325755}
   day1DialogueNode: Start
   day2DialogueNode: Part2
