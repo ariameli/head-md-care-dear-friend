@@ -1,0 +1,44 @@
+// Deadline Photo Contest
+// Photos 1/2/3/4
+// Guide about facing assisted suicide
+// Knitting Pattern
+
+
+
+title: EugenieFolder
+---
+
+
+Camille: J'ouvre les fichiers.
+Sylvia: ...
+
+
+===
+
+title: PhotoContestDeadline
+---
+<<setCanClick DocumentIcon_1 false>>
+<<stopPulsatingFile DocumentIcon_1>>
+
+// (La caméra zoom out encore un peu. On voit qu'un café est posé sur la table)
+//-> Cliquer sur le café pour boire une gorgée du café (Audio FX: Slurp). Quand on clique sur le café, le café se vide. 
+
+// Sylvia: Oh, non!
+// Camille: Qu'est-ce que c'est ?
+// Sylvia: Un concours photo. Je devais envoyer les photos qu'on avait prises avec mon amie.
+// Camille : La deadline est fixée à aujourd'hui. C'est peut-être pas trop tard.
+// Sylvia: Tu crois ? Les photos sont quelque part sur mon ordinateur.
+// Camille : Mais il faut d'abord régler ce "problème de bruit".
+
+<<startPulsating CloseButtonPattern>>
+<<setCanClickForCloseButton CloseButtonPattern true>>
+
+===
+
+title: photo1
+---
+
+
+Sylvia : 
+
+=== 
