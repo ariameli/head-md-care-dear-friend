@@ -14882,7 +14882,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DayManager
   fadeController: {fileID: 1246725543}
   roomController: {fileID: 703410963}
-  currentDay: 3
+  currentDay: 1
   dialogueRunner: {fileID: 50325755}
   day1DialogueNode: Start
   day2DialogueNode: Part2
@@ -17926,7 +17926,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8309902628685535410, guid: 52571f68872914e24837210513edea1d, type: 3}
       propertyPath: autoStart
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8309902628685535410, guid: 52571f68872914e24837210513edea1d, type: 3}
+      propertyPath: startNode
+      value: Start
       objectReference: {fileID: 0}
     - target: {fileID: 8309902628685535410, guid: 52571f68872914e24837210513edea1d, type: 3}
       propertyPath: yarnProject
@@ -18067,7 +18071,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CloseWindow
   dialogueRunner: {fileID: 50325755}
   clickNodeName: FirstFile
-  pulseAmount: 0.1
+  pulseAmount: 0.25
   pulseSpeed: 4
   canClick: 0
 --- !u!136 &1628669179
@@ -18561,17 +18565,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13fe411a5dc264e3bb9333191ca24955, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DesktopItem
-  canClick: 0
-  canDrag: 1
+  canClick: 1
+  canDrag: 0
   inputSound: {fileID: 0}
   dialogueRunner: {fileID: 50325755}
-  clickNodeName: PhotoContestDeadline
-  trashNodeName: PasOK
-  trashAfterOpenNodeName: Desktop
+  clickNodeName: fileVirus
+  trashNodeName: fileTaxes
+  trashAfterOpenNodeName: 
   dropElsewhereNodeName: 
   cam: {fileID: 0}
   selectedScaleMultiplier: 1.15
-  fileContentObject: {fileID: 1346308934}
+  fileContentObject: {fileID: 0}
   trashHoverMaterial: {fileID: 2100000, guid: b36fcf5c2b7c3448e880bbf9ef242953, type: 2}
   trashTransform: {fileID: 6645823804667868864}
   trashBigScale: 1.3

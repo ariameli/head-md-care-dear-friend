@@ -4,8 +4,7 @@ position: 0,0
 <<declare $zoom = 0>> // De 0 à 100
 
 // DEBUG
-//<<jump Messagerie_part_1>>
-
+//<<jump fileVirus>>
 //<<jump ComputerIsWorkingAgain>>
 
 //<<PlaySound FX ComputerHumming>>
@@ -14,6 +13,8 @@ Sylvia: Mon ordinateur fait plus de bruit qu'avant. Vous pouvez me dire pourquoi
 
 //<<PlaySound FX ComputerFanSpeedsUp>> // En attente du vrai son
 Camille: Il est sur le point de décoller, oui... Je vais voir ce que je peux faire. #sound:DialogueCamille_1
+Camille : Est-ce qu'on peut se tutoyer ?
+Sylvia: Oui, bien sûr.
 
 <<showWarning ErrorBox>>
 
@@ -31,9 +32,11 @@ title: WarningWindow
 //Computer: Warning : Storage FULL!!! Please make space by deleting unnecessary files.
 
 <<PlaySound FX Warning>>
-Camille: On doit faire de la place sur le disque.
-Sylvia: Faire de la place ? Oh... Ce n'est pas infini la mémoire d'un ordinateur ?
-Camille: Malheureusement pas. On doit la "nettoyer" de temps en temps.
+Camille: Je vois. On doit faire de la place sur le disque.
+Sylvia: Faire de la place ? Je croyais que les ordinateurs étaient virtuels.
+Camille: Il faut quand-même les nettoyer de temps en temps. C'était quand la dernière fois?
+Sylvia: Je l'ai acheté il y a 10 ans. 
+Camille: 10 ans. Ça en fait du chnie.
 
 <<startPulsating CloseButton>>
 <<setCanClickForCloseButton CloseButton true>>
@@ -41,19 +44,42 @@ Camille: Malheureusement pas. On doit la "nettoyer" de temps en temps.
 ===
 title: FirstFile
 ---
-// NEW ASSET : hard disk icon with warning
-// NEW ASSET: Mail box icon with 200 written in a red cercle
-
-Camille: Est-ce que je peux supprimer les fichiers qui sont sur ton bureau ?
-Sylvia: Est-ce que tu peux me montrer ce que c'est d'abord ?
-Sylvia: Ce fichier-là, par exemple ?
-
-// NEW ASSET : PDF CONCOURS PHOTO DEADLINE
+Camille: Commençons tout gentillement.
+Camille: On peut supprimer les fichiers du bureau ?
+Sylvia: Effacer !? Tout ?
+Camille: On peut faire un par un. 
+Sylvia: Ok...
+Sylvia: Celui-là, par exemple ?
 
 <<startPulsatingFile DocumentIcon_1>>
 <<setCanClick DocumentIcon_1 true>>
 
+
 ===
+title: fileVirus
+---
+
+<<setCanClick DocumentIcon_1 true>>
+
+
+Camille: C'est clairement un virus. En plus il est gros.
+Sylvia: Qu'est-ce qu'il faut faire ?
+Camille: Direct à la poubelle.
+
+<<setCanDrag DocumentIcon_1 true>>
+<<startPulsatingFile Trashbin>>
+
+===
+title: fileTaxes
+---
+
+
+Sylvia: Il est parti ?
+Camille: Oui. Ecoute, on entend plus le ventilateur.
+
+===
+
+
 title: PhotoContestDeadline
 ---
 <<setCanClick DocumentIcon_1 false>>
