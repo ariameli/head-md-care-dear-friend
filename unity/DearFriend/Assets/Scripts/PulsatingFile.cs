@@ -19,9 +19,20 @@ public class PulsatingFile : MonoBehaviour
     {
         if (!pulsing) return;
 
-        // Smoothly goes from 1.0 to 1.1 and back
         float scale = 1f + Mathf.Sin(Time.time * pulseSpeed) * pulseAmount;
 
+        if (transform.name.StartsWith("Folder_"))
+        {
+            // Folders pulse on Y and Z while keeping their X scale unchanged.
+            transform.localScale = new Vector3(
+                originalScale.x,
+                originalScale.y * scale,
+                originalScale.z * scale
+            );
+            return;
+        }
+
+        // Documents and other objects keep their original uniform pulse.
         transform.localScale = originalScale * scale;
     }
 

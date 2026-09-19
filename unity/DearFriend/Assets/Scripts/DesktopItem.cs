@@ -39,6 +39,12 @@ public class DesktopItem : MonoBehaviour,
     [Header("Trash Material")]
     public Material trashHoverMaterial;
 
+    [Header("Trash Target")]
+    public GameObject trashObject;
+
+    [Header("Folder Target")]
+    public GameObject folderObject;
+
     [Header("Trash Animation")]
     public Transform trashTransform;
     public float trashBigScale = 1.3f;
@@ -80,6 +86,11 @@ public class DesktopItem : MonoBehaviour,
         if (objectRenderer != null)
         {
             originalMaterials = objectRenderer.materials;
+        }
+
+        if (trashTransform == null && trashObject != null)
+        {
+            trashTransform = trashObject.transform;
         }
 
         if (trashTransform != null)
@@ -313,8 +324,21 @@ public class DesktopItem : MonoBehaviour,
 
         StopTrashPulse();
 
-        if (IsPointerOverTrash(eventData))
+        if (IsPointerOverTrash(eventData) || IsObjectOverTrash())
         {
+            if (folderObject != null)
+            {
+                transform.position = dragStartPosition;
+                ResetMaterial();
+
+                if (dialogueRunner != null && !string.IsNullOrEmpty(trashNodeName))
+                {
+                    dialogueRunner.StartDialogue(trashNodeName);
+                }
+
+                return;
+            }
+
             // Block deletion only on the first trash attempt if the file has never been opened
             if (isFirstInteraction && !hasOpenedFile)
             {
@@ -352,7 +376,19 @@ public class DesktopItem : MonoBehaviour,
             return;
         }
 
-        // If dropped somewhere else, stay there
+        if (IsPointerOverFolder(eventData))
+        {
+            if (dialogueRunner != null && !string.IsNullOrEmpty(trashNodeName))
+            {
+                dialogueRunner.StartDialogue(trashNodeName);
+            }
+
+            Destroy(gameObject);
+            return;
+        }
+
+        // Invalid drop: snap the item back to its position before dragging.
+        transform.position = dragStartPosition;
         ResetMaterial();
 
         if (dialogueRunner != null && !string.IsNullOrEmpty(dropElsewhereNodeName))
@@ -379,11 +415,71 @@ public class DesktopItem : MonoBehaviour,
 
     bool IsPointerOverTrash(PointerEventData eventData)
     {
+        if (folderObject != null)
+        {
+            return false;
+        }
+
+        if (IsPointerOverTarget(eventData, trashObject, "Trash"))
+        {
+            return true;
+        }
+
+        return false;
+    }
+
+    bool IsObjectOverTrash()
+    {
+        if (trashObject == null)
+        {
+            return false;
+        }
+
+        Collider[] fileColliders = GetComponentsInChildren<Collider>();
+        Collider[] trashColliders = trashObject.GetComponentsInChildren<Collider>();
+
+        foreach (Collider fileCollider in fileColliders)
+        {
+            foreach (Collider trashCollider in trashColliders)
+            {
+                if (fileCollider.bounds.Intersects(trashCollider.bounds))
+                {
+                    return true;
+                }
+            }
+        }
+
+        return false;
+    }
+
+    bool IsPointerOverFolder(PointerEventData eventData)
+    {
+        if (folderObject == null)
+        {
+            return false;
+        }
+
+        return IsPointerOverTarget(eventData, folderObject, null);
+    }
+
+    bool IsPointerOverTarget(PointerEventData eventData, GameObject targetObject, string targetTag)
+    {
         Ray ray = cam.ScreenPointToRay(eventData.position);
 
-        if (Physics.Raycast(ray, out RaycastHit hit))
+        foreach (RaycastHit hit in Physics.RaycastAll(ray))
         {
-            return hit.collider.CompareTag("Trash");
+            if (targetObject != null &&
+                (hit.collider.transform == targetObject.transform ||
+                 hit.collider.transform.IsChildOf(targetObject.transform)))
+            {
+                return true;
+            }
+
+            if (targetObject == null && !string.IsNullOrEmpty(targetTag) &&
+                hit.collider.CompareTag(targetTag))
+            {
+                return true;
+            }
         }
 
         return false;

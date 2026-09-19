@@ -3,10 +3,8 @@ position: 0,0
 ---
 <<declare $zoom = 0>> // De 0 à 100
 
-<<startPulsatingFile PDF_urgent>>
-
 // DEBUG
-<<jump FirstFile>>
+<<jump FileAssurance>>
 
 //<<PlaySound FX ComputerHumming>>
 Sylvia: Mon ordinateur fait plus de bruit qu'avant. Vous pouvez me dire pourquoi ? #sound:DialogueSylvia_1
@@ -20,18 +18,25 @@ Sylvia: Oui, bien sûr.
 <<showWarning ErrorBox>>
 
 // Set All Documents to not clickable
-<<setCanClick PDF_cineCLub false>>
-<<setCanClick DocumentIcon_2 false>>
-<<setCanClick DocumentIcon_3 false>>
-<<setCanClick DocumentIcon_4 false>>
-<<setCanClick DocumentIcon_5 false>>
+
+<<setCanClick PDF_lecture false>>
+<<setCanClick PDF_facture false>>
+<<setCanClick PDF_assurance false>>
+<<setCanClick PDF_urgent false>>
+
+<<setCanClick Folder_Divers false>>
+<<setCanClick Folder_Factures false>>
+<<setCanClick Folder_Famille false>>
+<<setCanClick Folder_Impots false>>
+<<setCanClick Folder_Eugenie false>>
+
+<<setCanClick Trashbin false>>
 
 ===
 title: WarningWindow
 ---
 
 //Computer: Warning : Storage FULL!!! Please make space by deleting unnecessary files.
-
 <<PlaySound FX Warning>>
 Camille: Je vois. On doit faire de la place sur le disque.
 Sylvia: Faire de la place ? Je croyais que les ordinateurs, c’était virtuel..
@@ -43,7 +48,7 @@ Camille: 10 ?! Ça en fait du chnie!
 <<setCanClickForCloseButton CloseButton true>>
 
 ===
-title: FirstFile
+title: StartDeleteFiles
 ---
 Camille: Je peux effacer des fichiers ?
 Sylvia: Effacer !? Tout ?
@@ -51,46 +56,63 @@ Camille: Non, non. On peut les supprimer un par un.
 Sylvia: Ok...
 Sylvia: Celui-là, par exemple ?
 
-<<startPulsatingFile PDF_cineCLub>>
-<<setCanClick PDF_cineCLub true>>
-
+<<startPulsatingFile PDF_lecture>>
+<<setCanClick PDF_lecture true>>
 
 ===
-title: fileVirus
+title: FileLecture
 ---
+// File 1 -> Trashed
 
-<<setCanClick PDF_cineCLub true>>
+<<stopPulsatingFile PDF_lecture>>
+Sylvia: Ah, c'est le programme du Club de lecture.
+Sylvia: Tu peux le supprimer. Je n'y vais jamais.
 
-Camille: C'est clairement un virus. Un gros, en plus.
-Sylvia: Qu'est-ce qu'il faut faire ?
-Camille: Direct à la poubelle. // Poubelle.
-
-<<setCanDrag PDF_cineCLub true>>
 <<startPulsatingFile Trashbin>>
+<<setCanDrag PDF_lecture true>>
+
+===
+title: FileAssurance
+---
+// Fichier 2 -> Folder_divers
+Camille: Assurance ?
+Sylvia: Il faut garder ça. Tu peux le mettre dans un dossier ?
+Camille: Lequel ? Il n'y a pas "Assurances".
+Sylvia: Divers, alors.
+
+<<stopPulsatingFile Trashbin>>
+<<startPulsatingFile PDF_assurance>>
+<<setCanDrag PDF_assurance true>>
 
 ===
 
-title: fileTaxes
+title: FileFacture
 ---
 
-<<stoptPulsatingFile Trashbin>>
-Sylvia: Il est parti ?
-Camille: Oui. Écoute, on entend plus le ventilateur.
-
+//<<stoptPulsatingFile Trashbin>>
+Camille: Coucou.
 // Then Eugenie
 
 ===
-
-title: fileAssurance
+title: FileVirus
 ---
-Camille: LOL
-===
 
+Camille: C'est clairement un virus. Un gros, en plus.
+Sylvia: Qu'est-ce qu'il faut faire ?
+Camille: Poubelle. // Directe à la poubelle.
+
+===
+title: EugineFolderDiscovery
+---
+
+Sylvia: Il est parti ?
+Camille: Oui. Écoute, on entend plus le ventilateur.
+
+===
 
 title: PhotoContestDeadline
 ---
-<<setCanClick PDF_cineCLub false>>
-<<stopPulsatingFile PDF_cineCLub>>
+
 
 // (La caméra zoom out encore un peu. On voit qu'un café est posé sur la table)
 //-> Cliquer sur le café pour boire une gorgée du café (Audio FX: Slurp). Quand on clique sur le café, le café se vide. 
@@ -104,17 +126,6 @@ Camille : Mais il faut d'abord régler ce "problème de bruit".
 
 <<startPulsating CloseButtonPattern>>
 <<setCanClickForCloseButton CloseButtonPattern true>>
-
-===
-title: DeleteFirstFile
----
-
-Camille: Je supprime le fichier.
-
-<<startPulsatingFile PDF_cineCLub>>
-<<startPulsatingFile Trashbin>>
-<<setCanDrag PDF_cineCLub true>>
-// Jump at Desktop
 
 ===
 title: ComputerStillInPain
