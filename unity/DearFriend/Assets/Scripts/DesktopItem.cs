@@ -44,11 +44,17 @@ public class DesktopItem : MonoBehaviour,
 
     [Header("Folder Target")]
     public GameObject folderObject;
+    public Material folderHoverMaterial;
 
     [Header("Trash Animation")]
     public Transform trashTransform;
     public float trashBigScale = 1.3f;
     public float trashPulseDuration = 1f;
+
+    [Header("Folder Animation")]
+    public Transform folderTransform;
+    public float folderBigScale = 1.3f;
+    public float folderPulseDuration = 1f;
 
     private Vector3 originalScale;
     private Vector3 dragStartPosition;
@@ -59,10 +65,13 @@ public class DesktopItem : MonoBehaviour,
 
     private Vector3 trashOriginalScale;
     private Coroutine trashPulseCoroutine;
+    private Vector3 folderOriginalScale;
+    private Coroutine folderPulseCoroutine;
 
     private bool isDragging;
     private bool wasDragged;
     private bool isOverTrash;
+    private bool isOverFolder;
 
     // Track first interaction for blocking initial trash attempt
     private bool isFirstInteraction = true;
@@ -96,6 +105,16 @@ public class DesktopItem : MonoBehaviour,
         if (trashTransform != null)
         {
             trashOriginalScale = trashTransform.localScale;
+        }
+
+        if (folderTransform == null && folderObject != null)
+        {
+            folderTransform = folderObject.transform;
+        }
+
+        if (folderTransform != null)
+        {
+            folderOriginalScale = folderTransform.localScale;
         }
 
         // Get AudioSource from this GameObject
@@ -136,6 +155,7 @@ public class DesktopItem : MonoBehaviour,
 
         // Start trash animation while player is holding this item
         StartTrashPulse();
+        StartFolderPulse();
     }
 
     public void OnPointerUp(PointerEventData eventData)
@@ -146,6 +166,7 @@ public class DesktopItem : MonoBehaviour,
         }
         // Stop trash animation when player releases
         StopTrashPulse();
+        StopFolderPulse();
 
         // If it was only a click, scale back down
         if (!isDragging)
@@ -309,7 +330,7 @@ public class DesktopItem : MonoBehaviour,
             );
         }
 
-        CheckTrashHover(eventData);
+        CheckDropTargetHover(eventData);
     }
 
     public void OnEndDrag(PointerEventData eventData)
@@ -323,43 +344,27 @@ public class DesktopItem : MonoBehaviour,
         transform.localScale = originalScale;
 
         StopTrashPulse();
+        StopFolderPulse();
 
-        if (IsPointerOverTrash(eventData) || IsObjectOverTrash())
+        bool droppedOnTrash = folderObject == null &&
+            (IsPointerOverTrash(eventData) || IsObjectOverTrash());
+
+        if (folderObject != null && IsObjectOverTrash())
         {
-            if (folderObject != null)
+            transform.position = dragStartPosition;
+            ResetMaterial();
+
+            if (dialogueRunner != null && !string.IsNullOrEmpty(trashNodeName))
             {
-                transform.position = dragStartPosition;
-                ResetMaterial();
-
-                if (dialogueRunner != null && !string.IsNullOrEmpty(trashNodeName))
-                {
-                    dialogueRunner.StartDialogue(trashNodeName);
-                }
-
-                return;
+                dialogueRunner.StartDialogue(trashNodeName);
             }
 
-            // Block deletion only on the first trash attempt if the file has never been opened
-            if (isFirstInteraction && !hasOpenedFile)
-            {
-                // Return file to original position
-                transform.position = dragStartPosition;
-                
-                // Mark first interaction as complete
-                isFirstInteraction = false;
-                
-                // Reset material and trigger the first-time trash response
-                ResetMaterial();
-                
-                if (dialogueRunner != null && !string.IsNullOrEmpty(trashNodeName))
-                {
-                    dialogueRunner.StartDialogue(trashNodeName);
-                }
-                
-                return;
-            }
+            return;
+        }
 
-            // Choose the correct trash node after the file has been opened
+        if (droppedOnTrash)
+        {
+            // Choose the correct trash node based on whether the file was opened.
             string nodeToPlay = trashNodeName;
 
             if (hasOpenedFile && !string.IsNullOrEmpty(trashAfterOpenNodeName))
@@ -397,18 +402,25 @@ public class DesktopItem : MonoBehaviour,
         }
     }
 
-    void CheckTrashHover(PointerEventData eventData)
+    void CheckDropTargetHover(PointerEventData eventData)
     {
         bool currentlyOverTrash = IsPointerOverTrash(eventData);
+        bool currentlyOverFolder = IsPointerOverFolder(eventData);
 
-        if (currentlyOverTrash && !isOverTrash)
+        if (currentlyOverFolder && !isOverFolder)
+        {
+            isOverFolder = true;
+            isOverTrash = false;
+            SetAllMaterials(folderHoverMaterial);
+        }
+        else if (currentlyOverTrash && !isOverTrash)
         {
             isOverTrash = true;
+            isOverFolder = false;
             SetAllMaterials(trashHoverMaterial);
         }
-        else if (!currentlyOverTrash && isOverTrash)
+        else if (!currentlyOverTrash && !currentlyOverFolder && (isOverTrash || isOverFolder))
         {
-            isOverTrash = false;
             ResetMaterial();
         }
     }
@@ -510,6 +522,7 @@ public class DesktopItem : MonoBehaviour,
         }
 
         isOverTrash = false;
+        isOverFolder = false;
     }
 
     void StartTrashPulse()
@@ -541,6 +554,35 @@ public class DesktopItem : MonoBehaviour,
         }
     }
 
+    void StartFolderPulse()
+    {
+        if (folderTransform == null)
+        {
+            return;
+        }
+
+        if (folderPulseCoroutine != null)
+        {
+            StopCoroutine(folderPulseCoroutine);
+        }
+
+        folderPulseCoroutine = StartCoroutine(FolderPulseLoop());
+    }
+
+    void StopFolderPulse()
+    {
+        if (folderPulseCoroutine != null)
+        {
+            StopCoroutine(folderPulseCoroutine);
+            folderPulseCoroutine = null;
+        }
+
+        if (folderTransform != null)
+        {
+            folderTransform.localScale = folderOriginalScale;
+        }
+    }
+
     IEnumerator TrashPulseLoop()
     {
         Vector3 bigScale = trashOriginalScale * trashBigScale;
@@ -549,6 +591,17 @@ public class DesktopItem : MonoBehaviour,
         {
             yield return ScaleTrash(trashOriginalScale, bigScale, trashPulseDuration);
             yield return ScaleTrash(bigScale, trashOriginalScale, trashPulseDuration);
+        }
+    }
+
+    IEnumerator FolderPulseLoop()
+    {
+        Vector3 bigScale = folderOriginalScale * folderBigScale;
+
+        while (true)
+        {
+            yield return ScaleFolder(folderOriginalScale, bigScale, folderPulseDuration);
+            yield return ScaleFolder(bigScale, folderOriginalScale, folderPulseDuration);
         }
     }
 
@@ -568,5 +621,23 @@ public class DesktopItem : MonoBehaviour,
         }
 
         trashTransform.localScale = toScale;
+    }
+
+    IEnumerator ScaleFolder(Vector3 fromScale, Vector3 toScale, float duration)
+    {
+        float timer = 0f;
+
+        while (timer < duration)
+        {
+            timer += Time.deltaTime;
+
+            float t = timer / duration;
+
+            folderTransform.localScale = Vector3.Lerp(fromScale, toScale, t);
+
+            yield return null;
+        }
+
+        folderTransform.localScale = toScale;
     }
 }

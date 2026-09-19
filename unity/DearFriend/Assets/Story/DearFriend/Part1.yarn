@@ -4,7 +4,7 @@ position: 0,0
 <<declare $zoom = 0>> // De 0 à 100
 
 // DEBUG
-<<jump FileAssurance>>
+<<jump StartDeleteFiles>>
 
 //<<PlaySound FX ComputerHumming>>
 Sylvia: Mon ordinateur fait plus de bruit qu'avant. Vous pouvez me dire pourquoi ? #sound:DialogueSylvia_1
@@ -75,31 +75,44 @@ Sylvia: Tu peux le supprimer. Je n'y vais jamais.
 title: FileAssurance
 ---
 // Fichier 2 -> Folder_divers
+<<startPulsatingFile PDF_assurance>>
+<<stopPulsatingFile Trashbin>>
 Camille: Assurance ?
 Sylvia: Il faut garder ça. Tu peux le mettre dans un dossier ?
 Camille: Lequel ? Il n'y a pas "Assurances".
 Sylvia: Divers, alors.
 
-<<stopPulsatingFile Trashbin>>
-<<startPulsatingFile PDF_assurance>>
+
 <<setCanDrag PDF_assurance true>>
 
 ===
-
 title: FileFacture
 ---
 
-//<<stoptPulsatingFile Trashbin>>
-Camille: Coucou.
-// Then Eugenie
+<<startPulsatingFile PDF_facture>>
+// Fichier 3 -> Folder_facture
+Camille: Facture ?
+Sylvia: Facture.
+
+<<setCanDrag PDF_facture true>>
 
 ===
 title: FileVirus
 ---
 
-Camille: C'est clairement un virus. Un gros, en plus.
+
+Camille: Hum... Je pense avoir trouvé le responsable.
+Sylvia: Ah, oui ?!
+Camille: Regarde ce fichier, c'est clairement un virus.
+
+<<startPulsatingFile PDF_urgent>>
+
 Sylvia: Qu'est-ce qu'il faut faire ?
-Camille: Poubelle. // Directe à la poubelle.
+Camille: Poubelle.
+
+<<stopPulsatingFile PDF_urgent>>
+//<<setCanClick PDF_urgent true>>
+<<setCanDrag PDF_urgent true>>
 
 ===
 title: EugineFolderDiscovery
