@@ -5,7 +5,6 @@ position: 0,0
 
 // DEBUG
 //<<jump fileVirus>>
-//<<jump ComputerIsWorkingAgain>>
 
 //<<PlaySound FX ComputerHumming>>
 Sylvia: Mon ordinateur fait plus de bruit qu'avant. Vous pouvez me dire pourquoi ? #sound:DialogueSylvia_1
@@ -33,10 +32,10 @@ title: WarningWindow
 
 <<PlaySound FX Warning>>
 Camille: Je vois. On doit faire de la place sur le disque.
-Sylvia: Faire de la place ? Je croyais que les ordinateurs étaient virtuels.
+Sylvia: Faire de la place ? Je croyais que les ordinateurs, c’était virtuel..
 Camille: Il faut quand-même les nettoyer de temps en temps. C'était quand la dernière fois?
-Sylvia: Je l'ai acheté il y a 10 ans. 
-Camille: 10 ans. Ça en fait du chnie.
+Sylvia: Je l'ai acheté il y a 10 ans.
+Camille: 10 ?! Ça en fait du chnie!
 
 <<startPulsating CloseButton>>
 <<setCanClickForCloseButton CloseButton true>>
@@ -44,7 +43,6 @@ Camille: 10 ans. Ça en fait du chnie.
 ===
 title: FirstFile
 ---
-Camille: Commençons tout gentillement.
 Camille: On peut supprimer les fichiers du bureau ?
 Sylvia: Effacer !? Tout ?
 Camille: On peut faire un par un. 
@@ -61,23 +59,28 @@ title: fileVirus
 
 <<setCanClick DocumentIcon_1 true>>
 
-
-Camille: C'est clairement un virus. En plus il est gros.
+Camille: C'est clairement un virus. Un gros, en plus.
 Sylvia: Qu'est-ce qu'il faut faire ?
-Camille: Direct à la poubelle.
+Camille: Direct à la poubelle. // Poubelle.
 
 <<setCanDrag DocumentIcon_1 true>>
 <<startPulsatingFile Trashbin>>
 
 ===
+
 title: fileTaxes
 ---
 
-
+<<stoptPulsatingFile Trashbin>>
 Sylvia: Il est parti ?
-Camille: Oui. Ecoute, on entend plus le ventilateur.
+Camille: Oui. Écoute, on entend plus le ventilateur.
+
+// Then Eugenie
 
 ===
+
+title: file
+
 
 
 title: PhotoContestDeadline
