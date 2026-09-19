@@ -3,8 +3,10 @@ position: 0,0
 ---
 <<declare $zoom = 0>> // De 0 à 100
 
+<<startPulsatingFile PDF_urgent>>
+
 // DEBUG
-//<<jump fileVirus>>
+<<jump FirstFile>>
 
 //<<PlaySound FX ComputerHumming>>
 Sylvia: Mon ordinateur fait plus de bruit qu'avant. Vous pouvez me dire pourquoi ? #sound:DialogueSylvia_1
@@ -18,7 +20,7 @@ Sylvia: Oui, bien sûr.
 <<showWarning ErrorBox>>
 
 // Set All Documents to not clickable
-<<setCanClick DocumentIcon_1 false>>
+<<setCanClick PDF_cineCLub false>>
 <<setCanClick DocumentIcon_2 false>>
 <<setCanClick DocumentIcon_3 false>>
 <<setCanClick DocumentIcon_4 false>>
@@ -43,27 +45,27 @@ Camille: 10 ?! Ça en fait du chnie!
 ===
 title: FirstFile
 ---
-Camille: On peut supprimer les fichiers du bureau ?
+Camille: Je peux effacer des fichiers ?
 Sylvia: Effacer !? Tout ?
-Camille: On peut faire un par un. 
+Camille: Non, non. On peut les supprimer un par un. 
 Sylvia: Ok...
 Sylvia: Celui-là, par exemple ?
 
-<<startPulsatingFile DocumentIcon_1>>
-<<setCanClick DocumentIcon_1 true>>
+<<startPulsatingFile PDF_cineCLub>>
+<<setCanClick PDF_cineCLub true>>
 
 
 ===
 title: fileVirus
 ---
 
-<<setCanClick DocumentIcon_1 true>>
+<<setCanClick PDF_cineCLub true>>
 
 Camille: C'est clairement un virus. Un gros, en plus.
 Sylvia: Qu'est-ce qu'il faut faire ?
 Camille: Direct à la poubelle. // Poubelle.
 
-<<setCanDrag DocumentIcon_1 true>>
+<<setCanDrag PDF_cineCLub true>>
 <<startPulsatingFile Trashbin>>
 
 ===
@@ -79,14 +81,16 @@ Camille: Oui. Écoute, on entend plus le ventilateur.
 
 ===
 
-title: file
-
+title: fileAssurance
+---
+Camille: LOL
+===
 
 
 title: PhotoContestDeadline
 ---
-<<setCanClick DocumentIcon_1 false>>
-<<stopPulsatingFile DocumentIcon_1>>
+<<setCanClick PDF_cineCLub false>>
+<<stopPulsatingFile PDF_cineCLub>>
 
 // (La caméra zoom out encore un peu. On voit qu'un café est posé sur la table)
 //-> Cliquer sur le café pour boire une gorgée du café (Audio FX: Slurp). Quand on clique sur le café, le café se vide. 
@@ -107,9 +111,9 @@ title: DeleteFirstFile
 
 Camille: Je supprime le fichier.
 
-<<startPulsatingFile DocumentIcon_1>>
+<<startPulsatingFile PDF_cineCLub>>
 <<startPulsatingFile Trashbin>>
-<<setCanDrag DocumentIcon_1 true>>
+<<setCanDrag PDF_cineCLub true>>
 // Jump at Desktop
 
 ===
