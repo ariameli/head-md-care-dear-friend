@@ -54,7 +54,7 @@ Camille: Je peux effacer des fichiers ?
 Sylvia: Effacer !? Tout ?
 Camille: Non, non. On peut les supprimer un par un. 
 Sylvia: Ok...
-Sylvia: Celui-là, par exemple ?
+Sylvia: Tu peux me montrer ce que c'est ?
 
 <<startPulsatingFile PDF_lecture>>
 <<setCanClick PDF_lecture true>>
@@ -63,7 +63,7 @@ Sylvia: Celui-là, par exemple ?
 title: FileLecture
 ---
 // File 1 -> Trashed
-
+<<setCanClick PDF_lecture false>>
 <<stopPulsatingFile PDF_lecture>>
 Sylvia: Ah, c'est le programme du Club de lecture.
 Sylvia: Tu peux le supprimer. Je n'y vais jamais.
@@ -120,9 +120,23 @@ title: EugineFolderDiscovery
 
 Sylvia: Il est parti ?
 Camille: Oui. Écoute, on entend plus le ventilateur.
+Sylvia: Génial! Merci. 
+Camille: Mais on doit encore faire de la place.
+Sylvia: ... Est-ce vraiment nécessaire?
+Camille: Oui, malheureusement.
+Camille: Y'a quoi dans "Eugénie" ?
+Sylvia: On peut regarder.
+
+<<startPulsatingFile Folder_Eugenie>>
+<<setCanClick Folder_Eugenie true>>
 
 ===
+title: EugenieFolderOpened
+---
 
+
+
+===
 title: PhotoContestDeadline
 ---
 
