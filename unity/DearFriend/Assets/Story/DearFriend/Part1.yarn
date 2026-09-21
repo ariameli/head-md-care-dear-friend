@@ -4,7 +4,7 @@ position: 0,0
 <<declare $zoom = 0>> // De 0 à 100
 
 // DEBUG
-<<jump StartDeleteFiles>>
+<<jump EugenieFolderOpened>>
 
 //<<PlaySound FX ComputerHumming>>
 Sylvia: Mon ordinateur fait plus de bruit qu'avant. Vous pouvez me dire pourquoi ? #sound:DialogueSylvia_1
@@ -135,10 +135,27 @@ title: EugenieFolderOpened
 ---
 
 <<stopPulsatingFile Folder_Eugenie>>
-<<setCanClick Folder_Eugenie false>>
+//<<setCanClick Folder_Eugenie false>>
 
 
-Sylvia: Oh. J'avais oublié tout ça.
+Sylvia: Oh. Non. Qu'est-ce qu'est ?
+
+<<setCanClick filename3d-guide true>>
+<<setCanClick filename3d-tuto true>>
+<<setCanClick filename3d-concours true>>
+<<setCanClick filename3d-photo01 true>>
+<<setCanClick filename3d-photo02 true>>
+<<setCanClick filename3d-photo03 true>>
+<<setCanClick filename3d-photo04 true>>
+
+
+camille: What?
+
+===
+title: template
+---
+
+Camille: ras le bol.
 
 ===
 title: PhotoContestDeadline
