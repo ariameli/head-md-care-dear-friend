@@ -36,6 +36,9 @@ public class DesktopItem : MonoBehaviour,
     [Header("Open File Object")]
     public GameObject fileContentObject;
 
+    [Header("Asset Disabled While Open")]
+    public GameObject assetToDisableWhenOpen;
+
     [Header("Trash Material")]
     public Material trashHoverMaterial;
 
@@ -249,6 +252,16 @@ public class DesktopItem : MonoBehaviour,
             }
 
             fileContentObject.SetActive(true);
+
+            if (assetToDisableWhenOpen != null)
+            {
+                assetToDisableWhenOpen.SetActive(false);
+            }
+
+            foreach (var closeWindow in fileContentObject.GetComponentsInChildren<CloseWindow>(true))
+            {
+                closeWindow.SetAssetToEnableOnClose(assetToDisableWhenOpen);
+            }
         }
 
         // Start Yarn dialogue for clicking/opening this file

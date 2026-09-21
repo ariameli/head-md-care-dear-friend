@@ -12,6 +12,8 @@ public class CloseWindow : MonoBehaviour, IPointerClickHandler
 
     public bool canClick = false;
 
+    private GameObject assetToEnableOnClose;
+
     Vector3 originalScale;
     bool pulsing = false;
 
@@ -48,9 +50,20 @@ public class CloseWindow : MonoBehaviour, IPointerClickHandler
         canClick = value;
     }
 
+    public void SetAssetToEnableOnClose(GameObject asset)
+    {
+        assetToEnableOnClose = asset;
+    }
+
     public void OnPointerClick(PointerEventData eventData)
     {
         if (!canClick) return;
+
+        if (assetToEnableOnClose != null)
+        {
+            assetToEnableOnClose.SetActive(true);
+        }
+
         Destroy(transform.parent.gameObject);
         //start the node specified in clickNodeName
         if (dialogueRunner != null && !string.IsNullOrEmpty(clickNodeName))

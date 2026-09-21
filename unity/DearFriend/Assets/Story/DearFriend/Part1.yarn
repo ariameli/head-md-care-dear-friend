@@ -134,7 +134,11 @@ Sylvia: On peut regarder.
 title: EugenieFolderOpened
 ---
 
+<<stopPulsatingFile Folder_Eugenie>>
+<<setCanClick Folder_Eugenie false>>
 
+
+Sylvia: Oh. J'avais oublié tout ça.
 
 ===
 title: PhotoContestDeadline
