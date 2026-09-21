@@ -432,7 +432,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &51655638
 Transform:
   m_ObjectHideFlags: 0
@@ -3582,7 +3582,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 70fb762614c79a94b8b0b15efb379f8d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.296
+      value: 1.297
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 70fb762614c79a94b8b0b15efb379f8d, type: 3}
       propertyPath: m_LocalPosition.y
@@ -7516,7 +7516,7 @@ MonoBehaviour:
   canDrag: 0
   inputSound: {fileID: 0}
   dialogueRunner: {fileID: 50325755}
-  clickNodeName: template
+  clickNodeName: concoursPDF
   trashNodeName: 
   trashAfterOpenNodeName: 
   dropElsewhereNodeName: 
@@ -9078,7 +9078,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 77ee06899f8148044a9c81121752538e, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4865064391339405807, guid: 77ee06899f8148044a9c81121752538e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9102,6 +9102,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 77ee06899f8148044a9c81121752538e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 854063666}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 77ee06899f8148044a9c81121752538e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 854063667}
     - targetCorrespondingSourceObject: {fileID: -2511240423080479738, guid: 77ee06899f8148044a9c81121752538e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1209344949}
@@ -9139,13 +9142,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DayTransform
   day1:
     target: {fileID: 854063663}
-    visible: 1
+    visible: 0
   day2:
     target: {fileID: 854063663}
     visible: 0
   day3:
     target: {fileID: 854063663}
     visible: 0
+--- !u!114 &854063667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 492141935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae1229725ff48439ab0e0039ec78d600, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ObjectAppears
+  dialogueRunner: {fileID: 50325755}
+  dialogueNodeName: concoursPDF
+  objectToActivate: {fileID: 492141935}
 --- !u!1001 &875461490
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9684,7 +9702,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 70fb762614c79a94b8b0b15efb379f8d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.296
+      value: 1.297
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 70fb762614c79a94b8b0b15efb379f8d, type: 3}
       propertyPath: m_LocalPosition.y
@@ -13413,7 +13431,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6fa8f14da094579439e9d79cd72a94ca, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.1244
+      value: -0.125
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6fa8f14da094579439e9d79cd72a94ca, type: 3}
       propertyPath: m_LocalPosition.z
@@ -13843,7 +13861,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 70fb762614c79a94b8b0b15efb379f8d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.279
+      value: 1.28
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 70fb762614c79a94b8b0b15efb379f8d, type: 3}
       propertyPath: m_LocalPosition.y
@@ -15133,7 +15151,7 @@ MonoBehaviour:
   canDrag: 0
   inputSound: {fileID: 0}
   dialogueRunner: {fileID: 50325755}
-  clickNodeName: template
+  clickNodeName: Photo01
   trashNodeName: 
   trashAfterOpenNodeName: 
   dropElsewhereNodeName: 
@@ -17994,8 +18012,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.6682024, y: 0.18012314, z: 1.4342841e-10}
-  m_Center: {x: -0.7478169, y: -0.083117686, z: 0.00000008445545}
+  m_Size: {x: 3.6682024, y: 0.01811373, z: 1.3135453}
+  m_Center: {x: 0.00000004099304, y: 0.002232143, z: -0.65678024}
 --- !u!82 &1768024959
 AudioSource:
   m_ObjectHideFlags: 0
@@ -18109,7 +18127,7 @@ MonoBehaviour:
   canDrag: 0
   inputSound: {fileID: 0}
   dialogueRunner: {fileID: 50325755}
-  clickNodeName: template
+  clickNodeName: Photo04
   trashNodeName: 
   trashAfterOpenNodeName: 
   dropElsewhereNodeName: 
@@ -18448,7 +18466,7 @@ MonoBehaviour:
   canDrag: 0
   inputSound: {fileID: 0}
   dialogueRunner: {fileID: 50325755}
-  clickNodeName: template
+  clickNodeName: Photo02
   trashNodeName: 
   trashAfterOpenNodeName: 
   dropElsewhereNodeName: 
@@ -21512,7 +21530,7 @@ MonoBehaviour:
   canDrag: 0
   inputSound: {fileID: 0}
   dialogueRunner: {fileID: 50325755}
-  clickNodeName: template
+  clickNodeName: Photo03
   trashNodeName: 
   trashAfterOpenNodeName: 
   dropElsewhereNodeName: 
@@ -24490,7 +24508,7 @@ MonoBehaviour:
   dropElsewhereNodeName: 
   cam: {fileID: 0}
   selectedScaleMultiplier: 1.15
-  fileContentObject: {fileID: 0}
+  fileContentObject: {fileID: 51655637}
   assetToDisableWhenOpen: {fileID: 3655000510665859825}
   trashHoverMaterial: {fileID: 0}
   trashObject: {fileID: 0}
@@ -24630,6 +24648,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9090317204097134720}
+  - component: {fileID: 9090317204097134721}
   m_Layer: 0
   m_Name: 20260914_LunchBox_V001
   m_TagString: Untagged
@@ -24715,6 +24734,27 @@ Transform:
   - {fileID: 4970958004429193771}
   m_Father: {fileID: 2097498063}
   m_LocalEulerAnglesHint: {x: 0, y: 44.63, z: 0}
+--- !u!114 &9090317204097134721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8461309294735043130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 777bff9e8b47e3f4e8120ca41447b4bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DayTransform
+  day1:
+    target: {fileID: 0}
+    visible: 0
+  day2:
+    target: {fileID: 0}
+    visible: 1
+  day3:
+    target: {fileID: 0}
+    visible: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

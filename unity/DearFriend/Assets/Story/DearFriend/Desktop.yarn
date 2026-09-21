@@ -2,6 +2,9 @@ title: Desktop
 position: -63,-228
 ---
 
+
+<<activateObject CookingTimer>>
+
 <<declare $opened= 0>>
 <<stopPulsatingFile Trashbin>>
 //<<debugOpened>>

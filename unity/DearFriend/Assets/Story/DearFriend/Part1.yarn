@@ -4,7 +4,7 @@ position: 0,0
 <<declare $zoom = 0>> // De 0 à 100
 
 // DEBUG
-<<jump EugenieFolderOpened>>
+<<jump EugineFolderDiscovery>>
 
 //<<PlaySound FX ComputerHumming>>
 Sylvia: Mon ordinateur fait plus de bruit qu'avant. Vous pouvez me dire pourquoi ? #sound:DialogueSylvia_1
@@ -82,7 +82,6 @@ Sylvia: Il faut garder ça. Tu peux le mettre dans un dossier ?
 Camille: Lequel ? Il n'y a pas "Assurances".
 Sylvia: Divers, alors.
 
-
 <<setCanDrag PDF_assurance true>>
 
 ===
@@ -99,7 +98,6 @@ Sylvia: Facture.
 ===
 title: FileVirus
 ---
-
 
 Camille: Hum... Je pense avoir trouvé le responsable.
 Sylvia: Ah, oui ?!
@@ -118,62 +116,17 @@ Camille: Poubelle.
 title: EugineFolderDiscovery
 ---
 
+
 Sylvia: Il est parti ?
 Camille: Oui. Écoute, on entend plus le ventilateur.
-Sylvia: Génial! Merci. 
+Sylvia: Génial! Merci.
+<<ZoomOutCamera 37.9 0.02 -0.24 10>>
 Camille: Mais on doit encore faire de la place.
-Sylvia: ... Est-ce vraiment nécessaire?
-Camille: Oui, malheureusement.
-Camille: Y'a quoi dans "Eugénie" ?
-Sylvia: On peut regarder.
+Sylvia: On peut regarder ce qu'il y a dans Eugénie ?
 
 <<startPulsatingFile Folder_Eugenie>>
 <<setCanClick Folder_Eugenie true>>
 
-===
-title: EugenieFolderOpened
----
-
-<<stopPulsatingFile Folder_Eugenie>>
-//<<setCanClick Folder_Eugenie false>>
-
-
-Sylvia: Oh. Non. Qu'est-ce qu'est ?
-
-<<setCanClick filename3d-guide true>>
-<<setCanClick filename3d-tuto true>>
-<<setCanClick filename3d-concours true>>
-<<setCanClick filename3d-photo01 true>>
-<<setCanClick filename3d-photo02 true>>
-<<setCanClick filename3d-photo03 true>>
-<<setCanClick filename3d-photo04 true>>
-
-
-camille: What?
-
-===
-title: template
----
-
-Camille: ras le bol.
-
-===
-title: PhotoContestDeadline
----
-
-
-// (La caméra zoom out encore un peu. On voit qu'un café est posé sur la table)
-//-> Cliquer sur le café pour boire une gorgée du café (Audio FX: Slurp). Quand on clique sur le café, le café se vide. 
-
-Sylvia: Oh, non!
-Camille: Qu'est-ce que c'est ?
-Sylvia: Un concours photo. Je devais envoyer les photos qu'on avait prises avec mon amie.
-Camille : La deadline est fixée à aujourd'hui. C'est peut-être pas trop tard.
-Sylvia: Tu crois ? Les photos sont quelque part sur mon ordinateur.
-Camille : Mais il faut d'abord régler ce "problème de bruit".
-
-<<startPulsating CloseButtonPattern>>
-<<setCanClickForCloseButton CloseButtonPattern true>>
 
 ===
 title: ComputerStillInPain
