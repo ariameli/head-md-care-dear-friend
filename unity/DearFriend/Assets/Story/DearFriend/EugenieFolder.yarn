@@ -16,40 +16,44 @@ Sylvia: Oh. Non...
 //<<setCanClick filename3d-photo04 true>>
 
 
-Camille: Qu'est-ce que c'est ?
-Sylvia: Tu peux ouvrir le fichier "Concours?".
-<<setCanClick filename3d-concours true>>
+Camille: Qu'est-ce qu'il y a ?
+Sylvia: Eugénie... Le concours...
+<<setCanClick File-concours true>>
+<<startPulsatingFile File-concours>>
 
 ===
 title: concoursPDF
 ---
 
+<<stopPulsatingFile File-concours>>
+
 Sylvia: C'est fini aujourd'hui ?! Eugénie sera déçue.
 Camille: C'est qui Eugénie ?
-Sylvia: Une amie qui est décédée récemment.
+Sylvia: Une amie qui est décédée ... il y a deux mois.
 Camille: Je suis désolée. Toutes mes condoléances.
-Camille: Mais il n'est pas trop tard pour le concours.
-
+Sylvia: ...
+Camille: Mais il n'est pas trop tard pour le concours!
 Sylvia: Tu peux m'aider à choisir une photo ?
-Camille: Je dois partir dans 5 minutes, j'ai une vidéoconférence pour l'uni obligatoire...
-Sylvia: Je mets un minuteur.
+Camille: Je dois partir dans 5 minutes, j'ai une vidéoconférence obligatoire pour l'uni qui commence.
+Sylvia: Je mets un minuteur ?
 Camille: Ok.
 
-
-<<setCanClick filename3d-concours false>>
 
 <<activateObject CookingTimer>>
 <<Start_timer Head>>
 <<PlaySound FX KitchenTimerTicTac>>
-//<<ZoomOutCamera 37.9 0.02 -0.24 10>>
 
+Sylvia : Un peu de technologie.
 
-<<setCanClick filename3d-guide true>>
-<<setCanClick filename3d-tuto true>>
-<<setCanClick filename3d-photo01 true>>
-<<setCanClick filename3d-photo02 true>>
-<<setCanClick filename3d-photo03 true>>
-<<setCanClick filename3d-photo04 true>>
+//<<startPulsatingFile CloseButtonConcours>>
+
+<<setCanClick File-concours true>>
+<<setCanClick File-guide true>>
+<<setCanClick File-tuto true>>
+<<setCanClick File-photo01 true>>
+<<setCanClick File-photo02 true>>
+<<setCanClick File-photo03 true>>
+<<setCanClick File-photo04 true>>
 
 ===
 title: Photo01

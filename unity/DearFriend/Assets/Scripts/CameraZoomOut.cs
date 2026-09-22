@@ -42,7 +42,7 @@ public class CameraZoomOut : MonoBehaviour
     // --- Yarn command to trigger the camera zoom out effect ---
 
     [YarnCommand("ZoomOutCamera")]
-    public static void ZoomOutCamera(
+    public static IEnumerator ZoomOutCamera(
         float targetFov = 77.32661f,
         float lensShiftX = 0f,
         float lensShiftY = 0f,
@@ -51,14 +51,13 @@ public class CameraZoomOut : MonoBehaviour
         if (instance == null)
         {
             Debug.LogError("ZoomOutCamera failed: no CameraZoomOut instance exists in the scene.");
-            return;
+            yield break;
         }
 
-        instance.StartCoroutine(
-            instance.ZoomOutRoutine(
-                targetFov,
-                new Vector2(lensShiftX, lensShiftY),
-                zoomDuration));
+        yield return instance.ZoomOutRoutine(
+            targetFov,
+            new Vector2(lensShiftX, lensShiftY),
+            zoomDuration);
     }
 
     // --- Coroutine that performs the zoom out effect over time ---

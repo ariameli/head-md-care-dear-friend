@@ -4,7 +4,7 @@ position: 0,0
 <<declare $zoom = 0>> // De 0 à 100
 
 // DEBUG
-<<jump EugineFolderDiscovery>>
+<<jump concoursPDF>>
 
 //<<PlaySound FX ComputerHumming>>
 Sylvia: Mon ordinateur fait plus de bruit qu'avant. Vous pouvez me dire pourquoi ? #sound:DialogueSylvia_1
@@ -119,56 +119,13 @@ title: EugineFolderDiscovery
 
 Sylvia: Il est parti ?
 Camille: Oui. Écoute, on entend plus le ventilateur.
-Sylvia: Génial! Merci.
 <<ZoomOutCamera 37.9 0.02 -0.24 10>>
-Camille: Mais on doit encore faire de la place.
-Sylvia: On peut regarder ce qu'il y a dans Eugénie ?
+Sylvia: Génial! Merci.
+Sylvia: On peut encore faire un peu de rangement ?
+Sylvia: Tu peux regarder ce qu'il y a dans "Eugénie" ?
 
 <<startPulsatingFile Folder_Eugenie>>
 <<setCanClick Folder_Eugenie true>>
-
-
-===
-title: ComputerStillInPain
----
-
-Sylvia: (Impatiente) Bon. Efface ces dossiers.
-Camille: T'es sûre ?!!
-Sylvia: Oui.
-Camille: ...
-Sylvia: On a tout "dans un nuage", m'a dit mon neveu.
-
-<<jump DeleteHugeFolder>>
-
-===
-title: ComputerIsWorkingAgain
----
-
-// Computer makes less noise
-// Eventually : fenêtre poubelle se vide.
-// On devrait peut-être vider la corbeille, en fait...
-
-// VIDER LA CORBEILLE ?
-
-Camille: Bon, ça fonctionne à nouveau.
-Sylvia: (Soupir). Mais on a toujours pas les photos. J'étais sûre qu'elles étaient là.
-Sylvia: Tu les as supprimées par accident ?
-Camille: J'ai uniquement supprimé ce que tu m'as dit d'effacer!
-Sylvia: Tu es sûre ? Tu as l'air fatiguée. On peut faire une PAUSE. 
-Camille: Hum... Non, désolée. Je dois partir dans 10 minutes. J'ai une conférence obligatoire en ligne pour l'uni.
-Sylvia: Mais, tu as le temps de regarder dans ma messsagerie si les photos pour le concours sont là?
-Sylvia: Je mets un minuteur.
-Camille: Oh. Ok. Ça marche.
-Sylvia: Un peu de technologie.
-
-<<Start_timer Head>>
-<<PlaySound FX KitchenTimerTicTac>>
-<<ZoomOutCamera 37.9 0.02 -0.24 10>>
-<<startPulsatingFile MessAppIcon>>
-<<setCanClick MessAppIcon true>>
-// NEW FX : Tic Tac
-
-// MessaginApp Button jumps to MessagingApp_part1
 
 ===
 title: KitchenTimer
