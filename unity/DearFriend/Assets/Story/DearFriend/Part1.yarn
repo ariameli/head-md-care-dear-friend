@@ -4,11 +4,10 @@ position: 0,0
 <<declare $zoom = 0>> // De 0 à 100
 
 // DEBUG
-<<jump EugineFolderDiscovery>>
+//<<jump EugineFolderDiscovery>>
 
 //<<PlaySound FX ComputerHumming>>
 Sylvia: Mon ordinateur fait plus de bruit qu'avant. Vous pouvez me dire pourquoi ? #sound:DialogueSylvia_1
-
 
 //<<PlaySound FX ComputerFanSpeedsUp>> // En attente du vrai son
 Camille: Il est sur le point de décoller, oui... Je vais voir ce que je peux faire. #sound:DialogueCamille_1
@@ -42,7 +41,7 @@ Camille: Je vois. On doit faire de la place sur le disque.
 Sylvia: Faire de la place ? Je croyais que les ordinateurs, c’était virtuel..
 Camille: Il faut quand-même les nettoyer de temps en temps. C'était quand la dernière fois?
 Sylvia: Je l'ai acheté il y a 10 ans.
-Camille: 10 ?! Ça en fait du chnie!
+Camille: 10 ans de chnie ?!
 
 <<startPulsating CloseButton>>
 <<setCanClickForCloseButton CloseButton true>>
@@ -149,10 +148,4 @@ Camille: À toute à l'heure, alors.
 
 <<jump Part2>>
 // END OF PART I
-===
-title: shaken
----
-Sylvia: Attends! Pourquoi tu fais ça ?!!
-
-<<jump FirstFile>>
 ===

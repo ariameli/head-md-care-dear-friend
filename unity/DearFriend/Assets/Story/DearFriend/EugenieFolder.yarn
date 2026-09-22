@@ -1,19 +1,33 @@
 title: EugenieFolderOpened
 ---
 
+// Global Variables
+<<declare $isGuideOpened=false>>
+<<declare $isConcoursOpened=false>>
+<<declare $isTutoOpened=false>>
+<<declare $isPhoto01Opened=false>>
+<<declare $isPhoto02Opened=false>>
+<<declare $isPhoto03Opened=false>>
+<<declare $isPhoto04Opened=false>>
+
+
 <<setCanClick Folder_Eugenie_Icon false>>
 <<stopPulsatingFile Folder_Eugenie_Icon>>
-
 
 Sylvia: Oh. Non...
 Camille: Qu'est-ce qu'il y a ?
 Sylvia: Eugénie... Le concours...
+
 <<setCanClick File-concours true>>
 <<startPulsatingFile File-concours>>
 
 ===
 title: concoursPDF
 ---
+
+<<if $isConcoursOpened==true>>
+    <<jump concoursPDF_2>>
+<<endif>>
 
 <<stopPulsatingFile File-concours>>
 
@@ -24,9 +38,9 @@ Camille: Je suis désolée. Toutes mes condoléances.
 Sylvia: ...
 Camille: Mais il n'est pas trop tard pour le concours!
 Sylvia: Tu peux m'aider à choisir une photo ?
-Camille: Je dois partir dans 5 minutes, j'ai une vidéoconférence obligatoire pour l'uni qui commence.
-Sylvia: Je mets un minuteur ?
-Camille: Ok.
+Camille: Je dois partir dans 5 minutes.
+Sylvia: Je mets un minuteur.
+Camille: Dans ce cas.
 
 
 <<activateObject CookingTimer>>
@@ -35,10 +49,10 @@ Camille: Ok.
 
 Sylvia : Un peu de technologie.
 
-//<<startPulsatingFile CloseButtonConcours>>
+<<startPulsatingFile CloseButtonConcours>>
+<<set $isConcoursOpened=true>>
 
-<<setCanClick Folder_Eugenie true>>
-<<setCanClick File-concours true>>
+<<setCanClick File-concours false>>
 <<setCanClick File-guide true>>
 <<setCanClick File-tuto true>>
 <<setCanClick File-photo01 true>>
@@ -47,26 +61,85 @@ Sylvia : Un peu de technologie.
 <<setCanClick File-photo04 true>>
 
 ===
-title: Photo01
+title: lookingFolderContent
+---
+
+<<if $isPhoto01Opened&& $isPhoto02Opened&& $isPhoto03Opened && $isPhoto04Opened>>
+    <<jump KitchenTimer>>
+<<endif>>
+
+===
+title: concoursPDF_2
+---
+<<setCanClick File-concours false>>
+Sylvia: (Soupir)...
+<<jump lookingFolderContent>>
+
+===
+title: guidePDF
 ---
 Camille : Oh.
+<<setCanClick File-guide false>>
+
+-> Must have been hard....
+-> Gosh
+
+<<jump lookingFolderContent>>
 
 ===
-
-title: Photo02
+title: tutoPDF
 ---
-Camille : Beurk.
 
+Sylvia: Oh. Haha!
+Sylvia: C'est le costume que j'ai fabriqué avec mon amie pour Carnaval l'année dernière.
+Camille: Trop chou! J'en veux un.
+//Sylvia: Je n'en n'ai plus besoin. Tu peux le supprimer.
+
+//-> "T'es sûre ?" 
+//    <<ZoomOutCamera 27.0 0.02 -0.24 10>>
+//    Sylvia: Oui. S'il te plaît.
+//-> "Ok"
+<<jump lookingFolderContent>>
+===
+title: OpenPhoto01
+---
+<<setCanClick File-photo01 false>>
+<<set $isPhoto01Opened=true>>
+
+Sylvia: C'était notre dernière randonnée ensemble.
+
+-> Dire que c'est une belle photo.
+    Sylvia: Je n'aime plus trop me voir en photo.
+-> Ne rien dire.
+
+<<jump lookingFolderContent>>
 ===
 
-title: Photo03
+title: OpenPhoto02
 ---
-Camille : Ah.
-
+<<setCanClick File-photo02 false>>
+<<set $isPhoto02Opened=true>>
+Sylvia: Oh oui, je me rappelle. On lui avait si peur.
+<<jump lookingFolderContent>>
 ===
 
-title: Photo04
+title: OpenPhoto03
 ---
-Camille : Hi
+<<setCanClick File-photo03 false>>
+<<set $isPhoto03Opened=true>>
 
+Sylvia: C'est la rivière près de chez nous. J'aimais beacoup me promener là avec Eugénie, quand elle pouvait encore marcher.
+Sylvia: Je pense toujours à elle quand j'y vais maintenant. C'était quelqu'un d'extrêmemnt joyeux, apaisant.
+
+<<jump lookingFolderContent>>
+===
+
+title: OpenPhoto04
+---
+<<setCanClick File-photo04 false>>
+<<set $isPhoto04Opened=true>>
+Sylvia: Mon dieu! J'avais oublié ce voyage... Je ne sais plus qui a pris la photo.
+Sylvia: On est partie un mois avec des dromadaires. C'était incroyable.
+
+<<jump lookingFolderContent>>
 ===

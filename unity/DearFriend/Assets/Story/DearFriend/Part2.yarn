@@ -2,7 +2,7 @@ title: Part2
 position: -118,-98
 ---
 
-<<SylviaSits SylviaMesh>>
+//<<SylviaSits SylviaMesh>>
 
 Camille: Pfouf. Oui, une chose de moins à faire...
 Camille: Alors, tu as choisi la photo à envoyer ?
@@ -50,7 +50,6 @@ Sylvia: Entendu. N'oublie pas le tupperware.
 <<jump Part3>>
 
 ===
-
 
 title: archives
 position: -162,22
