@@ -12,6 +12,9 @@ public class AudioPlaySound : MonoBehaviour
     public AudioClip CameraZoomOut;
     public AudioClip KitchenTimerTicTac;
     public AudioClip KitchenTimerDing;
+    public AudioClip TrashedFile;
+    public AudioClip SaveddFile;
+
 
     [Header("Playback")]
     [SerializeField] private bool loopComputerWarning;
@@ -40,6 +43,8 @@ public class AudioPlaySound : MonoBehaviour
             "ComputerHumming" => ComputerHumming,
             "KitchenTimerTicTac" => KitchenTimerTicTac,
             "KitchenTimerDing" => KitchenTimerDing,
+            "TrashedFile" => TrashedFile,
+            "SavedFile" => SaveddFile,
             _               => null
         };
     }
@@ -74,6 +79,15 @@ public class AudioPlaySound : MonoBehaviour
         audioSource.loop = ShouldLoop(soundName);
         audioSource.Play();
 
+    }
+
+    [YarnCommand("PlaySoundAndWait")]
+    public IEnumerator PlaySoundAndWait(string soundName)
+    {
+        yield return PlaySound(soundName);
+
+        audioSource.loop = false;
+        yield return new WaitWhile(() => audioSource.isPlaying);
     }
 
     [YarnCommand("StopSound")]

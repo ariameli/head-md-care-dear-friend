@@ -3,13 +3,14 @@ position: 0,0
 ---
 <<declare $zoom = 0>> // De 0 à 100
 
-// DEBUG
-//<<jump EugineFolderDiscovery>>
 
-//<<PlaySound FX ComputerHumming>>
+
+// DEBUG
+//<<jump EugenieFolderOpened>>
+<<PlaySoundAndWait FX ComputerFanSpeedsUp>>
 Sylvia: Mon ordinateur fait plus de bruit qu'avant. Vous pouvez me dire pourquoi ? #sound:DialogueSylvia_1
 
-//<<PlaySound FX ComputerFanSpeedsUp>> // En attente du vrai son
+
 Camille: Il est sur le point de décoller, oui... Je vais voir ce que je peux faire. #sound:DialogueCamille_1
 Camille : Est-ce qu'on peut se tutoyer ?
 Sylvia: Oui, bien sûr.
@@ -37,11 +38,12 @@ title: WarningWindow
 
 //Computer: Warning : Storage FULL!!! Please make space by deleting unnecessary files.
 <<PlaySound FX Warning>>
-Camille: Je vois. On doit faire de la place sur le disque.
+
+Camille: Alors, tu dois faire de la place sur le disque.
 Sylvia: Faire de la place ? Je croyais que les ordinateurs, c’était virtuel..
-Camille: Il faut quand-même les nettoyer de temps en temps. C'était quand la dernière fois?
+Camille: C'est quand la dernière fois que tu as nettoyé ton ordi ?
 Sylvia: Je l'ai acheté il y a 10 ans.
-Camille: 10 ans de chnie ?!
+Camille: 10 ANS ?! Wahou. Ça en fait du chnie à nettoyer.
 
 <<startPulsating CloseButton>>
 <<setCanClickForCloseButton CloseButton true>>
@@ -49,11 +51,10 @@ Camille: 10 ans de chnie ?!
 ===
 title: StartDeleteFiles
 ---
-Camille: Je peux effacer des fichiers ?
+Camille: Je peux effacer ces fichiers ?
 Sylvia: Effacer !? Tout ?
-Camille: Non, non. On peut les supprimer un par un. 
-Sylvia: Ok...
-Sylvia: Tu peux me montrer ce que c'est ?
+Camille: On peut faire petit à petit.
+Sylvia: Tu peux me montrer ce fichier?
 
 <<startPulsatingFile PDF_lecture>>
 <<setCanClick PDF_lecture true>>
@@ -76,9 +77,7 @@ title: FileAssurance
 // Fichier 2 -> Folder_divers
 <<startPulsatingFile PDF_assurance>>
 <<stopPulsatingFile Trashbin>>
-Camille: Assurance ?
-Sylvia: Il faut garder ça. Tu peux le mettre dans un dossier ?
-Camille: Lequel ? Il n'y a pas "Assurances".
+Camille: "Assurance" ? Il n'y a pas de dossier "Assurances"...
 Sylvia: Divers, alors.
 
 <<setCanDrag PDF_assurance true>>
@@ -89,8 +88,8 @@ title: FileFacture
 
 <<startPulsatingFile PDF_facture>>
 // Fichier 3 -> Folder_facture
-Camille: Facture ?
-Sylvia: Facture.
+Camille: "Facture" ?
+Sylvia: Hé bien, "Factures".
 
 <<setCanDrag PDF_facture true>>
 
@@ -99,30 +98,40 @@ title: FileVirus
 ---
 
 Camille: Hum... Je pense avoir trouvé le responsable.
-Sylvia: Ah, oui ?!
+Sylvia: Déjà ?!
 Camille: Regarde ce fichier, c'est clairement un virus.
 
 <<startPulsatingFile PDF_urgent>>
 
 Sylvia: Qu'est-ce qu'il faut faire ?
-Camille: Poubelle.
+Camille: Poubelle, direct.
 
 <<stopPulsatingFile PDF_urgent>>
 //<<setCanClick PDF_urgent true>>
 <<setCanDrag PDF_urgent true>>
 
 ===
-title: EugineFolderDiscovery
+title: EugenieFolderDiscovery
 ---
 
 
 Sylvia: Il est parti ?
 Camille: Oui. Écoute, on entend plus le ventilateur.
 
-<<ZoomOutCamera 37.9 0.02 -0.24 10>>
-Sylvia: Génial! Merci.
-Sylvia: On peut encore faire un peu de rangement ?
-Sylvia: Tu peux regarder ce qu'il y a dans "Eugénie" ?
+<<PlaySound FX ZoomOut>>
+<<ZoomOutCamera 37.9 0.02 -0.24 5>>
+
+Sylvia: Je me sens mieux.
+Sylvia: On peut encore faire un peu de rangement ? Comme ça tu n'es pas venue pour rien ?
+Camille: Je dois VRAIMENT partir dans 5 minutes. J'ai un visio pour l'uni.
+Sylvia: Je mets un minuteur, alors.
+
+<<activateObject CookingTimer>>
+<<Start_timer Head>>
+<<PlaySound FX KitchenTimerTicTac>>
+
+Sylvia: Un peu de technologie.
+Sylvia: ... Tu peux regarder ce qu'il y a dans "Eugénie" ?
 
 <<startPulsatingFile Folder_Eugenie_Icon>>
 <<setCanClick Folder_Eugenie_Icon true>>
@@ -137,12 +146,12 @@ position: 0,0
 <<PlaySound FX KitchenTimerDing>>
 Camille: Déjà?!! Mince. Merci pou le café.
 // (Audio FX - Camille range sont sac) 
-Sylvia: Mais on a pas fini. Est-ce que tu peux revenir après ta conférence en ligne ?
+Sylvia: Mais on a pas fini. Est-ce que tu peux revenir après ton cours ?
 Camille: J'ai un examen important demain, je peux pas faire tard.
-Sylvia: Je ne peux pas envoyer la photo par moi-même. J'ai besoin de ton aide. // Plus dramatique / culpabilisant
-Camille: Ok. Je peux repasser vers 20h00.
-Sylvia: Merci, infiniment.
-Camille: À toute à l'heure, alors.
+Sylvia: Je ne peux pas envoyer la photo par moi-même.
+Camille: Bon. Je peux repasser dans 2 heures.
+Sylvia: D'accord. Merci beaucoup.
+Camille: À toute à l'heure.
 
 <<Next_day DayTransitionManager>>
 

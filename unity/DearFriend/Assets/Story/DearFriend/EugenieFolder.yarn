@@ -16,7 +16,7 @@ title: EugenieFolderOpened
 
 Sylvia: Oh. Non...
 Camille: Qu'est-ce qu'il y a ?
-Sylvia: Eugénie... Le concours...
+Sylvia: Le concours... Tu peux ouvrir le fichier ?
 
 <<setCanClick File-concours true>>
 <<startPulsatingFile File-concours>>
@@ -31,28 +31,21 @@ title: concoursPDF
 
 <<stopPulsatingFile File-concours>>
 
-Sylvia: C'est fini aujourd'hui ?! Eugénie sera déçue.
+Sylvia: C'est fini aujourd'hui ?!
 Camille: C'est qui Eugénie ?
-Sylvia: Une amie qui est décédée ... il y a deux mois.
+Sylvia: Mon amie qui est décédée il y a deux mois.
 Camille: Je suis désolée. Toutes mes condoléances.
 Sylvia: ...
-Camille: Mais il n'est pas trop tard pour le concours!
+Camille: Mais il est pas trop tard pour le concours!
 Sylvia: Tu peux m'aider à choisir une photo ?
-Camille: Je dois partir dans 5 minutes.
-Sylvia: Je mets un minuteur.
-Camille: Dans ce cas.
 
-
-<<activateObject CookingTimer>>
-<<Start_timer Head>>
-<<PlaySound FX KitchenTimerTicTac>>
-
-Sylvia : Un peu de technologie.
 
 <<startPulsatingFile CloseButtonConcours>>
 <<set $isConcoursOpened=true>>
+<<setObjectColor File-concours #D6D6D6>>
 
-<<setCanClick File-concours false>>
+
+<<setCanClick File-concours true>>
 <<setCanClick File-guide true>>
 <<setCanClick File-tuto true>>
 <<setCanClick File-photo01 true>>
@@ -78,11 +71,16 @@ Sylvia: (Soupir)...
 ===
 title: guidePDF
 ---
-Camille : Oh.
+Sylvia: Je préfère ne pas regarder ça maintenant.
 <<setCanClick File-guide false>>
+<<setObjectColor File-guide #D6D6D6>>
 
--> Must have been hard....
--> Gosh
+-> Ça a dû être dur pour toi.
+    Sylvia: Quand elle m'a annoncé la nouvelle. Je lui dis que ça me faisait mal...
+    Sylvia: Mais, je voulais surtout être forte pour elle, ne pas m'effondrer.
+    Sylvia: Je suis heureuse de l'avoir rencontrée.
+-> Ne rien dire.
+
 
 <<jump lookingFolderContent>>
 
@@ -90,20 +88,19 @@ Camille : Oh.
 title: tutoPDF
 ---
 
-Sylvia: Oh. Haha!
-Sylvia: C'est le costume que j'ai fabriqué avec mon amie pour Carnaval l'année dernière.
-Camille: Trop chou! J'en veux un.
-//Sylvia: Je n'en n'ai plus besoin. Tu peux le supprimer.
+<<setCanClick File-tuto false>>
+<<setObjectColor File-tuto #D6D6D6>>
 
-//-> "T'es sûre ?" 
-//    <<ZoomOutCamera 27.0 0.02 -0.24 10>>
-//    Sylvia: Oui. S'il te plaît.
-//-> "Ok"
+Sylvia: Oh. Haha!
+Sylvia: C'est le costume de Carnaval que j'ai fabriqué avec elle l'hiver passé.
+Sylvia: On avait l'air ridicule.
+
 <<jump lookingFolderContent>>
 ===
 title: OpenPhoto01
 ---
 <<setCanClick File-photo01 false>>
+<<setObjectColor File-photo01 #D6D6D6>>
 <<set $isPhoto01Opened=true>>
 
 Sylvia: C'était notre dernière randonnée ensemble.
@@ -118,18 +115,23 @@ Sylvia: C'était notre dernière randonnée ensemble.
 title: OpenPhoto02
 ---
 <<setCanClick File-photo02 false>>
+<<setObjectColor File-photo02 #D6D6D6>>
 <<set $isPhoto02Opened=true>>
-Sylvia: Oh oui, je me rappelle. On lui avait si peur.
+Camille: Hii! Trop beau.
+Sylvia: Oh oui, je me rappelle. On lui avait fait si peur.
 <<jump lookingFolderContent>>
 ===
 
 title: OpenPhoto03
 ---
 <<setCanClick File-photo03 false>>
+<<setObjectColor File-photo03 #D6D6D6>>
 <<set $isPhoto03Opened=true>>
 
-Sylvia: C'est la rivière près de chez nous. J'aimais beacoup me promener là avec Eugénie, quand elle pouvait encore marcher.
-Sylvia: Je pense toujours à elle quand j'y vais maintenant. C'était quelqu'un d'extrêmemnt joyeux, apaisant.
+Sylvia: C'est la rivière près de chez nous. On aimait beaucoup se promener là, quand elle pouvait encore marcher.
+Sylvia: Après, elle souffrait trop.
+Sylvia: ...
+Sylvia: C'était quelqu'un d'extrêmement joyeux, jusqu'à la fin. On riait toujours comme des baleines.
 
 <<jump lookingFolderContent>>
 ===
@@ -137,6 +139,7 @@ Sylvia: Je pense toujours à elle quand j'y vais maintenant. C'était quelqu'un 
 title: OpenPhoto04
 ---
 <<setCanClick File-photo04 false>>
+<<setObjectColor File-photo04 #D6D6D6>>
 <<set $isPhoto04Opened=true>>
 Sylvia: Mon dieu! J'avais oublié ce voyage... Je ne sais plus qui a pris la photo.
 Sylvia: On est partie un mois avec des dromadaires. C'était incroyable.

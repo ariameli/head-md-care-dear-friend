@@ -18,6 +18,7 @@ public class DesktopItem : MonoBehaviour,
 
     [Header("Audio")]
     public AudioClip inputSound;
+    public AudioClip dropSound;
     private AudioSource audioSource;
 
     [Header("Yarn")]
@@ -75,9 +76,6 @@ public class DesktopItem : MonoBehaviour,
     private bool wasDragged;
     private bool isOverTrash;
     private bool isOverFolder;
-
-    // Track first interaction for blocking initial trash attempt
-    private bool isFirstInteraction = true;
 
     // Track whether the file has been opened at least once
     private bool hasOpenedFile = false;
@@ -250,6 +248,31 @@ public class DesktopItem : MonoBehaviour,
         item.canDrag = value;
     }
 
+    [YarnCommand("setObjectColor")]
+    public static void SetObjectColor(string objectName, string htmlColor)
+    {
+        var item = FindDesktopItem(objectName);
+
+        if (item == null)
+        {
+            Debug.LogWarning($"DesktopItem: unable to find '{objectName}' for setObjectColor.");
+            return;
+        }
+
+        if (!ColorUtility.TryParseHtmlString(htmlColor, out var color))
+        {
+            Debug.LogWarning($"DesktopItem: invalid color '{htmlColor}' for setObjectColor.");
+            return;
+        }
+
+        var renderers = item.GetComponentsInChildren<Renderer>(true);
+
+        foreach (var renderer in renderers)
+        {
+            renderer.material.color = color;
+        }
+    }
+
     static DesktopItem FindDesktopItem(string objectName)
     {
         var items = Object.FindObjectsByType<DesktopItem>(
@@ -304,7 +327,6 @@ public class DesktopItem : MonoBehaviour,
         }
         // Mark the file as opened so trashing is no longer treated as the first interaction
         hasOpenedFile = true;
-        isFirstInteraction = false;
 
         if (inputSound != null)
         {
@@ -468,6 +490,7 @@ public class DesktopItem : MonoBehaviour,
                 dialogueRunner.StartDialogue(nodeToPlay);
             }
 
+            PlayDropSound();
             Destroy(gameObject);
             return;
         }
@@ -479,6 +502,7 @@ public class DesktopItem : MonoBehaviour,
                 dialogueRunner.StartDialogue(trashNodeName);
             }
 
+            PlayDropSound();
             Destroy(gameObject);
             return;
         }
@@ -490,6 +514,14 @@ public class DesktopItem : MonoBehaviour,
         if (dialogueRunner != null && !string.IsNullOrEmpty(dropElsewhereNodeName))
         {
             dialogueRunner.StartDialogue(dropElsewhereNodeName);
+        }
+    }
+
+    void PlayDropSound()
+    {
+        if (dropSound != null)
+        {
+            AudioSource.PlayClipAtPoint(dropSound, transform.position);
         }
     }
 

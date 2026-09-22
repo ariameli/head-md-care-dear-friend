@@ -6,6 +6,7 @@ public class CloseWindow : MonoBehaviour, IPointerClickHandler
 {
     public DialogueRunner dialogueRunner;
     public string clickNodeName;
+    public AudioClip closeSound;
 
     public float pulseAmount = 0.1f;
     public float pulseSpeed = 3f;
@@ -62,6 +63,11 @@ public class CloseWindow : MonoBehaviour, IPointerClickHandler
         if (assetToEnableOnClose != null)
         {
             assetToEnableOnClose.SetActive(true);
+        }
+
+        if (closeSound != null)
+        {
+            AudioSource.PlayClipAtPoint(closeSound, transform.position, 1f);
         }
 
         Destroy(transform.parent.gameObject);
