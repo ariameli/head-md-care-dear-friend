@@ -1,21 +1,11 @@
 title: EugenieFolderOpened
 ---
 
-<<stopPulsatingFile Folder_Eugenie>>
-<<setCanClick Folder_Eugenie false>>
+<<setCanClick Folder_Eugenie_Icon false>>
+<<stopPulsatingFile Folder_Eugenie_Icon>>
 
 
 Sylvia: Oh. Non...
-
-//<<setCanClick filename3d-guide true>>
-//<<setCanClick filename3d-tuto true>>
-//<<setCanClick filename3d-concours true>>
-//<<setCanClick filename3d-photo01 true>>
-//<<setCanClick filename3d-photo02 true>>
-//<<setCanClick filename3d-photo03 true>>
-//<<setCanClick filename3d-photo04 true>>
-
-
 Camille: Qu'est-ce qu'il y a ?
 Sylvia: Eugénie... Le concours...
 <<setCanClick File-concours true>>
@@ -47,6 +37,7 @@ Sylvia : Un peu de technologie.
 
 //<<startPulsatingFile CloseButtonConcours>>
 
+<<setCanClick Folder_Eugenie true>>
 <<setCanClick File-concours true>>
 <<setCanClick File-guide true>>
 <<setCanClick File-tuto true>>

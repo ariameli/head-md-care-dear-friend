@@ -427,12 +427,12 @@ GameObject:
   - component: {fileID: 51655641}
   - component: {fileID: 51655640}
   m_Layer: 0
-  m_Name: Window_folder
+  m_Name: Folder_Eugenie_Window
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &51655638
 Transform:
   m_ObjectHideFlags: 0
@@ -441,15 +441,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 51655637}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.00000023841852, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.0224, y: 0.0584, z: -0.0768}
-  m_LocalScale: {x: 0.30513096, y: 8.136826, z: 6.48184}
+  m_LocalRotation: {x: -0.7071067, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 1.5600111, y: -1.5799998, z: -0.23999344}
+  m_LocalScale: {x: 30.513094, y: 813.6826, z: 648.184}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2145363385}
   - {fileID: 1080893280}
   - {fileID: 603128144}
-  m_Father: {fileID: 5038469255918790233}
+  m_Father: {fileID: 543450653598042906}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!114 &51655640
 MonoBehaviour:
@@ -14048,7 +14048,6 @@ Transform:
   - {fileID: 5038469255740084844}
   - {fileID: 5038469255967953363}
   - {fileID: 5038469255138048245}
-  - {fileID: 5038469255918790233}
   m_Father: {fileID: 543450653598042906}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1386907664
@@ -22757,6 +22756,8 @@ Transform:
   - {fileID: 531264226}
   - {fileID: 928321662}
   - {fileID: 17548903}
+  - {fileID: 51655638}
+  - {fileID: 5038469255918790233}
   - {fileID: 1374449228}
   - {fileID: 1447378348}
   m_Father: {fileID: 1434674800}
@@ -22865,7 +22866,7 @@ GameObject:
   - component: {fileID: 8264220176428633496}
   - component: {fileID: 8264220176428633497}
   m_Layer: 0
-  m_Name: Folder_Eugenie
+  m_Name: Folder_Eugenie_Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23560,13 +23561,12 @@ Transform:
   m_GameObject: {fileID: 889660601385645168}
   serializedVersion: 2
   m_LocalRotation: {x: -0.707107, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 3.8, y: 6.1, z: 5.6}
+  m_LocalPosition: {x: 3.8000088, y: 6.1000023, z: 5.6000013}
   m_LocalScale: {x: 100, y: 99.99997, z: 99.99997}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1377252471279746648}
-  - {fileID: 51655638}
-  m_Father: {fileID: 1374449228}
+  m_Father: {fileID: 543450653598042906}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &5038469255967953363
 Transform:

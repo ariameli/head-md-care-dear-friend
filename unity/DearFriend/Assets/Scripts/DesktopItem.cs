@@ -90,6 +90,7 @@ public class DesktopItem : MonoBehaviour,
         }
 
         EnsurePointerCollider();
+        AlignPointerColliderToVisuals();
 
         originalScale = transform.localScale;
 
@@ -147,6 +148,49 @@ public class DesktopItem : MonoBehaviour,
         meshCollider.sharedMesh = meshFilter.sharedMesh;
     }
 
+    void AlignPointerColliderToVisuals()
+    {
+        var boxCollider = GetComponent<BoxCollider>();
+        var renderers = GetComponentsInChildren<Renderer>(true);
+
+        if (boxCollider == null || renderers.Length == 0)
+        {
+            return;
+        }
+
+        Bounds worldBounds = renderers[0].bounds;
+
+        for (var i = 1; i < renderers.Length; i++)
+        {
+            worldBounds.Encapsulate(renderers[i].bounds);
+        }
+
+        var localBounds = new Bounds(
+            transform.InverseTransformPoint(worldBounds.center),
+            Vector3.zero
+        );
+
+        var worldCorners = new Vector3[8];
+        var min = worldBounds.min;
+        var max = worldBounds.max;
+        worldCorners[0] = new Vector3(min.x, min.y, min.z);
+        worldCorners[1] = new Vector3(min.x, min.y, max.z);
+        worldCorners[2] = new Vector3(min.x, max.y, min.z);
+        worldCorners[3] = new Vector3(min.x, max.y, max.z);
+        worldCorners[4] = new Vector3(max.x, min.y, min.z);
+        worldCorners[5] = new Vector3(max.x, min.y, max.z);
+        worldCorners[6] = new Vector3(max.x, max.y, min.z);
+        worldCorners[7] = new Vector3(max.x, max.y, max.z);
+
+        foreach (var corner in worldCorners)
+        {
+            localBounds.Encapsulate(transform.InverseTransformPoint(corner));
+        }
+
+        boxCollider.center = localBounds.center;
+        boxCollider.size = localBounds.size;
+    }
+
     public void OnPointerDown(PointerEventData eventData)
     {
         if (!canDrag)
@@ -179,15 +223,49 @@ public class DesktopItem : MonoBehaviour,
     }
 
     [YarnCommand("setCanClick")]
-    public void canBeClicked(bool value)
+    public static void SetCanClick(string objectName, bool value)
     {
-        canClick = value;
+        var item = FindDesktopItem(objectName);
+
+        if (item == null)
+        {
+            Debug.LogWarning($"DesktopItem: unable to find '{objectName}' for setCanClick.");
+            return;
+        }
+
+        item.canClick = value;
     }
 
     [YarnCommand("setCanDrag")]
-    public void canBeDragged(bool value)
+    public static void SetCanDrag(string objectName, bool value)
     {
-        canDrag = value;
+        var item = FindDesktopItem(objectName);
+
+        if (item == null)
+        {
+            Debug.LogWarning($"DesktopItem: unable to find '{objectName}' for setCanDrag.");
+            return;
+        }
+
+        item.canDrag = value;
+    }
+
+    static DesktopItem FindDesktopItem(string objectName)
+    {
+        var items = Object.FindObjectsByType<DesktopItem>(
+            FindObjectsInactive.Include,
+            FindObjectsSortMode.None
+        );
+
+        foreach (var item in items)
+        {
+            if (item.name == objectName)
+            {
+                return item;
+            }
+        }
+
+        return null;
     }
 
     [YarnCommand("debugOpened")]

@@ -4,7 +4,7 @@ position: 0,0
 <<declare $zoom = 0>> // De 0 à 100
 
 // DEBUG
-<<jump concoursPDF>>
+<<jump EugineFolderDiscovery>>
 
 //<<PlaySound FX ComputerHumming>>
 Sylvia: Mon ordinateur fait plus de bruit qu'avant. Vous pouvez me dire pourquoi ? #sound:DialogueSylvia_1
@@ -28,7 +28,7 @@ Sylvia: Oui, bien sûr.
 <<setCanClick Folder_Factures false>>
 <<setCanClick Folder_Famille false>>
 <<setCanClick Folder_Impots false>>
-<<setCanClick Folder_Eugenie false>>
+<<setCanClick Folder_Eugenie_Icon false>>
 
 <<setCanClick Trashbin false>>
 
@@ -119,13 +119,14 @@ title: EugineFolderDiscovery
 
 Sylvia: Il est parti ?
 Camille: Oui. Écoute, on entend plus le ventilateur.
+
 <<ZoomOutCamera 37.9 0.02 -0.24 10>>
 Sylvia: Génial! Merci.
 Sylvia: On peut encore faire un peu de rangement ?
 Sylvia: Tu peux regarder ce qu'il y a dans "Eugénie" ?
 
-<<startPulsatingFile Folder_Eugenie>>
-<<setCanClick Folder_Eugenie true>>
+<<startPulsatingFile Folder_Eugenie_Icon>>
+<<setCanClick Folder_Eugenie_Icon true>>
 
 ===
 title: KitchenTimer
