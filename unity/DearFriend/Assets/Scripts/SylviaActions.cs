@@ -89,6 +89,35 @@ public class SylviaActions : MonoBehaviour
         moveRoutine = StartCoroutine(MoveToPosition(position3));
     }
 
+    [YarnCommand("SylviaSitsInstantly")]
+    public void SitsInstantly()
+    {
+        if (moveRoutine != null)
+        {
+            StopCoroutine(moveRoutine);
+            moveRoutine = null;
+        }
+
+        sitAfterArrival = false;
+
+
+        if (agent != null)
+        {
+            agent.isStopped = true;
+            agent.ResetPath();
+            agent.Warp(position3.position);
+        }
+        else
+        {
+            transform.position = position3.position;
+        }
+
+        transform.rotation = position3.rotation;
+        animator.SetBool("IsWalking", false);
+        animator.SetBool("IsSitting", true);
+        animator.Play("SittingIdle", 0, 0f);
+    }
+
     private IEnumerator SnapAndSit()
     {
         if (agent == null || position3 == null)
