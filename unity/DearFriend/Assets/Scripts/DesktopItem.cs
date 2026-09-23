@@ -105,6 +105,12 @@ public class DesktopItem : MonoBehaviour,
             return false;
         }
 
+        if (openContentObject == null || !openContentObject.activeInHierarchy)
+        {
+            SetContentOpen(false);
+            return false;
+        }
+
         if (openContentObject != null &&
             transform.IsChildOf(openContentObject.transform))
         {
@@ -375,6 +381,12 @@ public class DesktopItem : MonoBehaviour,
         if (IsBlockedByOpenContent())
         {
             Debug.LogWarning($"DesktopItem: click blocked on '{name}' because another content is open.");
+            return;
+        }
+
+        if (hasOpenedFile)
+        {
+            Debug.LogWarning($"DesktopItem: click blocked on '{name}' because it has already been opened.");
             return;
         }
 
