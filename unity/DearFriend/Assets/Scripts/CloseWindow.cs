@@ -70,6 +70,7 @@ public class CloseWindow : MonoBehaviour, IPointerClickHandler
             AudioSource.PlayClipAtPoint(closeSound, transform.position, 1f);
         }
 
+        DesktopItem.SetContentOpen(false);
         Destroy(transform.parent.gameObject);
         //start the node specified in clickNodeName
         if (dialogueRunner != null && !string.IsNullOrEmpty(clickNodeName))

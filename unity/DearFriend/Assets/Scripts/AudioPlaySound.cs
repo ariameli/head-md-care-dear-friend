@@ -14,6 +14,7 @@ public class AudioPlaySound : MonoBehaviour
     public AudioClip KitchenTimerDing;
     public AudioClip TrashedFile;
     public AudioClip SaveddFile;
+    public AudioClip PackingBag;
 
 
     [Header("Playback")]
@@ -45,6 +46,7 @@ public class AudioPlaySound : MonoBehaviour
             "KitchenTimerDing" => KitchenTimerDing,
             "TrashedFile" => TrashedFile,
             "SavedFile" => SaveddFile,
+            "PackingBag" => PackingBag,
             _               => null
         };
     }

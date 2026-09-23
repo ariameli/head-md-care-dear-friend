@@ -1,35 +1,34 @@
 title: Start
 position: 0,0
 ---
-<<declare $zoom = 0>> // De 0 à 100
-
-
 
 // DEBUG
 //<<jump EugenieFolderOpened>>
-<<PlaySoundAndWait FX ComputerFanSpeedsUp>>
-Sylvia: Mon ordinateur fait plus de bruit qu'avant. Vous pouvez me dire pourquoi ? #sound:DialogueSylvia_1
 
-
-Camille: Il est sur le point de décoller, oui... Je vais voir ce que je peux faire. #sound:DialogueCamille_1
-Camille : Est-ce qu'on peut se tutoyer ?
-Sylvia: Oui, bien sûr.
-
-<<showWarning ErrorBox>>
+// Global variables declarations
+<<declare $zoom = 0>> // From 0 à 100
 
 // Set All Documents to not clickable
 <<setCanClick PDF_lecture false>>
 <<setCanClick PDF_facture false>>
 <<setCanClick PDF_assurance false>>
 <<setCanClick PDF_urgent false>>
-
 <<setCanClick Folder_Divers false>>
 <<setCanClick Folder_Factures false>>
 <<setCanClick Folder_Famille false>>
 <<setCanClick Folder_Impots false>>
 <<setCanClick Folder_Eugenie_Icon false>>
-
 <<setCanClick Trashbin false>>
+
+// Starts after we "Entered the password"
+<<PlaySoundAndWait FX ComputerFanSpeedsUp>>
+
+Sylvia: Mon ordinateur fait plus de bruit qu'avant. Vous pouvez me dire pourquoi ? #sound:DialogueSylvia_1
+Camille: Il est sur le point de décoller, oui... Je vais voir ce que je peux faire. #sound:DialogueCamille_1
+Camille : Est-ce qu'on peut se tutoyer ?
+Sylvia: Oui, bien sûr.
+
+<<showWarning ErrorBox>>
 
 ===
 title: WarningWindow
@@ -52,8 +51,8 @@ title: StartDeleteFiles
 ---
 Camille: Je peux effacer ces fichiers ?
 Sylvia: Effacer !? Tout ?
-Camille: On peut faire petit à petit.
-Sylvia: Tu peux me montrer ce fichier?
+Camille: Non. On regarde ensemble, petit à petit.
+Sylvia: Ok. Tu peux me montrer ce fichier?
 
 <<startPulsatingFile PDF_lecture>>
 <<setCanClick PDF_lecture true>>
@@ -146,12 +145,14 @@ position: 0,0
 <<PlaySound FX KitchenTimerDing>>
 Camille: Déjà?!! Mince. Merci pou le café.
 // (Audio FX - Camille range sont sac) 
-Sylvia: Mais on a pas fini. Est-ce que tu peux revenir après ton cours ?
+Sylvia: On a pas fini. Est-ce que tu peux revenir après ton cours ?
 Camille: J'ai un examen important demain, je peux pas faire tard.
-Sylvia: Je ne peux pas envoyer la photo par moi-même.
-Camille: Bon. Je peux repasser dans 2 heures.
+Sylvia: Mais, je ne peux pas envoyer la photo par moi-même.
+Camille: Bon. Je repasse dans 1 heure.
 Sylvia: D'accord. Merci beaucoup.
 Camille: À toute à l'heure.
+
+<<PlaySound FX PackingBag>>
 
 <<Next_day DayTransitionManager>>
 

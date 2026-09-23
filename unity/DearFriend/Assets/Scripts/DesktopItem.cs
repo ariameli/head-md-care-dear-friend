@@ -36,6 +36,7 @@ public class DesktopItem : MonoBehaviour,
 
     [Header("Open File Object")]
     public GameObject fileContentObject;
+    public GameObject[] contentWindowsToIgnore;
 
     [Header("Asset Disabled While Open")]
     public GameObject assetToDisableWhenOpen;
@@ -79,6 +80,57 @@ public class DesktopItem : MonoBehaviour,
 
     // Track whether the file has been opened at least once
     private bool hasOpenedFile = false;
+    private static bool isContentOpen;
+    private static GameObject openContentObject;
+
+    public static void SetContentOpen(bool value)
+    {
+        isContentOpen = value;
+        if (!value)
+        {
+            openContentObject = null;
+        }
+    }
+
+    private static void SetContentOpen(GameObject contentObject)
+    {
+        isContentOpen = true;
+        openContentObject = contentObject;
+    }
+
+    private bool IsBlockedByOpenContent()
+    {
+        if (!isContentOpen)
+        {
+            return false;
+        }
+
+        if (openContentObject != null &&
+            transform.IsChildOf(openContentObject.transform))
+        {
+            return false;
+        }
+
+        if (openContentObject != null &&
+            openContentObject.name == "Folder_Eugenie_Window" &&
+            name.StartsWith("File", System.StringComparison.OrdinalIgnoreCase))
+        {
+            return false;
+        }
+
+        if (contentWindowsToIgnore != null)
+        {
+            foreach (var ignoredContent in contentWindowsToIgnore)
+            {
+                if (ignoredContent == openContentObject)
+                {
+                    return false;
+                }
+            }
+        }
+
+        return true;
+    }
 
     void Start()
     {
@@ -191,7 +243,7 @@ public class DesktopItem : MonoBehaviour,
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        if (!canDrag)
+        if (IsBlockedByOpenContent() || !canDrag)
         {
             return;
         }
@@ -320,6 +372,12 @@ public class DesktopItem : MonoBehaviour,
 
     public void OnPointerClick(PointerEventData eventData)
     {
+        if (IsBlockedByOpenContent())
+        {
+            Debug.LogWarning($"DesktopItem: click blocked on '{name}' because another content is open.");
+            return;
+        }
+
         if (!canClick)
         {
             Debug.LogWarning($"DesktopItem: click blocked on '{name}' because canClick is false.");
@@ -346,6 +404,8 @@ public class DesktopItem : MonoBehaviour,
         // Activate the image/content inside the file
         if (fileContentObject != null)
         {
+            SetContentOpen(fileContentObject);
+
             for (var parent = fileContentObject.transform.parent; parent != null; parent = parent.parent)
             {
                 parent.gameObject.SetActive(true);
@@ -393,7 +453,7 @@ public class DesktopItem : MonoBehaviour,
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        if (!canDrag)
+        if (IsBlockedByOpenContent() || !canDrag)
         {
             return;
         }

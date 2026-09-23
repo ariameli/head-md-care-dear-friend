@@ -129,7 +129,7 @@ GameObject:
   m_Component:
   - component: {fileID: 17548903}
   m_Layer: 0
-  m_Name: Documents
+  m_Name: PDFs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -144,7 +144,7 @@ Transform:
   m_GameObject: {fileID: 17548902}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 1.199816, y: -9.633938, z: 1.4451736}
+  m_LocalPosition: {x: 1.3, y: -9.633938, z: 1.4}
   m_LocalScale: {x: 84.31582, y: 84.31592, z: 84.31582}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -441,7 +441,7 @@ Transform:
   m_GameObject: {fileID: 51655637}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071067, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 1.52, y: -0.85, z: -0.85}
+  m_LocalPosition: {x: 1.5, y: -1, z: -0.3}
   m_LocalScale: {x: 29.16472, y: 777.726, z: 619.5408}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1245,6 +1245,7 @@ MonoBehaviour:
   cam: {fileID: 0}
   selectedScaleMultiplier: 1.15
   fileContentObject: {fileID: 0}
+  contentWindowsToIgnore: []
   assetToDisableWhenOpen: {fileID: 0}
   trashHoverMaterial: {fileID: 2100000, guid: b36fcf5c2b7c3448e880bbf9ef242953, type: 2}
   trashObject: {fileID: 0}
@@ -1254,7 +1255,7 @@ MonoBehaviour:
   trashBigScale: 1.3
   trashPulseDuration: 1
   folderTransform: {fileID: 0}
-  folderBigScale: 1.3
+  folderBigScale: 1.2
   folderPulseDuration: 1
 --- !u!1001 &134683803
 PrefabInstance:
@@ -1385,6 +1386,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10512eb411a70d84796a2516bab814ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CloseButtons
+  dialogueRunner: {fileID: 0}
+  nodeNameAfterClose: 
 --- !u!114 &134683811
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2684,6 +2687,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10512eb411a70d84796a2516bab814ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CloseButtons
+  dialogueRunner: {fileID: 0}
+  nodeNameAfterClose: 
 --- !u!114 &228815369
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4712,15 +4717,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8775cc1fae307684e9c6e3c998cf712d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.0498
+      value: -0.067
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8775cc1fae307684e9c6e3c998cf712d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.0659
+      value: 0.083
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8775cc1fae307684e9c6e3c998cf712d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.0117
+      value: -0.013
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8775cc1fae307684e9c6e3c998cf712d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -6768,6 +6773,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10512eb411a70d84796a2516bab814ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CloseButtons
+  dialogueRunner: {fileID: 0}
+  nodeNameAfterClose: 
 --- !u!114 &705846855
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8123,6 +8130,8 @@ MonoBehaviour:
   cam: {fileID: 0}
   selectedScaleMultiplier: 1.15
   fileContentObject: {fileID: 1082018018}
+  contentWindowsToIgnore:
+  - {fileID: 51655637}
   assetToDisableWhenOpen: {fileID: 0}
   trashHoverMaterial: {fileID: 0}
   trashObject: {fileID: 0}
@@ -8583,15 +8592,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8da571c08edd35940a5c11d0b17078a6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.0314
+      value: -0.034
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8da571c08edd35940a5c11d0b17078a6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.1048
+      value: 0.118
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8da571c08edd35940a5c11d0b17078a6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.0117
+      value: -0.012
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8da571c08edd35940a5c11d0b17078a6, type: 3}
       propertyPath: m_LocalRotation.w
@@ -8673,6 +8682,7 @@ MonoBehaviour:
   cam: {fileID: 0}
   selectedScaleMultiplier: 1.1
   fileContentObject: {fileID: 0}
+  contentWindowsToIgnore: []
   assetToDisableWhenOpen: {fileID: 0}
   trashHoverMaterial: {fileID: 0}
   trashObject: {fileID: 0}
@@ -8682,7 +8692,7 @@ MonoBehaviour:
   trashBigScale: 1.2
   trashPulseDuration: 0.7
   folderTransform: {fileID: 0}
-  folderBigScale: 1.1
+  folderBigScale: 1.2
   folderPulseDuration: 0.5
 --- !u!82 &847742648
 AudioSource:
@@ -9712,7 +9722,7 @@ Transform:
   m_GameObject: {fileID: 969429846}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.35188, y: 1.08695, z: -2.88377}
+  m_LocalPosition: {x: -0.3515, y: 1.08695, z: -2.88377}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -10445,6 +10455,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10512eb411a70d84796a2516bab814ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CloseButtons
+  dialogueRunner: {fileID: 50325755}
+  nodeNameAfterClose: setClickableTrue
 --- !u!114 &1005382431
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12447,15 +12459,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c79ecc966e72ec847aa8d9eaf04a3448, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.0825
+      value: -0.088
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c79ecc966e72ec847aa8d9eaf04a3448, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.0884
+      value: 0.11
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c79ecc966e72ec847aa8d9eaf04a3448, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.0117
+      value: -0.012
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c79ecc966e72ec847aa8d9eaf04a3448, type: 3}
       propertyPath: m_LocalRotation.w
@@ -12555,17 +12567,18 @@ MonoBehaviour:
   cam: {fileID: 0}
   selectedScaleMultiplier: 1.15
   fileContentObject: {fileID: 0}
+  contentWindowsToIgnore: []
   assetToDisableWhenOpen: {fileID: 0}
   trashHoverMaterial: {fileID: 0}
   trashObject: {fileID: 0}
   folderObject: {fileID: 889660600753913925}
-  folderHoverMaterial: {fileID: 0}
+  folderHoverMaterial: {fileID: 2100000, guid: d130b618d034018449d2972cf06d81c3, type: 2}
   trashTransform: {fileID: 0}
   trashBigScale: 1.3
-  trashPulseDuration: 1
+  trashPulseDuration: 0.5
   folderTransform: {fileID: 0}
-  folderBigScale: 1.1
-  folderPulseDuration: 1
+  folderBigScale: 1.2
+  folderPulseDuration: 0.5
 --- !u!82 &1317669092
 AudioSource:
   m_ObjectHideFlags: 0
@@ -13026,15 +13039,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1122dcae56b99414582fd6b29ebb1267, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.0383
+      value: -0.049
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1122dcae56b99414582fd6b29ebb1267, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.1742
+      value: 0.17
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1122dcae56b99414582fd6b29ebb1267, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.0117
+      value: -0.012
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1122dcae56b99414582fd6b29ebb1267, type: 3}
       propertyPath: m_LocalRotation.w
@@ -13116,6 +13129,7 @@ MonoBehaviour:
   cam: {fileID: 0}
   selectedScaleMultiplier: 1.15
   fileContentObject: {fileID: 0}
+  contentWindowsToIgnore: []
   assetToDisableWhenOpen: {fileID: 0}
   trashHoverMaterial: {fileID: 2100000, guid: b36fcf5c2b7c3448e880bbf9ef242953, type: 2}
   trashObject: {fileID: 3655000510665859825}
@@ -13125,7 +13139,7 @@ MonoBehaviour:
   trashBigScale: 1.3
   trashPulseDuration: 1
   folderTransform: {fileID: 0}
-  folderBigScale: 1.3
+  folderBigScale: 1.2
   folderPulseDuration: 1
 --- !u!114 &1351837469
 MonoBehaviour:
@@ -13923,6 +13937,7 @@ MonoBehaviour:
   cam: {fileID: 0}
   selectedScaleMultiplier: 1.15
   fileContentObject: {fileID: 0}
+  contentWindowsToIgnore: []
   assetToDisableWhenOpen: {fileID: 0}
   trashHoverMaterial: {fileID: 0}
   trashObject: {fileID: 0}
@@ -14735,6 +14750,8 @@ MonoBehaviour:
   cam: {fileID: 0}
   selectedScaleMultiplier: 1.15
   fileContentObject: {fileID: 1431365845}
+  contentWindowsToIgnore:
+  - {fileID: 51655637}
   assetToDisableWhenOpen: {fileID: 0}
   trashHoverMaterial: {fileID: 0}
   trashObject: {fileID: 0}
@@ -15171,6 +15188,8 @@ MonoBehaviour:
   cam: {fileID: 0}
   selectedScaleMultiplier: 1.15
   fileContentObject: {fileID: 1935323775}
+  contentWindowsToIgnore:
+  - {fileID: 51655637}
   assetToDisableWhenOpen: {fileID: 0}
   trashHoverMaterial: {fileID: 0}
   trashObject: {fileID: 0}
@@ -15779,6 +15798,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10512eb411a70d84796a2516bab814ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CloseButtons
+  dialogueRunner: {fileID: 0}
+  nodeNameAfterClose: 
 --- !u!114 &1588440762
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15791,6 +15812,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10512eb411a70d84796a2516bab814ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CloseButtons
+  dialogueRunner: {fileID: 0}
+  nodeNameAfterClose: 
 --- !u!114 &1588440763
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15870,6 +15893,10 @@ PrefabInstance:
     - target: {fileID: 2958262985454349539, guid: 52571f68872914e24837210513edea1d, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 2958262985454349543, guid: 52571f68872914e24837210513edea1d, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2958262986393358531, guid: 52571f68872914e24837210513edea1d, type: 3}
       propertyPath: m_SizeDelta.x
@@ -15982,6 +16009,10 @@ PrefabInstance:
     - target: {fileID: 2958262987206614837, guid: 52571f68872914e24837210513edea1d, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2958262987206614838, guid: 52571f68872914e24837210513edea1d, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2958262987206614838, guid: 52571f68872914e24837210513edea1d, type: 3}
       propertyPath: m_fontStyle
@@ -16115,6 +16146,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: 8020628925107869969, guid: 52571f68872914e24837210513edea1d, type: 3}
+      propertyPath: m_Alpha
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8020628925184811237, guid: 52571f68872914e24837210513edea1d, type: 3}
       propertyPath: m_Type
       value: 0
@@ -16172,6 +16207,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 330585545}
     - target: {fileID: 8150228081625468094, guid: 52571f68872914e24837210513edea1d, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8150228081625468094, guid: 52571f68872914e24837210513edea1d, type: 3}
       propertyPath: m_RenderMode
       value: 0
       objectReference: {fileID: 0}
@@ -16185,7 +16224,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8309902628685535410, guid: 52571f68872914e24837210513edea1d, type: 3}
       propertyPath: autoStart
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8309902628685535410, guid: 52571f68872914e24837210513edea1d, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8309902628685535410, guid: 52571f68872914e24837210513edea1d, type: 3}
       propertyPath: startNode
@@ -16206,6 +16249,10 @@ PrefabInstance:
     - target: {fileID: 8790380584632356852, guid: 52571f68872914e24837210513edea1d, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8877867826578261527, guid: 52571f68872914e24837210513edea1d, type: 3}
+      propertyPath: continueButton
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -16574,6 +16621,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10512eb411a70d84796a2516bab814ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CloseButtons
+  dialogueRunner: {fileID: 0}
+  nodeNameAfterClose: 
 --- !u!114 &1672311859
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18120,6 +18169,8 @@ MonoBehaviour:
   cam: {fileID: 0}
   selectedScaleMultiplier: 1.15
   fileContentObject: {fileID: 1007054214}
+  contentWindowsToIgnore:
+  - {fileID: 51655637}
   assetToDisableWhenOpen: {fileID: 0}
   trashHoverMaterial: {fileID: 0}
   trashObject: {fileID: 0}
@@ -19154,6 +19205,8 @@ MonoBehaviour:
   cam: {fileID: 0}
   selectedScaleMultiplier: 1.15
   fileContentObject: {fileID: 1912098279}
+  contentWindowsToIgnore:
+  - {fileID: 51655637}
   assetToDisableWhenOpen: {fileID: 0}
   trashHoverMaterial: {fileID: 0}
   trashObject: {fileID: 0}
@@ -19759,6 +19812,7 @@ GameObject:
   - component: {fileID: 1951783983}
   - component: {fileID: 1951783985}
   - component: {fileID: 1951783984}
+  - component: {fileID: 1951783986}
   m_Layer: 0
   m_Name: FX
   m_TagString: Untagged
@@ -19802,6 +19856,7 @@ MonoBehaviour:
   KitchenTimerDing: {fileID: 8300000, guid: 7689ab3df76d4c047b25cfc7df823d71, type: 3}
   TrashedFile: {fileID: 8300000, guid: 6545eef512944c94796319d9fde32d3c, type: 3}
   SaveddFile: {fileID: 8300000, guid: 44514ac9c335cfe449dce9343f0aa18a, type: 3}
+  PackingBag: {fileID: 8300000, guid: 622c4b2d6245ac34bb1b822c73c12655, type: 3}
   loopComputerWarning: 0
   loopComputerNotification: 0
   loopComputerHumming: 0
@@ -19820,7 +19875,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 0f7bc229a8516b6479253cc8f8a43f32, type: 3}
+  m_Resource: {fileID: 8300000, guid: 622c4b2d6245ac34bb1b822c73c12655, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -20488,6 +20543,103 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!82 &1951783986
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1951783974}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: 622c4b2d6245ac34bb1b822c73c12655, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1953256733
 GameObject:
   m_ObjectHideFlags: 0
@@ -20815,6 +20967,8 @@ MonoBehaviour:
   cam: {fileID: 0}
   selectedScaleMultiplier: 1.15
   fileContentObject: {fileID: 1327195866}
+  contentWindowsToIgnore:
+  - {fileID: 51655637}
   assetToDisableWhenOpen: {fileID: 0}
   trashHoverMaterial: {fileID: 0}
   trashObject: {fileID: 0}
@@ -21418,6 +21572,8 @@ MonoBehaviour:
   cam: {fileID: 0}
   selectedScaleMultiplier: 1.15
   fileContentObject: {fileID: 564062849}
+  contentWindowsToIgnore:
+  - {fileID: 51655637}
   assetToDisableWhenOpen: {fileID: 0}
   trashHoverMaterial: {fileID: 0}
   trashObject: {fileID: 0}
@@ -23800,7 +23956,7 @@ Transform:
   m_GameObject: {fileID: 889660600114323945}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 3.93, y: -0.8, z: -4.32}
+  m_LocalPosition: {x: 3.93, y: -0.8, z: -4.25}
   m_LocalScale: {x: 100, y: 99.99997, z: 99.99997}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -24853,6 +25009,7 @@ MonoBehaviour:
   cam: {fileID: 0}
   selectedScaleMultiplier: 1.15
   fileContentObject: {fileID: 51655637}
+  contentWindowsToIgnore: []
   assetToDisableWhenOpen: {fileID: 3655000510665859825}
   trashHoverMaterial: {fileID: 0}
   trashObject: {fileID: 0}
