@@ -1,6 +1,6 @@
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 using Yarn.Unity;
 
 public class DialogueGlobalClick : MonoBehaviour
@@ -8,6 +8,31 @@ public class DialogueGlobalClick : MonoBehaviour
     public DialogueRunner dialogueRunner;
     public AudioDialoguePresenter audioDialoguePresenter;
     public Camera cam;
+    private Button continueButton;
+
+    void Awake()
+    {
+        GameObject continueButtonObject = GameObject.Find("Continue Button");
+        if (continueButtonObject != null)
+        {
+            continueButton = continueButtonObject.GetComponent<Button>();
+
+            if (continueButton != null)
+                continueButton.gameObject.SetActive(false);
+        }
+    }
+
+    void LateUpdate()
+    {
+        if (continueButton == null || audioDialoguePresenter == null ||
+            audioDialoguePresenter.audioSource == null)
+        {
+            return;
+        }
+
+        if (audioDialoguePresenter.audioSource.isPlaying)
+            continueButton.interactable = false;
+    }
 
     void Update()
     {
@@ -19,27 +44,6 @@ public class DialogueGlobalClick : MonoBehaviour
             audioDialoguePresenter.audioSource.isPlaying)
         {
             return;
-        }
-
-        if (EventSystem.current != null &&
-            EventSystem.current.IsPointerOverGameObject())
-        {
-            return;
-        }
-
-        if (cam == null)
-            cam = Camera.main;
-
-        Vector2 mousePosition = Mouse.current.position.ReadValue();
-        Ray ray = cam.ScreenPointToRay(mousePosition);
-
-        if (Physics.Raycast(ray, out RaycastHit hit))
-        {
-            if (hit.collider.GetComponentInParent<DesktopItem>() != null ||
-                hit.collider.GetComponentInParent<CloseWindow>() != null)
-            {
-                return;
-            }
         }
 
         if (dialogueRunner != null && dialogueRunner.IsDialogueRunning)

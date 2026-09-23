@@ -18,7 +18,6 @@ Sylvia: Oui, bien sûr.
 <<showWarning ErrorBox>>
 
 // Set All Documents to not clickable
-
 <<setCanClick PDF_lecture false>>
 <<setCanClick PDF_facture false>>
 <<setCanClick PDF_assurance false>>
@@ -43,7 +42,7 @@ Camille: Alors, tu dois faire de la place sur le disque.
 Sylvia: Faire de la place ? Je croyais que les ordinateurs, c’était virtuel..
 Camille: C'est quand la dernière fois que tu as nettoyé ton ordi ?
 Sylvia: Je l'ai acheté il y a 10 ans.
-Camille: 10 ANS ?! Wahou. Ça en fait du chnie à nettoyer.
+Camille: 10 ANS ?! Ça en fait du chnie à nettoyer.
 
 <<startPulsating CloseButton>>
 <<setCanClickForCloseButton CloseButton true>>
@@ -64,11 +63,12 @@ title: FileLecture
 ---
 // File 1 -> Trashed
 <<setCanClick PDF_lecture false>>
-<<stopPulsatingFile PDF_lecture>>
+//<<stopPulsatingFile PDF_lecture>>
 Sylvia: Ah, c'est le programme du Club de lecture.
 Sylvia: Tu peux le supprimer. Je n'y vais jamais.
 
-<<startPulsatingFile Trashbin>>
+//<<startPulsatingFile PDF_lecture>>
+//<<startPulsatingFile Trashbin>>
 <<setCanDrag PDF_lecture true>>
 
 ===
@@ -104,7 +104,7 @@ Camille: Regarde ce fichier, c'est clairement un virus.
 <<startPulsatingFile PDF_urgent>>
 
 Sylvia: Qu'est-ce qu'il faut faire ?
-Camille: Poubelle, direct.
+Camille: Directe à la poubelle.
 
 <<stopPulsatingFile PDF_urgent>>
 //<<setCanClick PDF_urgent true>>
@@ -122,7 +122,7 @@ Camille: Oui. Écoute, on entend plus le ventilateur.
 <<ZoomOutCamera 37.9 0.02 -0.24 5>>
 
 Sylvia: Je me sens mieux.
-Sylvia: On peut encore faire un peu de rangement ? Comme ça tu n'es pas venue pour rien ?
+Sylvia: On peut encore faire un peu de rangement ?
 Camille: Je dois VRAIMENT partir dans 5 minutes. J'ai un visio pour l'uni.
 Sylvia: Je mets un minuteur, alors.
 
