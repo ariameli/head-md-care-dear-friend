@@ -25445,7 +25445,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.2901961, g: 0.42352942, b: 0.36078432, a: 0.8352941}
+  m_Color: {r: 0.2784314, g: 0.36862746, b: 0.3254902, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -25521,7 +25521,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvasGroup: {fileID: 8020628926571351713}
-  optionViewPrefab: {fileID: 2576261519635394347, guid: e605972137b0b4c1399ffb07beae9a9b, type: 3}
+  optionViewPrefab: {fileID: 2576261519635394347, guid: 39e0075c3c7ddb54fbb42083afe69267, type: 3}
   showsLastLine: 0
   lastLineText: {fileID: 8020628924931695310}
   lastLineContainer: {fileID: 0}
