@@ -1,8 +1,7 @@
 title: Part2
 position: -118,-98
 ---
-
-//<<SylviaSits SylviaMesh>>
+<<SylviaStandingIdle SylviaMesh>>
 
 Camille: Pfouf. Oui, une chose de moins à faire...
 Camille: Alors, tu as choisi la photo à envoyer ?
