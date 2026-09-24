@@ -45,7 +45,7 @@ Sylvia: Tu peux m'aider à choisir une photo ?
 <<setObjectColor File-concours #D6D6D6>>
 
 
-<<setCanClick File-concours true>>
+<<setCanClick File-concours false>>
 <<setCanClick File-guide true>>
 <<setCanClick File-tuto true>>
 <<setCanClick File-photo01 true>>
@@ -64,7 +64,7 @@ title: lookingFolderContent
 ===
 title: concoursPDF_2
 ---
-<<setCanClick File-concours false>>
+//<<setCanClick File-concours false>>
 Sylvia: (Soupir)...
 <<jump lookingFolderContent>>
 
@@ -72,7 +72,7 @@ Sylvia: (Soupir)...
 title: guidePDF
 ---
 Sylvia: Je préfère ne pas regarder ça maintenant.
-<<setCanClick File-guide false>>
+//<<setCanClick File-guide false>>
 <<setObjectColor File-guide #D6D6D6>>
 
 -> Ça a dû être dur pour toi.

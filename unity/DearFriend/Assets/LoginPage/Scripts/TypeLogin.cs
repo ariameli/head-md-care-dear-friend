@@ -1,18 +1,21 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TypewriterText : MonoBehaviour
 {
-    [SerializeField] private float vitesse = 0.15f;
+    [SerializeField] private float vitesse = 0.5f;
     [SerializeField] private string motDePasse = "1234";
 
-    private TMP_Text texteUI;
+    private TMP_Text texteTMP;
+    private Text texteLegacy;
     private Coroutine coroutine;
 
     private void Awake()
     {
-        texteUI = GetComponent<TMP_Text>();
+        texteTMP = GetComponent<TMP_Text>();
+        texteLegacy = GetComponent<Text>();
     }
 
     public void LancerTexte()
@@ -26,15 +29,24 @@ public class TypewriterText : MonoBehaviour
     private IEnumerator Ecrire(string texte)
     {
         // Efface "TAPEZ le mot de passe"
-        texteUI.text = "";
+        DefinirTexte("");
 
         // Écrit "1234" caractère par caractère
         foreach (char caractere in texte)
         {
-            texteUI.text += caractere;
+            string texteActuel = texteTMP != null ? texteTMP.text : texteLegacy.text;
+            DefinirTexte(texteActuel + caractere);
             yield return new WaitForSeconds(vitesse);
         }
 
         coroutine = null;
+    }
+
+    private void DefinirTexte(string texte)
+    {
+        if (texteTMP != null)
+            texteTMP.text = texte;
+        else if (texteLegacy != null)
+            texteLegacy.text = texte;
     }
 }

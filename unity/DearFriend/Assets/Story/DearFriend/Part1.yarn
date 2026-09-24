@@ -3,13 +3,10 @@ position: 0,0
 ---
 <<declare $zoom = 0>> // De 0 à 100
 
-
-
 // DEBUG
 //<<jump EugenieFolderOpened>>
 <<PlaySoundAndWait FX ComputerFanSpeedsUp>>
 Sylvia: Mon ordinateur fait plus de bruit qu'avant. Vous pouvez me dire pourquoi ? #sound:DialogueSylvia_1
-
 
 Camille: Il est sur le point de décoller, oui... Je vais voir ce que je peux faire. #sound:DialogueCamille_1
 Camille : Est-ce qu'on peut se tutoyer ?
@@ -23,13 +20,12 @@ Sylvia: Oui, bien sûr.
 <<setCanClick PDF_assurance false>>
 <<setCanClick PDF_urgent false>>
 
-<<setCanClick Folder_Divers false>>
-<<setCanClick Folder_Factures false>>
-<<setCanClick Folder_Famille false>>
-<<setCanClick Folder_Impots false>>
-<<setCanClick Folder_Eugenie_Icon false>>
-
-<<setCanClick Trashbin false>>
+//<<setCanClick Folder_Divers false>>
+//<<setCanClick Folder_Factures false>>
+//<<setCanClick Folder_Famille false>>
+//<<setCanClick Folder_Impots false>>
+//<<setCanClick Folder_Eugenie_Icon false>>
+//<<setCanClick Trashbin false>>
 
 ===
 title: WarningWindow
@@ -78,7 +74,7 @@ title: FileAssurance
 <<startPulsatingFile PDF_assurance>>
 <<stopPulsatingFile Trashbin>>
 Camille: "Assurance" ? Il n'y a pas de dossier "Assurances"...
-Sylvia: Divers, alors.
+Sylvia: "Divers", alors.
 
 <<setCanDrag PDF_assurance true>>
 
