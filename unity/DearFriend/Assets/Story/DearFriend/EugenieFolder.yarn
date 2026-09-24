@@ -40,7 +40,7 @@ Camille: Mais il est pas trop tard pour le concours!
 Sylvia: Tu peux m'aider à choisir une photo ?
 
 
-<<startPulsatingFile CloseButtonConcours>>
+//<<startPulsating CloseButtonConcours>>
 <<set $isConcoursOpened=true>>
 <<setObjectColor File-concours #D6D6D6>>
 
@@ -56,6 +56,8 @@ Sylvia: Tu peux m'aider à choisir une photo ?
 ===
 title: lookingFolderContent
 ---
+
+<<closeDesktopContent>>
 
 <<if $isPhoto01Opened&& $isPhoto02Opened&& $isPhoto03Opened && $isPhoto04Opened>>
     <<jump KitchenTimer>>

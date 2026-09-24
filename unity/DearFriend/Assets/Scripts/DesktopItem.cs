@@ -93,6 +93,17 @@ public class DesktopItem : MonoBehaviour,
         }
     }
 
+    [YarnCommand("closeDesktopContent")]
+    public static void CloseDesktopContent()
+    {
+        if (openContentObject != null)
+        {
+            openContentObject.SetActive(false);
+        }
+
+        SetContentOpen(false);
+    }
+
     private static void SetContentOpen(GameObject contentObject)
     {
         isContentOpen = true;
@@ -316,6 +327,11 @@ public class DesktopItem : MonoBehaviour,
         }
 
         item.canDrag = value;
+
+        foreach (var collider in item.GetComponents<Collider>())
+        {
+            collider.enabled = value || item.canClick;
+        }
     }
 
     [YarnCommand("setObjectColor")]

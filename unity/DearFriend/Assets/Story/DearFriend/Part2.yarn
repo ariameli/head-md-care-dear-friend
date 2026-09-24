@@ -2,7 +2,12 @@ title: Part2
 position: -118,-98
 ---
 
+<<setLightTemperature DirectionalLight 1500>>
 <<SylviaSittingIdle SylviaMesh>>
+<<deactivateObject Folder_Eugenie_Window>>
+<<deactivateObject NotEugenie>>
+
+
 
 <<declare $proposed01=false>>
 <<declare $proposed02=false>>
@@ -19,6 +24,11 @@ Camille: Tu as choisi la photo ?
 
 Sylvia: Non... Je n'arrive pas à me décider.
 Camille: Laisse-moi t'aider.
+
+//<<startPulsatingFile Photo01D2>>
+//<<startPulsatingFile Photo02D2>>
+//<<startPulsatingFile Photo03D2>>
+//<<startPulsatingFile Photo04D2>>
 
 <<jump Photo_Selection>>
 
@@ -65,6 +75,8 @@ Sylvia: On gagnera jamais le concours avec ça! Haha!
 
 <<set $proposed01=true>>
 <<setCanClick Photo01D2 false>>
+
+<<stopPulsatingFile Photo01D2>>
 <<setObjectColor Photo01D2 #241F47>>
 <<jump Photo_Selection>>
 ===
@@ -74,6 +86,7 @@ title: DiscussPhoto02
 
 Sylvia: C'est un peu banal, non ?
 <<set $proposed02=true>>
+<<stopPulsatingFile Photo02D2>>
 <<setCanClick Photo02D2 false>>
 <<setObjectColor Photo02D2 #241F47>>
 <<jump Photo_Selection>>
@@ -83,6 +96,7 @@ title: DiscussPhoto03
 ---
 Sylvia: C'est chou, mais sans plus.
 <<set $proposed03=true>>
+<<stopPulsatingFile Photo03D2>>
 <<setCanClick Photo03D2 false>>
 <<setObjectColor Photo03D2 #241F47>>
 <<jump Photo_Selection>>
@@ -92,6 +106,7 @@ title: DiscussPhoto04
 ---
 Sylvia: Je ne vois pas le rapport avec le thème.
 <<set $proposed04=true>>
+<<stopPulsatingFile Photo04D2>>
 <<setCanClick Photo04D2 false>>
 <<setObjectColor Photo04D2 #241F47>>
 <<jump Photo_Selection>>
@@ -113,7 +128,7 @@ Camille: Oui, avec plaisir.
 Sylvia: Pas trop fatiguée ?
 Camille: Si... Je vais rentrer, d'ailleurs. Désolée.
 Sylvia: Je t'ai mis des pâtes de côté. Prends-les !
-Camaille: Merci ! Je n'ai pas encore eu le temps de manger...
+Camille: Merci ! Je n'ai pas encore eu le temps de manger...
 Sylvia: Bonne chance pour demain.
 Camille: Merci...
 

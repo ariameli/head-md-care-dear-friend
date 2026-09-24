@@ -2,6 +2,9 @@ title: Part3
 position: 0,0
 ---
 
+<<setLightTemperature DirectionalLight 10405>>
+<<deactivateObject Computer>>
+
 <<if $choicePhoto02>>
     <<activateObject MagazineFox >>
 <<elseif $choicePhoto03>>
@@ -15,13 +18,33 @@ position: 0,0
 Camille: Tu vois, je te l'avais dit qu'elles étaient bien ces photos !
 Sylvia: Tout le monde a eu une photo publiée au final.
 Camille: Mais pas en couverture !
-
+Sylvia: C'est vrai...
 Sylvia: Et tes examens, alors ?
 Camille: J'attends les résultats. Mais je pense que ça a passé.
-Camille: Merci de m'avoir apporté à manger tous les jours.
-Camille: J'aurais jamais réussi sans ça. Je serais morte de faim.
-Sylvia: Tu vas déménager bientôt ?
-Camille: Je sais pas. J'ai pas très envie. Mais je ne peux pas rester dans l'immeuble.
+Camille: Merci de m'avoir apporté à manger tous ces jours.
+Camille: J'aurais jamais réussi sans ça.
 Sylvia: Alors, c'est la dernière fois qu'on se voit ?
-Camille: J'aurais bien voulu que tu me montres comment coudre...
+Camille: Non. Il faut fêter cette victoire !
+Sylvia: Bonne idée. Tu veux venir à la fermeture du JARDIN DE SONIA avec moi ? ?
+
+<<activateObject SoniaGardenPoster>>
+<<activateObject SoniaGardenPoster>>
+<<startPulsatingFile SoniaGardenPoster>>
+<<deactivateObject MagazineFox>>
+<<deactivateObject MagazineRiver>>
+<<deactivateObject MagazineCamel>>
+
+-> Avec plaisir!
+    Sylvia: Génial. Je t'amènerai un cadeau.
+    Camille: Un bonnet, par hasard ?
+    Sylvia: Haha.
+-> Je peux pas venir, désolée.
+    Sylvia: Oui, je comprends.
+
+Sylvia: Merci pour ton aide.
+
+<<deactivateObject SoniaGardenPoster>>
+<<ZoomOutCamera 6 3.2 0.5 10>>
+
+// Jump to credits ?
 ===

@@ -3,7 +3,7 @@ position: 0,0
 ---
 <<declare $zoom = 0>> // De 0 à 100
 
-
+<<setLightTemperature DirectionalLight 5400>>
 // DEBUG
 //<<jump EugenieFolderOpened>>
 <<PlaySoundAndWait FX ComputerFanSpeedsUp>>
@@ -142,7 +142,6 @@ position: 0,0
 <<StopSound FX KitchenTimerTicTac>>
 <<PlaySound FX KitchenTimerDing>>
 Camille: Déjà?!! Mince. Merci pou le café.
-// (Audio FX - Camille range sont sac) 
 Sylvia: Mais on a pas fini. Est-ce que tu peux revenir après ton cours ?
 Camille: J'ai un examen important demain, je peux pas faire tard.
 Sylvia: Je ne peux pas envoyer la photo par moi-même.
@@ -151,7 +150,6 @@ Sylvia: D'accord. Merci beaucoup.
 Camille: À toute à l'heure.
 
 <<Next_day DayTransitionManager>>
-
 <<jump Part2>>
 // END OF PART I
 ===
