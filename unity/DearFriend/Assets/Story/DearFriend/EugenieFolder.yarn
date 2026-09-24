@@ -1,7 +1,7 @@
 title: EugenieFolderOpened
 ---
 
-// Global variables
+// Global Variables
 <<declare $isGuideOpened=false>>
 <<declare $isConcoursOpened=false>>
 <<declare $isTutoOpened=false>>
@@ -11,15 +11,7 @@ title: EugenieFolderOpened
 <<declare $isPhoto04Opened=false>>
 
 
-<<setCanClick File-concours false>>
-<<setCanClick File-guide false>>
-<<setCanClick File-tuto false>>
-<<setCanClick File-photo01 false>>
-<<setCanClick File-photo02 false>>
-<<setCanClick File-photo03 false>>
-<<setCanClick File-photo04 false>>
 <<setCanClick Folder_Eugenie_Icon false>>
-
 <<stopPulsatingFile Folder_Eugenie_Icon>>
 
 Sylvia: Oh. Non...
@@ -33,6 +25,10 @@ Sylvia: Le concours... Tu peux ouvrir le fichier ?
 title: concoursPDF
 ---
 
+<<if $isConcoursOpened==true>>
+    <<jump concoursPDF_2>>
+<<endif>>
+
 <<stopPulsatingFile File-concours>>
 
 Sylvia: C'est fini aujourd'hui ?!
@@ -43,14 +39,11 @@ Sylvia: ...
 Camille: Mais il est pas trop tard pour le concours!
 Sylvia: Tu peux m'aider à choisir une photo ?
 
+
 <<startPulsatingFile CloseButtonConcours>>
 <<set $isConcoursOpened=true>>
 <<setObjectColor File-concours #D6D6D6>>
 
-
-===
-title: setClickableTrue
----
 
 <<setCanClick File-concours true>>
 <<setCanClick File-guide true>>
@@ -69,13 +62,18 @@ title: lookingFolderContent
 <<endif>>
 
 ===
+title: concoursPDF_2
+---
+<<setCanClick File-concours false>>
+Sylvia: (Soupir)...
+<<jump lookingFolderContent>>
+
+===
 title: guidePDF
 ---
-
+Sylvia: Je préfère ne pas regarder ça maintenant.
 <<setCanClick File-guide false>>
 <<setObjectColor File-guide #D6D6D6>>
-
-Sylvia: Je préfère ne pas regarder ça maintenant.
 
 -> Ça a dû être dur pour toi.
     Sylvia: Quand elle m'a annoncé la nouvelle. Je lui dis que ça me faisait mal...
@@ -83,7 +81,9 @@ Sylvia: Je préfère ne pas regarder ça maintenant.
     Sylvia: Je suis heureuse de l'avoir rencontrée.
 -> Ne rien dire.
 
+
 <<jump lookingFolderContent>>
+
 ===
 title: tutoPDF
 ---
@@ -96,11 +96,9 @@ Sylvia: C'est le costume de Carnaval que j'ai fabriqué avec elle l'hiver passé
 Sylvia: On avait l'air ridicule.
 
 <<jump lookingFolderContent>>
-
 ===
 title: OpenPhoto01
 ---
-
 <<setCanClick File-photo01 false>>
 <<setObjectColor File-photo01 #D6D6D6>>
 <<set $isPhoto01Opened=true>>
@@ -108,15 +106,14 @@ title: OpenPhoto01
 Sylvia: C'était notre dernière randonnée ensemble.
 
 -> Dire que c'est une belle photo.
-    Sylvia: Je n'aime plus trop me voir.
+    Sylvia: Je n'aime plus trop me voir en photo.
 -> Ne rien dire.
 
 <<jump lookingFolderContent>>
-
 ===
+
 title: OpenPhoto02
 ---
-
 <<setCanClick File-photo02 false>>
 <<setObjectColor File-photo02 #D6D6D6>>
 <<set $isPhoto02Opened=true>>
@@ -124,26 +121,24 @@ Camille: Hii! Trop beau.
 Sylvia: Oh oui, je me rappelle. On lui avait fait si peur.
 <<jump lookingFolderContent>>
 ===
+
 title: OpenPhoto03
 ---
-
 <<setCanClick File-photo03 false>>
 <<setObjectColor File-photo03 #D6D6D6>>
 <<set $isPhoto03Opened=true>>
 
-Sylvia: La rivière près de chez nous..
-Sylvia: On aimait beaucoup se promener là, quand elle pouvait encore marcher.
+Sylvia: C'est la rivière près de chez nous. On aimait beaucoup se promener là, quand elle pouvait encore marcher.
 Sylvia: Après, elle souffrait trop.
 Sylvia: ...
 Sylvia: C'était quelqu'un d'extrêmement joyeux, jusqu'à la fin.
 Sylvia: On riait toujours comme des baleines.
 
 <<jump lookingFolderContent>>
-
 ===
+
 title: OpenPhoto04
 ---
-
 <<setCanClick File-photo04 false>>
 <<setObjectColor File-photo04 #D6D6D6>>
 <<set $isPhoto04Opened=true>>
