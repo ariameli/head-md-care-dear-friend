@@ -2,6 +2,14 @@ title: Part3
 position: 0,0
 ---
 
+<<if $choicePhoto02>>
+    <<activateObject MagazineFox >>
+<<elseif $choicePhoto03>>
+    <<activateObject MagazineRiver >>
+<<elseif $choicePhoto04>>
+    <<activateObject MagazineCamel >>
+<<endif>>
+
 <<SylviaSittingIdle SylviaMesh>>
 
 Camille: Tu vois, je te l'avais dit qu'elles étaient bien ces photos !

@@ -9,6 +9,11 @@ position: -118,-98
 <<declare $proposed03=false>>
 <<declare $proposed04=false>>
 
+
+<<declare $choicePhoto02=false>>
+<<declare $choicePhoto03=false>>
+<<declare $choicePhoto04=false>>
+
 Camille: Ok, je suis là.
 Camille: Tu as choisi la photo ?
 
@@ -36,13 +41,17 @@ Sylvia: J'ai peur de décevoir Eugénie.
 Camille: Je comprends.
 
 Camille: Moi, j'enverrais...
--> le ruisseau.
--> le renard.
--> le dromadaire.
+
+-> le renard
+    <<set $choicePhoto02=true>>
+-> le ruisseau
+    <<set $choicePhoto03 =true>>
+-> le dromadaire
+    <<set $choicePhoto04 =true>>
 
 Sylvia: Hum...
 Sylvia: D'accord. Je fais confiance à la jeunesse.
-Camille: J'étudie le droit, pas sür que je sois de bon conseil.
+Camille: J'étudie le droit, pas sûr que je sois de bon conseil.
 
 <<jump PhotoSent>>
 
@@ -51,8 +60,8 @@ Camille: J'étudie le droit, pas sür que je sois de bon conseil.
 title: DiscussPhoto01
 ---
 Sylvia: On gagnera jamais le concours avec ça! Haha!
-Camille: Ok. C'est vrai. Mais vous êtes si belles.
-Sylvia: Tu es trop gentille.
+//Camille: Ok. C'est vrai. Mais vous êtes si belles.
+//Sylvia: Tu es trop gentille.
 
 <<set $proposed01=true>>
 <<setCanClick Photo01D2 false>>
