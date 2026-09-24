@@ -1,10 +1,18 @@
 title: Part2
 position: -118,-98
 ---
-<<SylviaStandingIdle SylviaMesh>>
 
-Camille: Pfouf. Oui, une chose de moins à faire...
-Camille: Alors, tu as choisi la photo à envoyer ?
+
+<<declare $proposed01=false>>
+<<declare $proposed02=false>>
+<<declare $proposed03=false>>
+<<declare $proposed04=false>>
+
+
+<<SylviaSittingIdle SylviaMesh>>
+
+Camille: Ok, je suis là.
+Camille: Tu as choisi la photo ?
 
 Sylvia: Non... Je n'arrive pas à me décider.
 Camille: Laisse-moi t'aider.
@@ -15,62 +23,71 @@ Camille: Laisse-moi t'aider.
 title: Photo_Selection
 ---
 
-// Quand on descend dans les flèches, le scroll descend ou remonte.
--> La photo de Sylvia et Eugénie en randonnée.
-    Sylvia : Je crois pas qu'elle aimerait ça.
--> Le ruisseau dans la forêt.
-    Sylvia : C'est un peu banal, non ?
--> La jonquille.
-    Sylvia : C'est jolie, mais sans plus...
--> Le couché de soleil vers le glacier d'Aletsch. // Photo 04 pas faite
-    Sylvia : Je vois pas le rapport avec le thème.
+<<if $proposed01&& $proposed02&& $proposed03&& $proposed04>>
+    <<jump CamilleChoice>>
+<<endif>>
 
-Camille: T'es trop négative. Elles sont très bien ces photos.
-Sylvia: Ce n'est pas ça.... J'ai peur que Eugénie soit "déçue".
+-> La photo de Sylvia et Eugénie en randonnée ?
+    Sylvia: ... ça ne gagnera jamais le concours, ça, haha!
+    Camille: Ok. C'est vrai. Mais c'est une belle photo.
+    Sylvia: Tu es trop gentille.
+    <<set $proposed01=true>>
+-> La rivière dans la forêt?
+    Sylvia: C'est un peu banal, non ?
+    <<set $proposed02=true>>
+-> Le renard ?
+    Sylvia: C'est chou, mais sans plus.
+    <<set $proposed03=true>>
+-> Le dromadaire dans le marais ?
+    Sylvia: Je ne vois pas le rapport avec le thème.
+    <<set $proposed04=true>>
 
-Camille: Moi j'enverais \:
--> Sylvia et Eugénie
--> Le ruisseau
--> La jonquille
--> Le couché de Soleil
 
-Sylvia: Hum... D'accord. Je te fais confiance. Eugénie trouvais que j'étais un peu timorée.
-// Transférer la photo au concours sur Whatsapp
-
-Camille: Voilà, c'est fait. Soulagée ?
-Sylvia: C'est bien parti, tu es sûr ?
-Camille: Oui.
-Camille: Le résultat est dans 2 semaines. Tu me diras si on a gagné ?
-
-Sylvia: Entendu. N'oublie pas le tupperware.
-
-<<Next_day DayTransitionManager>>
-// END OF PART II
-<<jump Part3>>
+<<jump Photo_Selection>>
 
 ===
-
-title: archives
-position: -162,22
+title: CamilleChoice
 ---
-//(Photo 1 - Sylvia et Eugénie en randonnée.)
 
--> Demander qui est la personne sur la photo.
-    Sylvia: C'est une amie très chère qui est décédée.
-    -> Demander si elle est partie avec une aide au suicide.
-        Sylvia: ... Oui.
-        Sylvia: Elle m'a prévenue une semaine avant.
-        Camille: Ah bon! ça a dû être difficile.
-        Sylvia: Je lui ai dit que ce qu'elle venait de me dire m'avait fait très mal.
-        Camille: ...
-        Camille: Je sais pas comment j'aurais réagi à ta place.
-        Sylvia: Je ne voulais pas m'effondrer, je voulais être forte pour elle.
-        Sylvia: Et je voulais surtout rester sur un bon sentiment, celui d'avoir été contente de l'avoir rencontrée.
-        -> Demander comment elle se sont rencontrées.
-            Sylvia: Dans le couloir de l'immeuble. On s'est dit bonjour il y a 7 ans.
-            Sylvia: (Soupir)
-    -> Ne pas poser de question. 
+Camille: Elles sont très bien ces photos!
+Camille: T'es trop négative.
+Sylvia: J'ai peur... 
+Sylvia: J'ai peur de décevoir Eugénie.
+Camille: Je comprends.
 
--> Dire qu'on aimerait bien trouver le temps de faire des randonnées.
-    (Camera zoom in légèrement)
+Camille: Moi, j'enverrais...
+-> le ruisseau.
+-> le renard.
+-> le dromadaire.
+
+Sylvia: Hum...
+Sylvia: D'accord. Je fais confiance à la jeunesse.
+Camille: J'étudie le droit, pas sür que je sois de bon conseil.
+
+<<jump PhotoSent>>
+
+===
+title: PhotoSent
+---
+<<deactivateObject PhotoSelection>>
+<<activateObject BlackScreen>>
+<<ZoomOutCamera 60 0.02 -0.24 10>>
+
+Camille: Voilà, c'est fait. Soulagée ?
+Sylvia: C'est bien parti, tu es sûre ?
+Camille: Oui.
+Sylvia: Je sais pas si je suis mieux maintenant...
+Sylvia: Je te dirais si on a gagné.
+Camille: Oui, avec plaisir.
+Sylvia: Pas trop fatiguée ?
+Camille: Si... Je vais rentrer, d'ailleurs. Désolée.
+Sylvia: Je t'ai mis des pâtes de côté. Prends-les !
+Camaille: Merci ! Je n'ai pas encore eu le temps de manger...
+Sylvia: Bonne chance pour demain.
+Camille: Merci...
+
+
+// END OF PART II
+<<Next_day DayTransitionManager>>
+<<jump Part3>>
 ===

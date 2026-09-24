@@ -23,4 +23,19 @@ public class ObjectAppears : MonoBehaviour
 
       Debug.LogWarning($"ObjectAppears: could not find scene object '{objectName}'.");
    }
+
+   [YarnCommand("deactivateObject")]
+   public static void DeactivateObject(string objectName)
+   {
+      foreach (GameObject sceneObject in Resources.FindObjectsOfTypeAll<GameObject>())
+      {
+         if (sceneObject.name == objectName && sceneObject.scene.IsValid())
+         {
+            sceneObject.SetActive(false);
+            return;
+         }
+      }
+
+      Debug.LogWarning($"ObjectAppears: could not find scene object '{objectName}'.");
+   }
 }
