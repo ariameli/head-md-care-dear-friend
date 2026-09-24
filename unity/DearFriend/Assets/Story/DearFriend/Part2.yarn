@@ -2,14 +2,12 @@ title: Part2
 position: -118,-98
 ---
 
+<<SylviaSittingIdle SylviaMesh>>
 
 <<declare $proposed01=false>>
 <<declare $proposed02=false>>
 <<declare $proposed03=false>>
 <<declare $proposed04=false>>
-
-
-<<SylviaSittingIdle SylviaMesh>>
 
 Camille: Ok, je suis là.
 Camille: Tu as choisi la photo ?
@@ -26,24 +24,6 @@ title: Photo_Selection
 <<if $proposed01&& $proposed02&& $proposed03&& $proposed04>>
     <<jump CamilleChoice>>
 <<endif>>
-
--> La photo de Sylvia et Eugénie en randonnée ?
-    Sylvia: ... ça ne gagnera jamais le concours, ça, haha!
-    Camille: Ok. C'est vrai. Mais c'est une belle photo.
-    Sylvia: Tu es trop gentille.
-    <<set $proposed01=true>>
--> La rivière dans la forêt?
-    Sylvia: C'est un peu banal, non ?
-    <<set $proposed02=true>>
--> Le renard ?
-    Sylvia: C'est chou, mais sans plus.
-    <<set $proposed03=true>>
--> Le dromadaire dans le marais ?
-    Sylvia: Je ne vois pas le rapport avec le thème.
-    <<set $proposed04=true>>
-
-
-<<jump Photo_Selection>>
 
 ===
 title: CamilleChoice
@@ -67,6 +47,48 @@ Camille: J'étudie le droit, pas sür que je sois de bon conseil.
 <<jump PhotoSent>>
 
 ===
+
+title: DiscussPhoto01
+---
+Sylvia: On gagnera jamais le concours avec ça! Haha!
+Camille: Ok. C'est vrai. Mais vous êtes si belles.
+Sylvia: Tu es trop gentille.
+
+<<set $proposed01=true>>
+<<setCanClick Photo01D2 false>>
+<<setObjectColor Photo01D2 #241F47>>
+<<jump Photo_Selection>>
+===
+
+title: DiscussPhoto02
+---
+
+Sylvia: C'est un peu banal, non ?
+<<set $proposed02=true>>
+<<setCanClick Photo02D2 false>>
+<<setObjectColor Photo02D2 #241F47>>
+<<jump Photo_Selection>>
+===
+
+title: DiscussPhoto03
+---
+Sylvia: C'est chou, mais sans plus.
+<<set $proposed03=true>>
+<<setCanClick Photo03D2 false>>
+<<setObjectColor Photo03D2 #241F47>>
+<<jump Photo_Selection>>
+===
+
+title: DiscussPhoto04
+---
+Sylvia: Je ne vois pas le rapport avec le thème.
+<<set $proposed04=true>>
+<<setCanClick Photo04D2 false>>
+<<setObjectColor Photo04D2 #241F47>>
+<<jump Photo_Selection>>
+
+
+===
 title: PhotoSent
 ---
 <<deactivateObject PhotoSelection>>
@@ -85,7 +107,6 @@ Sylvia: Je t'ai mis des pâtes de côté. Prends-les !
 Camaille: Merci ! Je n'ai pas encore eu le temps de manger...
 Sylvia: Bonne chance pour demain.
 Camille: Merci...
-
 
 // END OF PART II
 <<Next_day DayTransitionManager>>

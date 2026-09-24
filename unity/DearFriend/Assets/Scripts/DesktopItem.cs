@@ -2,6 +2,7 @@ using System.Collections;
 using System.Text.RegularExpressions;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 using Yarn.Unity;
 
 public class DesktopItem : MonoBehaviour,
@@ -290,8 +291,19 @@ public class DesktopItem : MonoBehaviour,
         }
 
         item.canClick = value;
-    }
 
+        foreach (var collider in item.GetComponents<Collider>())
+        {
+            collider.enabled = value;
+        }
+
+        var button = item.GetComponent<Button>();
+        if (button != null)
+        {
+            button.interactable = value;
+        }
+    }
+    
     [YarnCommand("setCanDrag")]
     public static void SetCanDrag(string objectName, bool value)
     {
