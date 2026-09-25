@@ -3696,6 +3696,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 160567815036327457, guid: a061efefcca2a034989841e09f260752, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 380879109762988063, guid: a061efefcca2a034989841e09f260752, type: 3}
       propertyPath: m_fontSize
       value: 30
@@ -3765,12 +3769,16 @@ PrefabInstance:
       value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 2910144493240861237, guid: a061efefcca2a034989841e09f260752, type: 3}
+      propertyPath: cornerSize
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2910144493240861237, guid: a061efefcca2a034989841e09f260752, type: 3}
       propertyPath: dialogueRunner
       value: 
       objectReference: {fileID: 1056935913}
     - target: {fileID: 3205701247132114762, guid: a061efefcca2a034989841e09f260752, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3679516843249244140, guid: a061efefcca2a034989841e09f260752, type: 3}
       propertyPath: m_Transition
