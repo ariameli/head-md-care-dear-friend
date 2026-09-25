@@ -2,8 +2,11 @@ title: Part3
 position: 0,0
 ---
 
-<<setLightTemperature DirectionalLight 10405>>
+//<<jump EndCredits>>
 <<deactivateObject Computer>>
+<<setLightTemperature DirectionalLight 10405>>
+<<setLightIntensity DirectionalLight 1>>
+
 
 <<if $choicePhoto02>>
     <<activateObject MagazineFox >>
@@ -15,36 +18,54 @@ position: 0,0
 
 <<SylviaSittingIdle SylviaMesh>>
 
-Camille: Tu vois, je te l'avais dit qu'elles étaient bien ces photos !
-Sylvia: Tout le monde a eu une photo publiée au final.
+Camille: Je te l'avais dit qu'elles étaient bien ces photos !
+Sylvia: Tout le monde a eu sa photo publiée, au final.
 Camille: Mais pas en couverture !
 Sylvia: C'est vrai...
 Sylvia: Et tes examens, alors ?
-Camille: J'attends les résultats. Mais je pense que ça a passé.
-Camille: Merci de m'avoir apporté à manger tous ces jours.
-Camille: J'aurais jamais réussi sans ça.
-Sylvia: Alors, c'est la dernière fois qu'on se voit ?
+Camille: J'attends les résultats.
+Camille: Merci de m'avoir fait à manger pour moi tous ces jours.
+Camille: J'aurais jamais réussi sans toi.
+Sylvia: N'importe quoi. Mais ravie d'avoir pu aider.
+Sylvia: C'est la dernière fois qu'on se voit ?
 Camille: Non. Il faut fêter cette victoire !
-Sylvia: Bonne idée. Tu veux venir à la fermeture du JARDIN DE SONIA avec moi ? ?
+Sylvia: Bonne idée. Tu veux venir à la fermeture du JARDIN DE SONIA avec moi ?
 
 <<activateObject SoniaGardenPoster>>
 <<activateObject SoniaGardenPoster>>
 <<startPulsatingFile SoniaGardenPoster>>
-<<deactivateObject MagazineFox>>
-<<deactivateObject MagazineRiver>>
-<<deactivateObject MagazineCamel>>
+//<<deactivateObject MagazineFox>>
+//<<deactivateObject MagazineRiver>>
+//<<deactivateObject MagazineCamel>>
+
+===
+title: Ending
+---
 
 -> Avec plaisir!
     Sylvia: Génial. Je t'amènerai un cadeau.
-    Camille: Un bonnet, par hasard ?
-    Sylvia: Haha.
--> Je peux pas venir, désolée.
-    Sylvia: Oui, je comprends.
+    Camille: Un bonnet ?
+    Sylvia: Haha. Peut-être.
+    Camille: J'aime pas les surprises !
+    Camille: Un dromadaire ?
+-> Je peux pas venir, navrée.
+    Sylvia: Tu déménages, je comprends.
 
-Sylvia: Merci pour ton aide.
+Sylvia: Merci infiniment.
+Camille: Merci à toi!
 
 <<deactivateObject SoniaGardenPoster>>
-<<ZoomOutCamera 6 3.2 0.5 10>>
+<<activateObject EndCreditsImage>>
+// Laisser du temps ?
+<<jump EndCredits>>
 
-// Jump to credits ?
+===
+title: EndCredits
+---
+<<PlaySound FX LastZoomOut>>
+<<ZoomOutCamera 18.4 0.02 -0.24 10 16.327 -2.22 -0.269>>
+<<activateObject EndCreditsCanva>>
+
+
+
 ===

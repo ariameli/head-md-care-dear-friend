@@ -15,6 +15,7 @@ public class AudioPlaySound : MonoBehaviour
     public AudioClip TrashedFile;
     public AudioClip SaveddFile;
     public AudioClip PackingBag;
+    public AudioClip LastZoomOut;
 
 
     [Header("Playback")]
@@ -47,6 +48,7 @@ public class AudioPlaySound : MonoBehaviour
             "TrashedFile" => TrashedFile,
             "SavedFile" => SaveddFile,
             "PackingBag" => PackingBag,
+            "LastZoomOut" => LastZoomOut,
             _               => null
         };
     }

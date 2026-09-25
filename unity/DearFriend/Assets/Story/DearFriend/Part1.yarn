@@ -1,11 +1,16 @@
 title: Start
 position: 0,0
 ---
-<<declare $zoom = 0>> // De 0 à 100
-
-<<setLightTemperature DirectionalLight 5400>>
 // DEBUG
 //<<jump EugenieFolderOpened>>
+
+// Set scene
+<<setLightTemperature DirectionalLight 5400>>
+<<setLightIntensity DirectionalLight 10>>
+
+//Global variables
+<<declare $zoom = 0>> // De 0 à 100
+
 <<PlaySoundAndWait FX ComputerFanSpeedsUp>>
 Sylvia: Mon ordinateur fait plus de bruit qu'avant. Vous pouvez me dire pourquoi ? #sound:DialogueSylvia_1
 

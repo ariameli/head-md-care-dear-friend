@@ -2,7 +2,11 @@ title: Part2
 position: -118,-98
 ---
 
+// Set scene
 <<setLightTemperature DirectionalLight 1500>>
+<<setLightIntensity DirectionalLight 10>>
+
+
 <<SylviaSittingIdle SylviaMesh>>
 <<deactivateObject Folder_Eugenie_Window>>
 <<deactivateObject NotEugenie>>

@@ -46,22 +46,24 @@ public class CameraZoomOut : MonoBehaviour
         float targetFov = 77.32661f,
         float lensShiftX = 0f,
         float lensShiftY = 0f,
-        float zoomDuration = 1f)
+        float zoomDuration = 1f,
+        float targetRotationX = 0f,
+        float targetRotationY = 0f,
+        float targetRotationZ = 0f)
+
     {
-        if (instance == null)
-        {
-            Debug.LogError("ZoomOutCamera failed: no CameraZoomOut instance exists in the scene.");
-            yield break;
-        }
 
         yield return instance.ZoomOutRoutine(
             targetFov,
             new Vector2(lensShiftX, lensShiftY),
-            zoomDuration);
+            zoomDuration,
+            targetRotationX,
+            targetRotationY,
+            targetRotationZ);
     }
 
     // --- Coroutine that performs the zoom out effect over time ---
-    private IEnumerator ZoomOutRoutine(float targetFov, Vector2 targetLensShift, float zoomDuration)
+    private IEnumerator ZoomOutRoutine(float targetFov, Vector2 targetLensShift, float zoomDuration, float targetRotationX, float targetRotationY, float targetRotationZ)
     {
         Camera cam = Camera.main;
         if (cam == null)
@@ -71,7 +73,9 @@ public class CameraZoomOut : MonoBehaviour
         }
 
         float startFov = cam.fieldOfView;
+        Quaternion startRotation = cam.transform.rotation;
         Vector2 startLensShift = cam.lensShift;
+        Quaternion targetRotation = Quaternion.Euler(targetRotationX, targetRotationY, targetRotationZ);
 
         float elapsed = 0f;
         while (elapsed < zoomDuration)
@@ -81,6 +85,7 @@ public class CameraZoomOut : MonoBehaviour
 
             cam.fieldOfView = Mathf.Lerp(startFov, targetFov, easedT);
             cam.lensShift = Vector2.Lerp(startLensShift, targetLensShift, easedT);
+            cam.transform.rotation = Quaternion.Slerp(startRotation, targetRotation, easedT);
 
             elapsed += Time.deltaTime;
             yield return null;
@@ -88,5 +93,6 @@ public class CameraZoomOut : MonoBehaviour
 
         cam.fieldOfView = targetFov;
         cam.lensShift = targetLensShift;
+        cam.transform.rotation = targetRotation;
     }
 }

@@ -12,7 +12,7 @@ public class LightManager : MonoBehaviour
             targetLight = GetComponent<Light>();
         }
     }
-
+    
     [YarnCommand("setLightTemperature")]
     public void SetLightTemperature(float temperature)
     {
@@ -24,5 +24,17 @@ public class LightManager : MonoBehaviour
 
         targetLight.useColorTemperature = true;
         targetLight.colorTemperature = Mathf.Clamp(temperature, 1000f, 20000f);
+    }
+
+    [YarnCommand("setLightIntensity")]
+    public void SetLightIntensity(float intensity)
+    {
+        if (targetLight == null)
+        {
+            Debug.LogWarning("Aucune lumière assignée à LightManager.");
+            return;
+        }
+
+        targetLight.intensity = Mathf.Max(0f, intensity);
     }
 }
